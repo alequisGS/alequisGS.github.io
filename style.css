@@ -32,6 +32,13 @@ body {
   border-bottom: 1px solid var(--rule);
 }
 
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 34px;
+  align-items: start;
+}
+
 h1,
 h2 {
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -89,6 +96,26 @@ a:focus {
   font-size: 0.98rem;
 }
 
+.links {
+  margin-top: 16px;
+  color: var(--muted);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.links span {
+  margin: 0 8px;
+}
+
+.profile-photo {
+  width: 190px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 45% 38%;
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+}
+
 .math {
   white-space: nowrap;
 }
@@ -105,6 +132,15 @@ a:focus {
 
   .site-header {
     margin-bottom: 26px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .profile-photo {
+    width: 150px;
   }
 
   h2 {
