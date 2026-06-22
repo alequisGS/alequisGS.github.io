@@ -120,6 +120,12 @@ a:focus {
   white-space: nowrap;
 }
 
+.paper-audio {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 .spotify-player {
   display: block;
   width: 100%;
