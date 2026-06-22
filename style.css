@@ -40,7 +40,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -124,6 +125,20 @@ a:focus {
   display: block;
   width: 100%;
   margin-top: 0.5rem;
+}
+
+.audio-language {
+  margin-top: 1.25rem;
+}
+
+.audio-language h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.coming-soon {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .spotify-player {
