@@ -177,6 +177,26 @@ a.doi:visited {
   border-radius: 12px;
 }
 
+.site-footer {
+  margin-top: 52px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+
+.visitor-counter img {
+  display: block;
+  width: auto;
+  height: 20px;
+  opacity: 1;
+}
+
 /* Light counterpart */
 @media (prefers-color-scheme: light) {
   body {
