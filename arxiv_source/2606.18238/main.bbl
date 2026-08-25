@@ -1,0 +1,847 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{AlexeevNikulin}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=6ade5b9a401fe4157f4b2ebca496e8ad}{%
+           family={Alexeev},
+           familyi={A\bibinitperiod},
+           given={Valery},
+           giveni={V\bibinitperiod}}}%
+        {{hash=0a461aad65e9ed7ba880c3347dc93bb1}{%
+           family={Nikulin},
+           familyi={N\bibinitperiod},
+           given={Viacheslav\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Mathematical Society of Japan}%
+      }
+      \strng{namehash}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{fullhash}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{fullhashraw}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{bibnamehash}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{authorbibnamehash}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{authornamehash}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{authorfullhash}{79752864cb1ab6350bbc8048642eba9d}
+      \strng{authorfullhashraw}{79752864cb1ab6350bbc8048642eba9d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9784931469341}
+      \field{issn}{2189-1494}
+      \field{journaltitle}{Mathematical Society of Japan Memoirs}
+      \field{title}{Del Pezzo and K3 Surfaces}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.2969/msjmemoirs/015010000
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.2969/msjmemoirs/015010000
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.2969/msjmemoirs/015010000
+      \endverb
+    \endentry
+    \entry{Beilinson1978}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=73876313521569bfdf78717c57efe49d}{%
+           family={Beilinson},
+           familyi={B\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{73876313521569bfdf78717c57efe49d}
+      \strng{fullhash}{73876313521569bfdf78717c57efe49d}
+      \strng{fullhashraw}{73876313521569bfdf78717c57efe49d}
+      \strng{bibnamehash}{73876313521569bfdf78717c57efe49d}
+      \strng{authorbibnamehash}{73876313521569bfdf78717c57efe49d}
+      \strng{authornamehash}{73876313521569bfdf78717c57efe49d}
+      \strng{authorfullhash}{73876313521569bfdf78717c57efe49d}
+      \strng{authorfullhashraw}{73876313521569bfdf78717c57efe49d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-8485}
+      \field{journaltitle}{Funct. Anal. Appl.}
+      \field{month}{7}
+      \field{number}{3}
+      \field{title}{Coherent sheaves on $\mathbb{P}^n$ and problems of linear algebra}
+      \field{volume}{12}
+      \field{year}{1978}
+      \field{pages}{214\bibrangedash 216}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1007/bf01681436
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/BF01681436
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/BF01681436
+      \endverb
+    \endentry
+    \entry{Bright2013}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=331bdd7f8892aad88f7096c119fde041}{%
+           family={Bright},
+           familyi={B\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Michigan Mathematical Journal}%
+      }
+      \strng{namehash}{331bdd7f8892aad88f7096c119fde041}
+      \strng{fullhash}{331bdd7f8892aad88f7096c119fde041}
+      \strng{fullhashraw}{331bdd7f8892aad88f7096c119fde041}
+      \strng{bibnamehash}{331bdd7f8892aad88f7096c119fde041}
+      \strng{authorbibnamehash}{331bdd7f8892aad88f7096c119fde041}
+      \strng{authornamehash}{331bdd7f8892aad88f7096c119fde041}
+      \strng{authorfullhash}{331bdd7f8892aad88f7096c119fde041}
+      \strng{authorfullhashraw}{331bdd7f8892aad88f7096c119fde041}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0026-2285}
+      \field{journaltitle}{Michigan Math. J.}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Brauer groups of singular del Pezzo surfaces}
+      \field{volume}{62}
+      \field{year}{2013}
+      \field{pages}{657\bibrangedash 664}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1307/mmj/1378757892
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1307/mmj/1378757892
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1307/mmj/1378757892
+      \endverb
+    \endentry
+    \entry{CAVEY2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=844b6f14c8c10cf1b1f787b36ee38bf7}{%
+           family={Cavey},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=79140b4d6ed8e4cb22b2c3f33ba6c0ef}{%
+           family={Prince},
+           familyi={P\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematical Society of Japan}%
+      }
+      \strng{namehash}{79f207e43d99932f376715e101188df7}
+      \strng{fullhash}{79f207e43d99932f376715e101188df7}
+      \strng{fullhashraw}{79f207e43d99932f376715e101188df7}
+      \strng{bibnamehash}{79f207e43d99932f376715e101188df7}
+      \strng{authorbibnamehash}{79f207e43d99932f376715e101188df7}
+      \strng{authornamehash}{79f207e43d99932f376715e101188df7}
+      \strng{authorfullhash}{79f207e43d99932f376715e101188df7}
+      \strng{authorfullhashraw}{79f207e43d99932f376715e101188df7}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Math. Soc. Japan}
+      \field{number}{2}
+      \field{title}{{Del Pezzo surfaces with a single $1/k(1,1)$ singularity}}
+      \field{volume}{72}
+      \field{year}{2020}
+      \field{pages}{465\bibrangedash 505}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.2969/jmsj/79337933
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2969/jmsj/79337933
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2969/jmsj/79337933
+      \endverb
+      \keyw{del Pezzo surfaces,mirror symmetry}
+    \endentry
+    \entry{Corti2016}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9da8c2beb1e3d5d38e2ed3753147f2da}{%
+           family={Corti},
+           familyi={C\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2b53d5dacc52f82b78e3a90eba3dbb5e}{%
+           family={Heuberger},
+           familyi={H\bibinitperiod},
+           given={Liana},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media LLC}%
+      }
+      \strng{namehash}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{fullhash}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{fullhashraw}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{bibnamehash}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{authorbibnamehash}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{authornamehash}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{authorfullhash}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \strng{authorfullhashraw}{f77ef63b9a0aa91b36fdc1622bc1ddcf}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1432-1785}
+      \field{journaltitle}{Manuscripta Math.}
+      \field{month}{7}
+      \field{number}{1-2}
+      \field{title}{Del Pezzo surfaces with $\frac{1}{3}(1, 1)$ points}
+      \field{volume}{153}
+      \field{year}{2016}
+      \field{pages}{71\bibrangedash 118}
+      \range{pages}{48}
+      \verb{doi}
+      \verb 10.1007/s00229-016-0870-y
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/s00229-016-0870-y
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/s00229-016-0870-y
+      \endverb
+    \endentry
+    \entry{Dolgachev1982}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{hash=508393cb3a9b62cbfe42f33fc795e328}{%
+           family={Dolgachev},
+           familyi={D\bibinitperiod},
+           given={Igor},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{fullhash}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{fullhashraw}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{bibnamehash}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{authorbibnamehash}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{authornamehash}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{authorfullhash}{508393cb3a9b62cbfe42f33fc795e328}
+      \strng{authorfullhashraw}{508393cb3a9b62cbfe42f33fc795e328}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Group Actions and Vector Fields}
+      \field{isbn}{9783540395287}
+      \field{issn}{1617-9692}
+      \field{title}{Weighted projective varieties}
+      \field{year}{1982}
+      \field{pages}{34\bibrangedash 71}
+      \range{pages}{38}
+      \verb{doi}
+      \verb 10.1007/bfb0101508
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1007/BFb0101508
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/BFb0101508
+      \endverb
+    \endentry
+    \entry{Elagin2007}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=8e9a7486ea854672c0b06e2b1166fb11}{%
+           family={Elagin},
+           familyi={E\bibinitperiod},
+           given={A.\bibnamedelimi D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pleiades Publishing Ltd}%
+      }
+      \strng{namehash}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{fullhash}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{fullhashraw}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{bibnamehash}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{authorbibnamehash}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{authornamehash}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{authorfullhash}{8e9a7486ea854672c0b06e2b1166fb11}
+      \strng{authorfullhashraw}{8e9a7486ea854672c0b06e2b1166fb11}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-8876}
+      \field{journaltitle}{Math. Notes}
+      \field{month}{7}
+      \field{number}{1-2}
+      \field{title}{Exceptional sets on del Pezzo surfaces with one log-terminal singularity}
+      \field{volume}{82}
+      \field{year}{2007}
+      \field{pages}{33\bibrangedash 46}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1134/s000143460707005x
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1134/S000143460707005X
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1134/S000143460707005X
+      \endverb
+    \endentry
+    \entry{GugiattiRota2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=89968aa3fe9941344737e187c0abab68}{%
+           family={Gugiatti},
+           familyi={G\bibinitperiod},
+           given={Giulia},
+           giveni={G\bibinitperiod}}}%
+        {{hash=cade1c48ceae21a6792926de79a8d824}{%
+           family={Rota},
+           familyi={R\bibinitperiod},
+           given={Franco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press (OUP)}%
+      }
+      \strng{namehash}{2581ddb728b67dd559663292e796bece}
+      \strng{fullhash}{2581ddb728b67dd559663292e796bece}
+      \strng{fullhashraw}{2581ddb728b67dd559663292e796bece}
+      \strng{bibnamehash}{2581ddb728b67dd559663292e796bece}
+      \strng{authorbibnamehash}{2581ddb728b67dd559663292e796bece}
+      \strng{authornamehash}{2581ddb728b67dd559663292e796bece}
+      \strng{authorfullhash}{2581ddb728b67dd559663292e796bece}
+      \strng{authorfullhashraw}{2581ddb728b67dd559663292e796bece}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1687-0247}
+      \field{journaltitle}{Int. Math. Res. Not. IMRN}
+      \field{month}{10}
+      \field{number}{21}
+      \field{title}{Full Exceptional Collections for Anticanonical Log del Pezzo Surfaces}
+      \field{volume}{2023}
+      \field{year}{2023}
+      \field{pages}{18803\bibrangedash 18855}
+      \range{pages}{53}
+      \verb{doi}
+      \verb 10.1093/imrn/rnad228
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1093/imrn/rnad228
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1093/imrn/rnad228
+      \endverb
+    \endentry
+    \entry{HillePerling2011}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=422320b882ff5cc537332822d5d14145}{%
+           family={Hille},
+           familyi={H\bibinitperiod},
+           given={Lutz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ba5c5b1502657269ec1a1ac59453097f}{%
+           family={Perling},
+           familyi={P\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press (CUP)}%
+      }
+      \strng{namehash}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{fullhash}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{fullhashraw}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{bibnamehash}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{authorbibnamehash}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{authornamehash}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{authorfullhash}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \strng{authorfullhashraw}{07b7bbabc75a0dd735cac0cb1d84e358}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1570-5846}
+      \field{journaltitle}{Compos. Math.}
+      \field{month}{3}
+      \field{number}{4}
+      \field{title}{Exceptional sequences of invertible sheaves on rational surfaces}
+      \field{volume}{147}
+      \field{year}{2011}
+      \field{pages}{1230\bibrangedash 1280}
+      \range{pages}{51}
+      \verb{doi}
+      \verb 10.1112/s0010437x10005208
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1112/S0010437X10005208
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1112/S0010437X10005208
+      \endverb
+    \endentry
+    \entry{IanoFletcher2000}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{hash=3e4b775d3bdc6d9fecc9f5d2cfa5af35}{%
+           family={Iano-Fletcher},
+           familyi={I\bibinithyphendelim F\bibinitperiod},
+           given={A.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{fullhash}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{fullhashraw}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{bibnamehash}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{authorbibnamehash}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{authornamehash}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{authorfullhash}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \strng{authorfullhashraw}{3e4b775d3bdc6d9fecc9f5d2cfa5af35}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Explicit Birational Geometry of 3-folds}
+      \field{isbn}{9780511758942}
+      \field{month}{7}
+      \field{title}{Working with weighted complete intersections}
+      \field{year}{2000}
+      \field{pages}{101\bibrangedash 174}
+      \range{pages}{74}
+      \verb{doi}
+      \verb 10.1017/cbo9780511758942.005
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1017/CBO9780511758942.005
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1017/CBO9780511758942.005
+      \endverb
+    \endentry
+    \entry{Ishii2015}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d0651cd3fc85427231bbca1f28cceb85}{%
+           family={Ishii},
+           familyi={I\bibinitperiod},
+           given={Akira},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6c57ea0288afb93888c160dff5b0225e}{%
+           family={Ueda},
+           familyi={U\bibinitperiod},
+           given={Kazushi},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mathematical Institute, Tohoku University}%
+      }
+      \strng{namehash}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{fullhash}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{fullhashraw}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{bibnamehash}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{authorbibnamehash}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{authornamehash}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{authorfullhash}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \strng{authorfullhashraw}{c8cc5ac05130a3677e5bcbe8e0e03f18}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0040-8735}
+      \field{journaltitle}{Tohoku Math. J. (2)}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{The special McKay correspondence and exceptional collections}
+      \field{volume}{67}
+      \field{year}{2015}
+      \field{pages}{585\bibrangedash 609}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.2748/tmj/1450798075
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.2748/tmj/1450798075
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.2748/tmj/1450798075
+      \endverb
+    \endentry
+    \entry{JohnsonKollar2001}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=aa14d1b9fa9b2334ec8f930263b744e5}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Jennifer\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=43fd239813bce49520fe61f6a161a3ed}{%
+           family={Kollár},
+           familyi={K\bibinitperiod},
+           given={János},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MathDoc/Centre Mersenne}%
+      }
+      \strng{namehash}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{fullhash}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{fullhashraw}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{bibnamehash}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{authorbibnamehash}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{authornamehash}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{authorfullhash}{db738e0bd5d4b7e8662647aa6819afa7}
+      \strng{authorfullhashraw}{db738e0bd5d4b7e8662647aa6819afa7}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1777-5310}
+      \field{journaltitle}{Ann. Inst. Fourier (Grenoble)}
+      \field{number}{1}
+      \field{title}{Kähler-Einstein metrics on log del Pezzo surfaces in weighted projective 3-spaces}
+      \field{volume}{51}
+      \field{year}{2001}
+      \field{pages}{69\bibrangedash 79}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.5802/aif.1815
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.5802/aif.1815
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.5802/aif.1815
+      \endverb
+    \endentry
+    \entry{KKS2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e5235baae63ea798a46b72d39ca0bb91}{%
+           family={Karmazyn},
+           familyi={K\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3e1f2bcd8c8ceaf1cd2e6c88b6e90b0d}{%
+           family={Kuznetsov},
+           familyi={K\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1408dffc99c5d12d9205c973fab3f267}{%
+           family={Shinder},
+           familyi={S\bibinitperiod},
+           given={Evgeny},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {European Mathematical Society - EMS - Publishing House GmbH}%
+      }
+      \strng{namehash}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{fullhash}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{fullhashraw}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{bibnamehash}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{authorbibnamehash}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{authornamehash}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{authorfullhash}{0a8547cb1803fe047e605f94cbefba74}
+      \strng{authorfullhashraw}{0a8547cb1803fe047e605f94cbefba74}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1435-9863}
+      \field{journaltitle}{J. Eur. Math. Soc. (JEMS)}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{Derived categories of singular surfaces}
+      \field{volume}{24}
+      \field{year}{2022}
+      \field{pages}{461\bibrangedash 526}
+      \range{pages}{66}
+      \verb{doi}
+      \verb 10.4171/jems/1106
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.4171/JEMS/1106
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.4171/JEMS/1106
+      \endverb
+    \endentry
+    \entry{Kawamata2004}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=d46564bf96653b4e268f553f65750126}{%
+           family={Kawamata},
+           familyi={K\bibinitperiod},
+           given={Yujiro},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Project MUSE}%
+      }
+      \strng{namehash}{d46564bf96653b4e268f553f65750126}
+      \strng{fullhash}{d46564bf96653b4e268f553f65750126}
+      \strng{fullhashraw}{d46564bf96653b4e268f553f65750126}
+      \strng{bibnamehash}{d46564bf96653b4e268f553f65750126}
+      \strng{authorbibnamehash}{d46564bf96653b4e268f553f65750126}
+      \strng{authornamehash}{d46564bf96653b4e268f553f65750126}
+      \strng{authorfullhash}{d46564bf96653b4e268f553f65750126}
+      \strng{authorfullhashraw}{d46564bf96653b4e268f553f65750126}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1080-6377}
+      \field{journaltitle}{Amer. J. Math.}
+      \field{month}{10}
+      \field{number}{5}
+      \field{title}{Equivalences of derived categories of sheaves on smooth stacks}
+      \field{volume}{126}
+      \field{year}{2004}
+      \field{pages}{1057\bibrangedash 1083}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1353/ajm.2004.0036
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1353/ajm.2004.0036
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1353/ajm.2004.0036
+      \endverb
+    \endentry
+    \entry{Kermes2007}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=87dd65be85737129bbc8e51366c3968c}{%
+           family={Kermes},
+           familyi={K\bibinitperiod},
+           given={Jeremiah\bibnamedelima Mitchell},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {North Carolina State University}%
+      }
+      \strng{namehash}{87dd65be85737129bbc8e51366c3968c}
+      \strng{fullhash}{87dd65be85737129bbc8e51366c3968c}
+      \strng{fullhashraw}{87dd65be85737129bbc8e51366c3968c}
+      \strng{bibnamehash}{87dd65be85737129bbc8e51366c3968c}
+      \strng{authorbibnamehash}{87dd65be85737129bbc8e51366c3968c}
+      \strng{authornamehash}{87dd65be85737129bbc8e51366c3968c}
+      \strng{authorfullhash}{87dd65be85737129bbc8e51366c3968c}
+      \strng{authorfullhashraw}{87dd65be85737129bbc8e51366c3968c}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{month}{5}
+      \field{note}{NC State University Libraries Repository}
+      \field{title}{Fermat Curves on Weighted Projective Planes}
+      \field{type}{PhD dissertation}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://www.lib.ncsu.edu/resolver/1840.16/5064
+      \endverb
+      \verb{url}
+      \verb http://www.lib.ncsu.edu/resolver/1840.16/5064
+      \endverb
+    \endentry
+    \entry{Kollar1998}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=67a563edf1e49a9e2d8ec1256c4a7325}{%
+           family={Kollár},
+           familyi={K\bibinitperiod},
+           given={Janos},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4b01929a78a8efced312b524d8541865}{%
+           family={Mori},
+           familyi={M\bibinitperiod},
+           given={Shigefumi},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{324e09e5b078e248e2d7b618579fa825}
+      \strng{fullhash}{324e09e5b078e248e2d7b618579fa825}
+      \strng{fullhashraw}{324e09e5b078e248e2d7b618579fa825}
+      \strng{bibnamehash}{324e09e5b078e248e2d7b618579fa825}
+      \strng{authorbibnamehash}{324e09e5b078e248e2d7b618579fa825}
+      \strng{authornamehash}{324e09e5b078e248e2d7b618579fa825}
+      \strng{authorfullhash}{324e09e5b078e248e2d7b618579fa825}
+      \strng{authorfullhashraw}{324e09e5b078e248e2d7b618579fa825}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780511662560}
+      \field{month}{9}
+      \field{title}{Birational Geometry of Algebraic Varieties}
+      \field{year}{1998}
+      \verb{doi}
+      \verb 10.1017/cbo9780511662560
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1017/CBO9780511662560
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1017/CBO9780511662560
+      \endverb
+    \endentry
+    \entry{Orlov1993}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=62dfe7f593c4161a4e0ebf77e719dd38}{%
+           family={Orlov},
+           familyi={O\bibinitperiod},
+           given={D.\bibnamedelimi O.},
+           giveni={D\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Steklov Mathematical Institute}%
+      }
+      \strng{namehash}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{fullhash}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{fullhashraw}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{bibnamehash}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{authorbibnamehash}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{authornamehash}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{authorfullhash}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \strng{authorfullhashraw}{62dfe7f593c4161a4e0ebf77e719dd38}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1064-5632}
+      \field{journaltitle}{Izv. Math.}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Projective Bundles, Monoidal Transformations, and Derived Categories of Coherent Sheaves}
+      \field{volume}{41}
+      \field{year}{1993}
+      \field{pages}{133\bibrangedash 141}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1070/im1993v041n01abeh002182
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1070/IM1993v041n01ABEH002182
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1070/IM1993v041n01ABEH002182
+      \endverb
+    \endentry
+    \entry{ReidSuzuki2004}{inbook}{}{}
+      \name{author}{2}{}{%
+        {{hash=b36ed2e74acb2c122428f1cb5b896108}{%
+           family={Reid},
+           familyi={R\bibinitperiod},
+           given={Miles},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7268fd6720122fe4706b2c0c9dbb6bc9}{%
+           family={Suzuki},
+           familyi={S\bibinitperiod},
+           given={Kaori},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{3bebe247671ead89df6904aa4158133c}
+      \strng{fullhash}{3bebe247671ead89df6904aa4158133c}
+      \strng{fullhashraw}{3bebe247671ead89df6904aa4158133c}
+      \strng{bibnamehash}{3bebe247671ead89df6904aa4158133c}
+      \strng{authorbibnamehash}{3bebe247671ead89df6904aa4158133c}
+      \strng{authornamehash}{3bebe247671ead89df6904aa4158133c}
+      \strng{authorfullhash}{3bebe247671ead89df6904aa4158133c}
+      \strng{authorfullhashraw}{3bebe247671ead89df6904aa4158133c}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Number Theory and Algebraic Geometry}
+      \field{isbn}{9780511734946}
+      \field{month}{1}
+      \field{title}{Cascades of projections from log del Pezzo surfaces}
+      \field{year}{2004}
+      \field{pages}{227\bibrangedash 250}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1017/cbo9780511734946.012
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1017/CBO9780511734946.012
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1017/CBO9780511734946.012
+      \endverb
+    \endentry
+    \entry{Wunram1988}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=153769e20c6c05b2ce3cd600412dfaf1}{%
+           family={Wunram},
+           familyi={W\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{fullhash}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{fullhashraw}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{bibnamehash}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{authorbibnamehash}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{authornamehash}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{authorfullhash}{153769e20c6c05b2ce3cd600412dfaf1}
+      \strng{authorfullhashraw}{153769e20c6c05b2ce3cd600412dfaf1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematische Annalen}
+      \field{number}{4}
+      \field{title}{Reflexive modules on quotient surface singularities}
+      \field{volume}{279}
+      \field{year}{1988}
+      \field{pages}{583\bibrangedash 598}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/BF01458530
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
