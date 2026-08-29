@@ -241,6 +241,50 @@
       \verb http://dx.doi.org/10.1007/s00229-016-0870-y
       \endverb
     \endentry
+    \entry{CoxLittleSchenck2011}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=f491ad1431e56daa11842f8c7ad8aa73}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=90d202ee474e4f8980fc2df6c7f982f0}{%
+           family={Little},
+           familyi={L\bibinitperiod},
+           given={John\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=a5a551298e00f0bdd8d280bd0552a030}{%
+           family={Schenck},
+           familyi={S\bibinitperiod},
+           given={Henry\bibnamedelima K.},
+           giveni={H\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Providence, RI}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{fullhash}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{fullhashraw}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{bibnamehash}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{authorbibnamehash}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{authornamehash}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{authorfullhash}{8f3b390e2816aa658ee917221ed1c140}
+      \strng{authorfullhashraw}{8f3b390e2816aa658ee917221ed1c140}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Graduate Studies in Mathematics}
+      \field{title}{Toric Varieties}
+      \field{volume}{124}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1090/gsm/124
+      \endverb
+    \endentry
     \entry{Dolgachev1982}{inbook}{}{}
       \name{author}{1}{}{%
         {{hash=508393cb3a9b62cbfe42f33fc795e328}{%
@@ -602,85 +646,6 @@
       \verb http://dx.doi.org/10.4171/JEMS/1106
       \endverb
     \endentry
-    \entry{Kawamata2004}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=d46564bf96653b4e268f553f65750126}{%
-           family={Kawamata},
-           familyi={K\bibinitperiod},
-           given={Yujiro},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Project MUSE}%
-      }
-      \strng{namehash}{d46564bf96653b4e268f553f65750126}
-      \strng{fullhash}{d46564bf96653b4e268f553f65750126}
-      \strng{fullhashraw}{d46564bf96653b4e268f553f65750126}
-      \strng{bibnamehash}{d46564bf96653b4e268f553f65750126}
-      \strng{authorbibnamehash}{d46564bf96653b4e268f553f65750126}
-      \strng{authornamehash}{d46564bf96653b4e268f553f65750126}
-      \strng{authorfullhash}{d46564bf96653b4e268f553f65750126}
-      \strng{authorfullhashraw}{d46564bf96653b4e268f553f65750126}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{1080-6377}
-      \field{journaltitle}{Amer. J. Math.}
-      \field{month}{10}
-      \field{number}{5}
-      \field{title}{Equivalences of derived categories of sheaves on smooth stacks}
-      \field{volume}{126}
-      \field{year}{2004}
-      \field{pages}{1057\bibrangedash 1083}
-      \range{pages}{27}
-      \verb{doi}
-      \verb 10.1353/ajm.2004.0036
-      \endverb
-      \verb{urlraw}
-      \verb http://dx.doi.org/10.1353/ajm.2004.0036
-      \endverb
-      \verb{url}
-      \verb http://dx.doi.org/10.1353/ajm.2004.0036
-      \endverb
-    \endentry
-    \entry{Kermes2007}{thesis}{}{}
-      \name{author}{1}{}{%
-        {{hash=87dd65be85737129bbc8e51366c3968c}{%
-           family={Kermes},
-           familyi={K\bibinitperiod},
-           given={Jeremiah\bibnamedelima Mitchell},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {North Carolina State University}%
-      }
-      \strng{namehash}{87dd65be85737129bbc8e51366c3968c}
-      \strng{fullhash}{87dd65be85737129bbc8e51366c3968c}
-      \strng{fullhashraw}{87dd65be85737129bbc8e51366c3968c}
-      \strng{bibnamehash}{87dd65be85737129bbc8e51366c3968c}
-      \strng{authorbibnamehash}{87dd65be85737129bbc8e51366c3968c}
-      \strng{authornamehash}{87dd65be85737129bbc8e51366c3968c}
-      \strng{authorfullhash}{87dd65be85737129bbc8e51366c3968c}
-      \strng{authorfullhashraw}{87dd65be85737129bbc8e51366c3968c}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{3}
-      \field{month}{5}
-      \field{note}{NC State University Libraries Repository}
-      \field{title}{Fermat Curves on Weighted Projective Planes}
-      \field{type}{PhD dissertation}
-      \field{year}{2007}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb http://www.lib.ncsu.edu/resolver/1840.16/5064
-      \endverb
-      \verb{url}
-      \verb http://www.lib.ncsu.edu/resolver/1840.16/5064
-      \endverb
-    \endentry
     \entry{Kollar1998}{book}{}{}
       \name{author}{2}{}{%
         {{hash=67a563edf1e49a9e2d8ec1256c4a7325}{%
@@ -721,6 +686,37 @@
       \endverb
       \verb{url}
       \verb http://dx.doi.org/10.1017/CBO9780511662560
+      \endverb
+    \endentry
+    \entry{Nikulin1980}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=affca1e0337cc7f8f5aa0ab450d1d558}{%
+           family={Nikulin},
+           familyi={N\bibinitperiod},
+           given={V.\bibnamedelimi V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{fullhash}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{fullhashraw}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{bibnamehash}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{authorbibnamehash}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{authornamehash}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{authorfullhash}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \strng{authorfullhashraw}{affca1e0337cc7f8f5aa0ab450d1d558}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematics of the USSR-Izvestiya}
+      \field{number}{1}
+      \field{title}{Integral symmetric bilinear forms and some of their applications}
+      \field{volume}{14}
+      \field{year}{1980}
+      \field{pages}{103\bibrangedash 167}
+      \range{pages}{65}
+      \verb{doi}
+      \verb 10.1070/IM1980v014n01ABEH001060
       \endverb
     \endentry
     \entry{Orlov1993}{article}{}{}
