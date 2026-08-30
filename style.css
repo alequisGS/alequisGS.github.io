@@ -72,6 +72,15 @@ li + li {
   margin-top: 6px;
 }
 
+.paper-abstract {
+  margin: 10px 0 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.94em;
+  line-height: 1.55;
+}
+
 a:link {
   color: var(--link);
   text-decoration: none;

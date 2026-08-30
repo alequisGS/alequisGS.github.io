@@ -159,7 +159,7 @@ and identify its semiorthogonal complement in terms of the non-special represent
 \]
 For singularities of type \(\frac13(1,1)\), we make the local contribution explicit and compute the length of the resulting collection: each stacky point contributes the single exceptional object \(\mathcal E_p\) supported on its residual gerbe. This structural construction is the starting point for the more explicit geometric and categorical results below.
 
-Our geometric tool is the Corti--Heuberger classification by log del Pezzo cascades \cite{Corti2016}. In this classification, the relevant surfaces are organized by sequences of blow-ups starting from \(qG\)-rigid base surfaces. Once a full exceptional collection is fixed on the minimal resolution of a rigid base, Orlov's blow-up formula and the local Ishii--Ueda contribution give a uniform construction procedure along the corresponding cascade. Thus the cascades control both the birational geometry and the passage from the chosen base collection to the stack-theoretic collections.
+Our geometric tool is the Corti--Heuberger classification by log del Pezzo cascades \cite{Corti2016}. In this classification, the relevant surfaces are organized by sequences of blow-ups starting from \(\mathbb Q\)-Gorenstein rigid (\(qG\)-rigid) base surfaces. Once a full exceptional collection is fixed on the minimal resolution of a rigid base, Orlov's blow-up formula and the local Ishii--Ueda contribution give a uniform construction procedure along the corresponding cascade. Thus the cascades control both the birational geometry and the passage from the chosen base collection to the stack-theoretic collections.
 
 Our first structural result is the following.
 
@@ -197,7 +197,7 @@ is the inclusion of the residual gerbe over \(p_i\), and \(\rho_2\) is the uniqu
 
 The theorem is established in \cref{sec:canonical-stack} by combining the Ishii--Ueda decomposition with the geometry of the minimal resolution. Its explicit content is the identification of the local object and the length formula: the resolution contributes \(12-K_X^2+\frac r3\) objects, and the stack contributes one object at each singular point. The broader formal consequence for quotient singularities, together with the corresponding formula for singularities of type \(\frac1k(1,1)\), is recorded in \cref{sec:further-directions}.
 
-We now turn to the family of degree \(10\) hypersurfaces
+We now turn to the family of degree-\(10\) hypersurfaces
 \[
 X_{10}=V(F_{10})\subset \Pp(1,2,3,5).
 \]
@@ -208,7 +208,7 @@ This geometry permits an explicit treatment of \(X_{10}\): we display a full exc
 For a blow-up \(\beta_i:Y_i\to Y_{i-1}\) with exceptional curve \(D_i\), Orlov's blow-up formula contributes \(\OO_{D_i}(-1)\). We denote its image after pullback through the subsequent blow-ups by \(G_i\in\Db(\coh\widetilde X_{10})\), and retain the notation \(\mathcal E_p\) and \(\Phi\) introduced above.
 
 \begin{theorem}\label{thm:X10-main}
-Let \(X_{10}\subset \Pp(1,2,3,5)\) be a general member of the family of degree \(10\) log del Pezzo hypersurfaces. Then its unique singularity \(p\) is of type \(\frac13(1,1)\), and \(X_{10}\) is the anticanonical model of the blow-up of \(\Pp(1,1,3)\) at eight general smooth points.
+Let \(X_{10}\subset \Pp(1,2,3,5)\) be a general member of the family of degree-\(10\) log del Pezzo hypersurfaces. Then its unique singularity \(p\) is of type \(\frac13(1,1)\), and \(X_{10}\) is the anticanonical model of the blow-up of \(\Pp(1,1,3)\) at eight general smooth points.
 
 On minimal resolutions, this gives a sequence
 \[
@@ -305,7 +305,7 @@ Let \(X\) be a log del Pezzo surface, and let \(f:\widetilde X\to X\) be its min
 \begin{proof}
 Since \(X\) has klt singularities and \(-K_X\) is ample, Kawamata--Viehweg vanishing gives \(H^1(X,\OO_X)=0\). Since the singularities of \(X\) are rational, the Leray isomorphism above gives \(H^1(\widetilde X,\OO_{\widetilde X})=0\).
 
-It remains to show that \(H^0(\widetilde X,\OO_{\widetilde X}(2K_{\widetilde X}))=0\) holds. Suppose, by contradiction, that there exists an effective divisor \(D\sim 2K_{\widetilde X}\). The pullback \(-f^*K_X\) is nef and big, because \(-K_X\) is ample. Hence \((-f^*K_X)\cdot D\geq 0\). On the other hand, if
+It remains to show that \(H^0(\widetilde X,\OO_{\widetilde X}(2K_{\widetilde X}))=0\) holds. Suppose for contradiction that there exists an effective divisor \(D\sim 2K_{\widetilde X}\). The pullback \(-f^*K_X\) is nef and big, because \(-K_X\) is ample. Hence \((-f^*K_X)\cdot D\geq 0\). On the other hand, if
 \[
 K_{\widetilde X}=f^*K_X+\sum_i a_iE_i
 \]
@@ -354,7 +354,7 @@ Thus one such collection is
 \right\rangle .
 \]
 
-\begin{theorem}[Orlov's blow-up formula {\cite[Theorem~4.3 \& Corollary~4.4 ]{Orlov1993}}]\label{thm:orlov-blow-up}
+\begin{theorem}[Orlov's blow-up formula {\cite[Theorem~4.3 and Corollary~4.4]{Orlov1993}}]\label{thm:orlov-blow-up}
 Let \(S\) be a smooth projective surface, and let \(\beta:\Bl_pS\to S\) be the blow-up of \(S\) at a point \(p\), with exceptional divisor \(E\). Then there is a semiorthogonal decomposition
 \[
 \Db(\coh \Bl_pS)
@@ -426,7 +426,7 @@ Character indices are read modulo \(3\). Hence
 \qquad
 \rho_{i_1}=\rho_1
 \]
-are the special representations. Since the irreducible characters of \(\muthree\) are exactly \(\rho_0,\rho_1,\rho_2\), the unique non-special representation is \(\rho_2\). This local computation is also noted in \cite[Example 2.6]{GugiattiRota2023}.
+are the special representations. Since the irreducible characters of \(\muthree\) are exactly \(\rho_0,\rho_1,\rho_2\), the unique non-special representation is \(\rho_2\). This local computation is also noted in \cite[Example~2.6]{GugiattiRota2023}.
 \end{proof}
 
 \begin{definition}
@@ -440,7 +440,7 @@ be the residual gerbe over \(p\). The \emph{local exceptional object} associated
 :=
 \iota_{p*}\bigl(\OO_{B\muthree}\otimes \rho_2\bigr).
 \]
-Equivalently, after identifying an étale neighbourhood of \(p\) with the quotient stack \([\A^2/\muthree]\), the object \(\mathcal E_p\) is represented by the \(\muthree\)-equivariant module 
+Equivalently, after identifying an étale neighborhood of \(p\) with the quotient stack \([\A^2/\muthree]\), the object \(\mathcal E_p\) is represented by the \(\muthree\)-equivariant module
 \[
 \C[x,y]/(x,y)\otimes \rho_2.
 \]
@@ -461,10 +461,9 @@ and a semiorthogonal decomposition
 \right\rangle,
 \]
 where \(\mathcal E_1,\dots\mathcal E_\ell\) form an exceptional collection. 
-In our applications, the objects \(\mathcal E_i\) are precisely the residual-gerbe objects corresponding to the non-special representations.
 \end{theorem}
 
-In the local cyclic case, Ishii--Ueda identify the semiorthogonal complement through the non-special representations; see \cite[Proposition 1.1 and Theorem 1.2]{Ishii2015}. Hence a singularity of type \(\frac13(1,1)\) contributes exactly one exceptional object to the complement, namely the object \(\mathcal E_p\) defined above.
+For the cyclic singularities \(\frac1n(1,1)\) used below, the exceptional collection in the Ishii--Ueda complement is given by the residual-gerbe simple objects corresponding to the non-special representations; see \cite[Proposition~1.1 and Theorem~1.2]{Ishii2015} and \cite[Example~2.6]{GugiattiRota2023}. Hence a singularity of type \(\frac13(1,1)\) contributes exactly one exceptional object to the complement, namely the object \(\mathcal E_p\) defined above.
 
 We now prove the main theorem for canonical stacks.
 
@@ -689,8 +688,15 @@ claim.
 
 \begin{remark}\label{rem:brauer-obstruction}
 We also record that the Brauer obstruction does not appear in the examples
-considered below. We use Bright's exact sequence for a normal surface \(X\) with
-rational singularities. If \(\tau:Y\to X\) is the minimal resolution and
+considered below. Here \(\Br(X)\) denotes the cohomological Brauer group. In
+the present projective setting, its torsion classes are represented by Azumaya
+algebras by Gabber's theorem, as used in
+\cite[proof of Theorem~6]{Bright2013}; thus no distinction between the two
+Brauer groups arises for the finite groups computed here. This is also the
+Brauer group entering the obstruction in \cite[Corollary~4.8]{KKS2020}.
+
+We use Bright's exact sequence for a normal surface \(X\) with rational
+singularities. If \(\tau:Y\to X\) is the minimal resolution and
 \(\Lambda_\tau\subset \Pic(Y)\) denotes the subgroup generated by the exceptional
 curves, then the intersection pairing induces a homomorphism
 \[
@@ -760,7 +766,7 @@ Bright's exact sequence gives
 \Br(X_{10})=0.
 \]
 
-The behaviour of this obstruction in the remaining Corti--Heuberger cascades
+The behavior of this obstruction in the remaining Corti--Heuberger cascades
 is analyzed in Appendix~\ref{app:brauer}.
 
 % ------------------------------------------------------------
@@ -772,7 +778,7 @@ In this section we describe a uniform construction along the Corti--Heuberger ca
 \[
 X_{10}\subset \Pp(1,2,3,5).
 \]
-The abstract existence of a full exceptional collection on the canonical stack follows from the Ishii--Ueda decomposition and the rationality of the minimal resolution. Once a full exceptional collection on the minimal resolution of a \(qG\)-rigid base is fixed, the cascades give a uniform procedure: pull the collection through the successive blow-ups by Orlov's formula and add the residual-gerbe objects prescribed by the local Ishii--Ueda complement. For \(X_{10}\), we carry this out with the objects displayed explicitly.
+The abstract existence of a full exceptional collection on the canonical stack follows from the Ishii--Ueda decomposition and the rationality of the minimal resolution. Once a full exceptional collection on the minimal resolution of a \(qG\)-rigid base is fixed, the cascades give a uniform procedure: pull the collection through the successive blow-ups by Orlov's formula, apply \(\Phi\), and place the residual-gerbe objects prescribed by the local Ishii--Ueda complement before its image. For \(X_{10}\), we carry this out with the objects displayed explicitly.
 
 Corti--Heuberger classify non-smooth del Pezzo surfaces with \(\frac13(1,1)\) points into \(qG\)-deformation families grouped into unprojection cascades. A cascade is obtained by blowing up nonsingular points, or equivalently by reversing a sequence of contractions of floating \((-1)\)-curves; see \cite[Definition 5]{Corti2016}. Since these curves lie in the smooth locus, the cascade preserves both the number and the analytic type of the singularities.
 
@@ -788,19 +794,22 @@ k & Z_k & K_{Z_k}^2 \\ \hline
 6 & X_{6,2} & 2 .
 \end{array}
 \]
-Every surface in the corresponding cascade is obtained from its listed base by blowing up nonsingular points. The base step is therefore to choose a full exceptional collection on each minimal resolution \(\widetilde Z_k\); the remaining pieces are the Orlov exceptional objects from the smooth blow-ups and the Ishii--Ueda residual-gerbe objects over the stacky points.
+Every surface in an index-one family \(X_{k,d}\) of the corresponding cascade is obtained from its listed base by blowing up nonsingular points. The base step is therefore to choose a full exceptional collection on each minimal resolution \(\widetilde Z_k\); the remaining pieces are the Orlov exceptional objects from the smooth blow-ups and the Ishii--Ueda residual-gerbe objects over the stacky points.
 
-The auxiliary families \(B_{1,16/3}\) and \(B_{2,8/3}\) may appear as outputs of a directed MMP; see \cite[Theorem~6 and Remark~7]{Corti2016}. The alternative contraction routes relating them to the chosen bases are described in \cite[Remark~9]{Corti2016}; the one-point case relevant to \(X_{10}\) is made explicit below.
+The auxiliary families \(B_{1,16/3}\) and \(B_{2,8/3}\) may appear as outputs of a directed MMP; see \cite[Theorem~6 and Remark~7]{Corti2016}. The alternative contraction routes relating smooth-point blow-ups of these families to the chosen bases are described in \cite[Remark~9]{Corti2016}; the one-point case relevant to \(X_{10}\) is made explicit below.
 
 We now describe the inductive step. Let \(X\) be a surface in the family \(X_{k,d}\). Then \(X\) is obtained from \(Z_k\) by
 \[
 K_{Z_k}^2-d
 \]
-blow-ups at nonsingular points. Passing to minimal resolutions gives a sequence of ordinary smooth blow-ups starting from \(\widetilde Z_k\). At each step, Orlov's blow-up formula adds the exceptional object associated with the new exceptional curve. After this sequence of blow-ups, the Ishii--Ueda decomposition adds one local object
+blow-ups at nonsingular points. Passing to minimal resolutions gives a sequence of ordinary smooth blow-ups starting from \(\widetilde Z_k\). At each step, Orlov's blow-up formula adds the exceptional object associated with the new exceptional curve. If \(\langle G_1,\dots,G_N\rangle\) is the resulting collection on the resolution, the Ishii--Ueda order is
 \[
-\mathcal E_p=\iota_{p*}\bigl(\OO_{B\muthree}\otimes\rho_2\bigr)
+\left\langle
+\mathcal E_{p_1},\dots,\mathcal E_{p_k},
+\Phi(G_1),\dots,\Phi(G_N)
+\right\rangle,
 \]
-for each \(\frac13(1,1)\) point. This construction gives a full exceptional collection on the canonical stack of \(X\), with length
+where \(\mathcal E_{p_i}=\iota_{p_i*}(\OO_{B\muthree}\otimes\rho_2)\). This construction gives a full exceptional collection on the canonical stack of \(X\), with length
 \[
 \ell=12-K_X^2+\frac{4k}{3}.
 \]
@@ -816,20 +825,13 @@ and this singularity is of type \(\frac13(1,1)\).
 \end{proposition}
 
 \begin{proof}
-We use the standard quasismoothness criterion for weighted hypersurfaces as in \cite{IanoFletcher2000}. The base locus of \(|\OO_{\Pp(1,2,3,5)}(10)|\) is the single point \(p=[0:0:1:0]\). Away from \(p\), the linear system is base-point-free, so Bertini's theorem gives quasismoothness for a general member. It remains to check the affine cone over the line above \(p\). Since the monomial \(x_0x_2^3\) has weighted degree \(10\), a general defining polynomial has the form
-\[
-F=a\,x_0x_2^3+\text{other monomials},
-\qquad a\neq 0.
-\]
-Therefore the affine cone over \(X_{10}\) is smooth away from the origin, and \(X_{10}\) is quasismooth.
+We use the standard quasismoothness criterion for weighted hypersurfaces as in \cite{IanoFletcher2000}. The base locus of \(|\OO_{\Pp(1,2,3,5)}(10)|\) is the single point \(p=[0:0:1:0]\). On the smooth locus of the ambient weighted projective space away from \(p\), Bertini's theorem therefore gives smoothness of a general member.
 
-Since \(\Pp(1,2,3,5)\) is well formed and its weights are pairwise coprime, its singular locus consists of the three coordinate points of weights \(2,3,5\). The monomials \(x_1^5\) and \(x_3^2\) show that a general hypersurface does not pass through \([0:1:0:0]\) or \([0:0:0:1]\). Hence the only singular point of \(X_{10}\) is \(p\).
-
-On the chart \(x_2\neq0\), the local quotient cover is \(\A^3\) with coordinates corresponding to \(x_0,x_1,x_3\), and the stabilizer \(\mu_3\) acts with weights
+Since \(\Pp(1,2,3,5)\) is well formed and its weights are pairwise coprime, its singular locus consists of the three coordinate points of weights \(2,3,5\). The monomials \(x_1^5\) and \(x_3^2\) show that a general hypersurface does not pass through \([0:1:0:0]\) or \([0:0:0:1]\). It remains to analyze the point \(p\). On the chart \(x_2\neq0\), the local quotient cover is \(\A^3\) with coordinates corresponding to \(x_0,x_1,x_3\), and the stabilizer \(\mu_3\) acts with weights
 \[
 (1,2,5)\equiv(1,2,2)\pmod 3.
 \]
-The term \(x_0x_2^3\) gives a nonzero linear term in the coordinate corresponding to \(x_0\), so the hypersurface is smooth upstairs and we may eliminate this coordinate. The induced \(\mu_3\)-action on the tangent coordinates has weights \((2,2)\), which is equivalent to \((1,1)\). Thus the singularity is of type \(\frac13(1,1)\).
+Since \(x_0x_2^3\) has weighted degree \(10\), its coefficient is nonzero in a general defining polynomial. It gives a nonzero linear term in the coordinate corresponding to \(x_0\), so the hypersurface is smooth on the local quotient cover and we may eliminate this coordinate. The induced \(\mu_3\)-action on the tangent coordinates has weights \((2,2)\), which is equivalent to \((1,1)\). Thus \(X_{10}\) is quasismooth and its unique singularity is of type \(\frac13(1,1)\).
 \end{proof}
 
 By weighted adjunction and the standard intersection formula for weighted projective spaces \cite{Dolgachev1982}, we have
@@ -842,11 +844,11 @@ By weighted adjunction and the standard intersection formula for weighted projec
 \qquad
 K_{X_{10}}^2=\frac{10}{1\cdot2\cdot3\cdot5}=\frac13.
 \]
-Thus a general \(X_{10}\subset\Pp(1,2,3,5)\) is a log del Pezzo surface in the Corti--Heuberger family \(X_{1,1/3}\). By \cite[Corollary~8(1)]{Corti2016}, every surface in \(X_{1,d}\) is obtained by blowing up \(25/3-d\) nonsingular points of \(\Pp(1,1,3)\); for \(d=1/3\), this gives eight blow-ups.
+Thus a general \(X_{10}\subset\Pp(1,2,3,5)\) is a log del Pezzo surface in the Corti--Heuberger family \(X_{1,1/3}\); see \cite[Theorem~4 and Table~2]{Corti2016}. By \cite[Corollary~8(1)]{Corti2016}, every surface in \(X_{1,d}\) is obtained by blowing up \(25/3-d\) nonsingular points of \(\Pp(1,1,3)\); for \(d=1/3\), this gives eight blow-ups.
 
 A chosen directed MMP in the one-point case may instead terminate at the auxiliary family \(B_{1,16/3}\). This does not conflict with the presentation above: \cite[Remark~9(1)]{Corti2016} states that if \(X\to B_{1,16/3}\) is the blow-up of a nonsingular point, then an alternative sequence of four contractions of floating \((-1)\)-curves starting from \(X\) ends at \(\Pp(1,1,3)\). The available \((-1)\)-curves therefore permit different contraction sequences, and the endpoint of one directed MMP does not obstruct the eight-blow-up presentation. For the general member, the Reid--Suzuki construction realizes this presentation with eight general smooth centers and identifies its anticanonical model.
 
-\begin{theorem}[{cf. Reid--Suzuki \cite[Section~1 and Table~1.1]{ReidSuzuki2004}}]
+\begin{theorem}[{Reid--Suzuki \cite[Section~1 and Table~1.1]{ReidSuzuki2004}}]
 \label{thm:X10-anticanonical-model}
 Let \(P_1,\dots,P_8\in \Pp(1,1,3)\) be eight general smooth points, and let
 \[
@@ -854,16 +856,19 @@ Let \(P_1,\dots,P_8\in \Pp(1,1,3)\) be eight general smooth points, and let
 \]
 be their blow-up. Then
 \[
--K_S=\eta^*\OO_{\Pp(1,1,3)}(5)-\sum_{i=1}^8E_i,
+-K_S=\eta^*(-K_{\Pp(1,1,3)})-\sum_{i=1}^8E_i,
 \]
-where \(E_i\) is the exceptional curve over \(P_i\). Moreover, the anticanonical ring has the form
+where \(E_i\) is the exceptional curve over \(P_i\). Here
+\(-K_{\Pp(1,1,3)}\) is the anticanonical \(\mathbb Q\)-Cartier divisor, whose
+associated rank-one reflexive sheaf is \(\OO_{\Pp(1,1,3)}(5)\). Moreover, the
+anticanonical ring has the form
 \[
 R(S,-K_S)\cong
 \frac{\C[x,y,z,w]}{(F_{10})},
 \qquad
 \deg(x,y,z,w)=(1,2,3,5),
 \]
-where \(F_{10}\) is weighted homogeneous of degree \(10\). Consequently, the anticanonical model of \(S\) is a degree \(10\) hypersurface
+where \(F_{10}\) is weighted homogeneous of degree \(10\). Consequently, the anticanonical model of \(S\) is a degree-\(10\) hypersurface
 \[
 X_{10}\subset\Pp(1,2,3,5).
 \]
@@ -871,10 +876,10 @@ The minimal resolution of \(X_{10}\) is obtained from \(\F_3\) by blowing up the
 \end{theorem}
 
 \begin{proof}
-By the standard formula for weighted projective spaces,
+By the standard formula for weighted projective spaces, the anticanonical
+\(\mathbb Q\)-Cartier divisor corresponds to the rank-one reflexive sheaf
+\(\OO_{\Pp(1,1,3)}(5)\), and
 \[
-\omega_{\Pp(1,1,3)}^\vee=\OO_{\Pp(1,1,3)}(5),
-\qquad
 K_{\Pp(1,1,3)}^2=\frac{25}{3}.
 \]
 Since the points \(P_i\) are smooth, the blow-up formula gives the asserted
@@ -919,7 +924,7 @@ and applying Orlov's blow-up formula gives
 \sigma^*\OO(C_0+3f),\sigma^*\OO(C_0+4f)
 \right\rangle
 \]
-on \(\widetilde X_{10}\). Hence \cref{thm:general-main} gives the following
+on \(\widetilde X_{10}\). The curves \(D_i\) are pairwise disjoint, so their exceptional objects may be listed in any order. Hence \cref{thm:general-main} places the local object \(\mathcal E_p\) before the image of this collection and gives the following
 consequence.
 
 \begin{corollary}\label{cor:X10-stack-fec} 
@@ -945,9 +950,10 @@ Let \(s\in\Z\) and let
 \mathcal C(s)=
 \big\langle
 &\mathcal E_p,\,
-\Phi\OO_{D_1}(-1),\ldots,\Phi\OO_{D_8}(-1),\,\Phi\sigma^*\OO,\,\Phi\sigma^*\OO(f),\\
-&\Phi\sigma^*\OO(C_0+(s+4)f),\,
-\Phi\sigma^*\OO(C_0+(s+5)f)
+\Phi(\OO_{D_1}(-1)),\ldots,\Phi(\OO_{D_8}(-1)),\,
+\Phi(\sigma^*\OO),\,\Phi(\sigma^*\OO(f)),\\
+&\Phi(\sigma^*\OO(C_0+(s+4)f)),\,
+\Phi(\sigma^*\OO(C_0+(s+5)f))
 \big\rangle 
 \end{aligned}
 \]
@@ -1029,7 +1035,7 @@ be the left adjoint of the Ishii--Ueda functor
 \[
 \Phi:D^b(\coh \widetilde X_{10})\longrightarrow D^b(\coh \mathcal X_{10}).
 \]
-We first compute the entries involving the residual-gerbe object \(\mathcal E_p\). Locally at the singular point \(p\), the stack is \([\A^2/\muthree]\), and \(\mathcal E_p\) is represented by \(O_0\otimes\rho_2\), where \(\rho_2\) is the unique non-special representation. We use the left-adjoint computation of Gugiatti--Rota \cite[Theorem~3.1]{GugiattiRota2023}. In the case \(\frac13(1,1)\), the natural representation is
+We first compute the entries involving the residual-gerbe object \(\mathcal E_p\). Locally at the singular point \(p\), the stack is \([\A^2/\muthree]\), and \(\mathcal E_p\) is represented by \(O_0\otimes\rho_2\), where \(\rho_2\) is the unique non-special representation. We use the left-adjoint computation of Gugiatti--Rota \cite[Theorem~3.1 and Example~3.5]{GugiattiRota2023}. In the case \(\frac13(1,1)\), the natural representation is
 \[
 \rho_{\mathrm{nat}}=\rho_1\oplus\rho_1,
 \qquad
@@ -1039,10 +1045,18 @@ The minimal resolution has a single exceptional curve \(E\), with \(E^2=-3\), an
 \[
 \rho_2\otimes\rho_{\det}=\rho_2\otimes\rho_2=\rho_1
 \]
-holds, the formula of \cite[Theorem~3.1]{GugiattiRota2023} gives
+holds, the cited formula gives
 \[
 \Psi(\mathcal E_p)\simeq \OO_E(-2).
 \]
+Equivalently, \cite[Example~3.5]{GugiattiRota2023} states directly, in its
+local notation, that for a cyclic quotient singularity of type
+\(\frac1n(1,1)\),
+\[
+\psi(\OO_0\otimes\rho_{n-1})\simeq \OO_E(-n+1).
+\]
+Taking \(n=3\) gives the displayed identification
+\(\Psi(\mathcal E_p)\simeq\OO_E(-2)\), with no cohomological shift.
 Therefore, for every \(A\in D^b(\coh\widetilde X_{10})\), adjunction gives
 \[
 \chi_{\mathcal X_{10}}(\mathcal E_p,\Phi A)
@@ -1057,11 +1071,13 @@ D^b(\coh\mathcal X_{10})
 \mathcal E_p,\Phi(D^b(\coh\widetilde X_{10}))
 \right\rangle,
 \]
-so we have
+and we use here the ordering of \cite[Theorem~1.4]{Ishii2015}, in which the
+exceptional complement lies to the left of
+\(\Phi(D^b(\coh\widetilde X_{10}))\). Thus
 \[
 \chi_{\mathcal X_{10}}(\Phi A,\mathcal E_p)=0.
 \]
-Thus only the first row has to be computed.
+Only the first row has to be computed.
 
 The curve \(E\) is the strict transform of the negative section \(C_0\subset\F_3\), while the curves \(D_1,\dots,D_8\) are disjoint from \(E\). Hence
 \[
@@ -1225,15 +1241,52 @@ By \cref{thm:X10-anticanonical-model}, the minimal resolution \(\widetilde X_{10
 \sigma:\widetilde X_{10}\longrightarrow \F_3
 \]
 be the composition of these blow-ups, and let \(E\subset \widetilde X_{10}\)
-be the strict transform of \(C_0\). Orlov's blow-up formula gives a semiorthogonal decomposition of \(\Db(\coh \widetilde X_{10})\) obtained from the pullbacks of the three blocks above together with eight additional exceptional objects. Using the right-handed form of the blow-up decomposition, equivalently the standard mutations of the Orlov components, we place these eight components after the three pullback blocks. The morphism \(\sigma\) is an isomorphism in a neighborhood of \(E\), so the restrictions of the pullback generators to \(E\), and hence their intersection data along \(E\), agree with those of the original generators along \(C_0\). Moreover, \cref{lem:kks-blowups} gives
+be the strict transform of \(C_0\). For a blow-up \(\beta:S'\to S\) with
+exceptional curve \(D\), the right-handed form of
+\cref{thm:orlov-blow-up}, obtained by the standard mutation, is
+\[
+\Db(\coh S')
+=
+\left\langle
+\beta^*\Db(\coh S),\OO_D
+\right\rangle.
+\]
+Iterating this form gives a semiorthogonal decomposition of
+\(\Db(\coh \widetilde X_{10})\) in which the eight Orlov exceptional
+components follow the three pulled-back blocks. Set
+\[
+L_0=\OO(-C_0-f),
+\qquad
+L_1=\OO(-f).
+\]
+The morphism \(\sigma\) is an isomorphism in a neighborhood of \(E\). Since
+the blow-up centers are disjoint from \(C_0\), the relation
+\(L_1=L_0(C_0)\) pulls back to
+\[
+\sigma^*L_1=\sigma^*L_0(E),
+\]
+and
+\[
+(\sigma^*L_0)\cdot E
+=
+L_0\cdot C_0
+=
+(-C_0-f)\cdot C_0
+=3-1
+=2.
+\]
+These are precisely the equivalent line-bundle conditions of
+\cite[Lemma~3.5 and Definition~3.6]{KKS2020} for untwisted adherence to the
+single \((-3)\)-curve \(E\). Moreover, \cref{lem:kks-blowups} gives
 \[
 \OO_E(-1)\in \sigma^*\widetilde{\mathcal A}_0 .
 \]
-Consequently, the decomposition is compatible with the contraction
+Since \(E\) is the only exceptional curve of the contraction
 \[
 \nu:\widetilde X_{10}\longrightarrow X_{10},
 \]
-which contracts only \(E\), and the untwisted adherence of \(\widetilde{\mathcal A}_0\) to \(C_0\) established in \cite[Example~3.17]{KKS2020} is preserved by pullback in the sense of \cite[Definition~3.6]{KKS2020}.
+this is exactly the compatibility condition of
+\cite[Definition~2.7]{KKS2020}.
 
 By \cite[Theorem~2.12]{KKS2020}, the decomposition descends to a
 semiorthogonal decomposition of \(\Db(\coh X_{10})\). The untwisted adherent
@@ -1303,7 +1356,13 @@ It remains to count the local objects added by the canonical stack. For the sing
 \[
 \rho_2,\rho_3,\dots,\rho_{k_i-1}.
 \]
-This local calculation is also recorded in \cite[Example 2.6]{GugiattiRota2023}. Therefore the point \(p_i\) contributes \(k_i-2\) exceptional objects. The full exceptional collection on \(\Db(\coh \XX)\) has length
+This local calculation is also recorded in \cite[Example~2.6]{GugiattiRota2023}, where the local exceptional collection is ordered as
+\[
+\left\langle
+\OO_0\otimes\rho_2,\dots,\OO_0\otimes\rho_{k_i-1}
+\right\rangle.
+\]
+In the Ishii--Ueda decomposition this local block precedes \(\Phi(\Db(\coh\widetilde X))\); blocks supported at distinct singular points are mutually orthogonal and may be ordered arbitrarily. Therefore the point \(p_i\) contributes \(k_i-2\) exceptional objects, and the full exceptional collection on \(\Db(\coh \XX)\) has length
 \[
 12-K_X^2
 +
@@ -1321,9 +1380,9 @@ This local calculation is also recorded in \cite[Example 2.6]{GugiattiRota2023}.
 
 We now explain how this computation interacts with cascades. Suppose first that \(X\) has one singular point of type \(\frac1k(1,1)\) and belongs to a family described by the Cavey--Prince cascade starting from \(\Pp(1,1,k)\); see \cite{CAVEY2020}. The minimal resolution of \(\Pp(1,1,k)\) is the Hirzebruch surface \(\F_k\), and the exceptional curve over the singular point is the negative section \(C_0\subset \F_k\), with \(C_0^2=-k\).
 
-The cascade consists of blow-ups at smooth points of the singular surface. Since these blow-ups occur away from the singular point, the analytic type \(\frac1k(1,1)\) remains unchanged. Passing to minimal resolutions, the cascade lifts to a sequence of ordinary point blow-ups of \(\F_k\), all away from \(C_0\) and its successive strict transforms. Thus Orlov's blow-up formula gives a full exceptional collection on the resolution. The canonical stack is then obtained categorically by adding the \(k-2\) exceptional objects supported on the residual gerbe, corresponding to the non-special representations \(\rho_2,\dots,\rho_{k-1}\).
+The cascade consists of blow-ups at smooth points of the singular surface. Since these blow-ups occur away from the singular point, the analytic type \(\frac1k(1,1)\) remains unchanged. Passing to minimal resolutions, the cascade lifts to a sequence of ordinary point blow-ups of \(\F_k\), all away from \(C_0\) and its successive strict transforms. Thus Orlov's blow-up formula gives a full exceptional collection on the resolution. The Ishii--Ueda decomposition places the \(k-2\) residual-gerbe objects corresponding to \(\rho_2,\dots,\rho_{k-1}\), in that order, to the left of the image of this resolution collection.
 
-For several singularities, the initial model must already contain the desired basket. One should not start from \(\Pp(1,1,k)\), since that surface has only one singular point. For instance, Cavey--Prince construct models with two singularities as hypersurfaces
+For several singularities, the initial model must already carry the prescribed basket; in particular, \(\Pp(1,1,k)\) is insufficient because it has only one singular point. For instance, Cavey--Prince construct models with two singularities as hypersurfaces
 \[
 X_{k_1+k_2}\subset \Pp(1,1,k_1,k_2),
 \]
@@ -1343,7 +1402,7 @@ This gives the guiding principle for explicit constructions beyond \(X_{10}\). O
 % ------------------------------------------------------------
 
 \appendix
-\section{Brauer obstructions in the Corti--Heuberger cascades}
+\section{Brauer groups and obstructions in the Corti--Heuberger cascades}
 \label{app:brauer}
 % ------------------------------------------------------------
 
@@ -1355,8 +1414,14 @@ minimal resolution is rational, that remark identifies
 \(\Br(X)\) with \(\operatorname{coker}(\theta)\). We write
 \(e_1,\dots,e_k\) for the basis of \(\Lambda^\vee\) dual to the \(E_i\). We also
 retain the notation \(Z_k\) of \cref{sec:cascade} for the chosen representative
-of the \(qG\)-rigid base of the \(k\)-point cascade. We determine the cokernel
-for these six cascades.
+of the \(qG\)-rigid base of the \(k\)-point cascade. By
+\cite[Theorem~6 and Remark~7]{Corti2016}, each \(Z_k\) is the unique
+isomorphism class in its base family, and \cite[Corollary~8]{Corti2016}
+expresses every member of an index-one family \(X_{k,d}\) in the corresponding
+cascade as a sequence of blow-ups of nonsingular points from \(Z_k\). The
+auxiliary families in the one- and two-point cascades are treated separately
+in \cref{app:brauer-classification}. We determine the cokernel for all six
+cascades.
 
 \subsection{Glue in the exceptional lattice}
 \label{app:brauer-glue}
@@ -1465,7 +1530,7 @@ map \(\theta:\Pic(\widetilde X)\to\Lambda^\vee\) is surjective. Hence
 \Br(X)=0.
 \]
 
-\subsection{Behaviour under cascade blow-ups}
+\subsection{Behavior under cascade blow-ups}
 \label{app:brauer-invariance}
 
 The morphisms in a Corti--Heuberger cascade are blow-ups of nonsingular
@@ -1519,10 +1584,9 @@ representative of each cascade.
 
 Corti--Heuberger exhibit polygon \(20\) as a toric \(qG\)-degeneration in the
 family \(X_{3,5}\); see
-\cite[Section~7, Table~4 and Figure~11]{Corti2016}. By
-\cite[Theorem~6 and Remark~7]{Corti2016}, this family is \(qG\)-rigid and
-consists of a single isomorphism class. Hence the toric special fibre is
-isomorphic to the chosen base \(Z_3=X_{3,5}\). Let \(N\cong\Z^2\), and let
+\cite[Section~7, Table~4 and Figure~11]{Corti2016}. By the rigidity noted
+above, the toric special fiber is isomorphic to the chosen base
+\(Z_3=X_{3,5}\). Let \(N\cong\Z^2\), and let
 \(v_1,\dots,v_5\in N\) be the primitive ray generators of its fan, in
 counterclockwise order, with \(V_i\) the corresponding torus-invariant
 divisors:
@@ -1583,8 +1647,12 @@ have intersection \(-\delta_{ij}\) with \(E_j\).
 For the four- and five-point calculations we use the \(k\)-gon construction.
 It starts with a smooth del Pezzo surface of degree \(k\) containing a cyclic
 configuration \(C_1+\cdots+C_k\) of \((-1)\)-curves, blows up the vertices
-\(C_i\cap C_{i+1}\), and contracts the strict transforms of the \(C_i\); see
-\cite[Section~3.5]{Corti2016}. Let \(F_i\) be the exceptional curve over the
+\(C_i\cap C_{i+1}\), and contracts the strict transforms of the \(C_i\).
+Corti--Heuberger show that the resulting surface has \(k\) singularities of
+type \(\frac13(1,1)\), degree \(k/3\), and belongs to the family
+\(X_{k,k/3}\); see \cite[Section~3.5, ``\(k\)-gons'']{Corti2016}. Thus the
+models used below are respectively members of \(X_{4,4/3}\) and
+\(X_{5,5/3}\). Let \(F_i\) be the exceptional curve over the
 \(i\)-th vertex and \(E_i\) the strict transform of \(C_i\), with cyclic
 indices. Direct intersection calculations give
 \[
@@ -1595,7 +1663,13 @@ indices. Direct intersection calculations give
 
 \subsubsection*{The five-point base}
 
-For the rigid base \(Z_5=X_{5,5/3}\), the five vectors
+For example, on the degree-five del Pezzo surface
+\(\Bl_{p_1,\dots,p_4}\Pp^2\), with exceptional classes \(Q_i\), the curves
+\[
+Q_1,\quad H-Q_1-Q_2,\quad Q_2,\quad H-Q_2-Q_3,\quad H-Q_1-Q_4
+\]
+form a cyclic pentagon of \((-1)\)-curves. The construction above therefore
+gives the rigid base \(Z_5=X_{5,5/3}\). The five vectors
 \(e_i+e_{i+1}\) are the columns of
 \[
 A_5=I+P_5,
@@ -1656,7 +1730,9 @@ Q_3\cdot C_1=Q_3\cdot C_2=Q_3\cdot C_3=0,
 \qquad
 Q_3\cdot C_4=1.
 \]
-If \(\pi\) is the blow-up of the four vertices, the projection formula gives
+For general \(p_1,\dots,p_5\), these intersections are transverse; in
+particular, \(Q_3\) avoids the four vertices of the cycle. If \(\pi\) is their
+blow-up, the projection formula gives
 \[
 \theta(\pi^*Q_3)=e_4.
 \]
@@ -1668,7 +1744,7 @@ e_2&=\theta(F_1)-e_1,\\
 e_3&=\theta(F_2)-e_2.
 \end{aligned}
 \]
-Hence \(\theta\) is surjective and the polygon model
+Hence \(\theta\) is surjective and the \(4\)-gon representative
 \(X_{4,4/3}\) has trivial Brauer group:
 \[
 \Br(X_{4,4/3})=0.
@@ -1796,30 +1872,51 @@ since such classes would make \(\theta\) surjective.
 By \cite[Corollary~4.8]{KKS2020}, a semiorthogonal decomposition of the
 resolution whose components are untwisted adherent to the connected
 components of the exceptional divisor would force \(X_{6,2}\) to be
-torsion-free, equivalently to have trivial Brauer group. The nonzero class
-computed above therefore prevents such a decomposition. In the expected
-untwisted construction, each local algebra would be \(K(3,1)\). This does not
-rule out unrelated semiorthogonal decompositions or the twisted adherent
-constructions of KKS.
+torsion-free in the sense of \cite[Definition~4.7]{KKS2020}, equivalently
+\(\Br(X_{6,2})=0\). The nonzero class computed above therefore prevents such
+an untwisted adherent decomposition. In the expected untwisted construction,
+each local algebra would be \(K(3,1)\). This does not rule out unrelated
+semiorthogonal decompositions or the twisted adherent constructions of KKS.
 
 \subsection{\texorpdfstring{Proof of \cref{thm:brauer-cascades-intro}}{Proof of Theorem 1.3}}
 \label{app:brauer-classification}
 
 The case \(k=1\) is the computation of
 \(\Br(\Pp(1,1,3))\) in \cref{rem:brauer-obstruction}, and the case
-\(k=2\) follows from \cref{lem:brauer-glue-vectors}. The intersection maps
-for \(k=3,4,5\) are surjective by the calculations in
-\cref{app:brauer-unobstructed}, whereas
-\cref{app:brauer-six} gives cokernel \(\Z/3\) for
-\(Z_6=X_{6,2}\).
-Finally, \cref{lem:brauer-cascade-invariance} propagates these computations
-from the chosen representatives to every member of the corresponding
-cascades. This proves \cref{thm:brauer-cascades-intro}. \qed
+\(k=2\) follows from \cref{lem:brauer-glue-vectors}. For \(k=3\) and \(k=5\),
+\cref{app:brauer-unobstructed} computes directly on the rigid bases
+\(Z_3=X_{3,5}\) and \(Z_5=X_{5,5/3}\). For \(k=4\), it computes on the
+\(4\)-gon representative \(X_{4,4/3}\), which belongs to the four-point
+cascade and is obtained from \(Z_4=X_{4,7/3}\) by one smooth blow-up.
+These three intersection maps are surjective, while
+\cref{app:brauer-six} gives cokernel \(\Z/3\) on the rigid base
+\(Z_6=X_{6,2}\). The uniqueness of the rigid bases noted at the beginning of
+the appendix, together with \cref{lem:brauer-cascade-invariance} and
+\cite[Corollary~8]{Corti2016}, propagates the computations to every member of
+the index-one families in the corresponding cascades.
+
+It remains to cover the two auxiliary families. Let
+\(B\in B_{1,16/3}\), and choose a smooth-point blow-up \(X'\to B\) as in
+\cite[Remark~9(1)]{Corti2016}. The same remark gives an alternative sequence
+of four contractions of floating \((-1)\)-curves from \(X'\) to
+\(\Pp(1,1,3)\). Applying \cref{lem:brauer-cascade-invariance} along these
+routes gives
+\[
+\Br(B)\cong\Br(X')\cong\Br(\Pp(1,1,3))=0.
+\]
+Similarly, let \(B\in B_{2,8/3}\). By
+\cite[Remark~9(2)]{Corti2016}, a suitable smooth-point blow-up \(X'\to B\)
+admits an alternative contraction to \(X_{2,17/3}\). Hence
+\[
+\Br(B)\cong\Br(X')\cong\Br(X_{2,17/3})=0.
+\]
+Thus all members of all six cascades are covered, proving
+\cref{thm:brauer-cascades-intro}. \qed
 
 % ------------------------------------------------------------
 
 \section*{Acknowledgements}
-I am grateful to my advisor, Sergey Galkin, for his guidance, support, and many valuable discussions. I thank Nicolau Saldanha and Carlos Tomei for supporting my travel to the RGAS School 2026, where part of this work was further developed. I also thank Alexander Kuznetsov for a helpful conversation during the school and for pointing me to the work of Karmazyn--Kuznetsov--Shinder, which motivated the comparison with the singular surface in Section~4. I am grateful to Alexey Elagin for useful discussions at IMPA about derived categories of singular varieties and for emphasizing the distinction between the categorical behaviour of singular surfaces and that of their smooth canonical stacks. Finally, I thank Alessio Corti for helpful correspondence on the Corti--Heuberger cascades, and in particular for pointing out the relevance of the Reid--Suzuki construction to \(X_{10}\).
+I am grateful to my advisor, Sergey Galkin, for his guidance, support, and many valuable discussions. I thank Nicolau Saldanha and Carlos Tomei for supporting my travel to the RGAS School 2026, where part of this work was further developed. I also thank Alexander Kuznetsov for a helpful conversation during the school and for pointing me to the work of Karmazyn--Kuznetsov--Shinder, which motivated the comparison with the singular surface in Section~4. I am grateful to Alexey Elagin for useful discussions at IMPA about derived categories of singular varieties and for emphasizing the distinction between the categorical behavior of singular surfaces and that of their smooth canonical stacks. Finally, I thank Alessio Corti for helpful correspondence on the Corti--Heuberger cascades, and in particular for pointing out the relevance of the Reid--Suzuki construction to \(X_{10}\).
 
 \section*{Funding}
 The author was supported by the Funda\c{c}\~ao Carlos Chagas Filho de Amparo \`a Pesquisa do Estado do Rio de Janeiro (FAPERJ) through the Nota 10 Excellence Scholarship.
