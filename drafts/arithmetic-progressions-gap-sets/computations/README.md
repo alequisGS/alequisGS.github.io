@@ -1,27 +1,59 @@
 # Computational certificates
 
-This is the reproducibility package for *Arithmetic Progressions in Gap Sets
-of Numerical Semigroups*. All source files and retained logs are placed in the
-project root, beside `main.tex`, so they are visible directly in the project
-and in a downloaded ZIP.
+This directory contains the computational certificate material for
+*Arithmetic Progressions in Gap Sets of Numerical Semigroups*.
 
-The five `.c` files are the source code. The script
-`generate_certificate.sh` does **not** create them: it validates the retained
-logs and generates only the concise summary `CERTIFICATE.txt`.
+The manuscript source remains one level above this directory:
+
+```text
+../main.tex
+../references.bib
+```
+
+The certificate package is organized as follows:
+
+```text
+computations/
+├── README.md
+├── CERTIFICATE.txt
+├── SHA256SUMS
+├── generate_certificate.sh
+├── src/
+│   ├── plateau_certificate.c
+│   ├── plateau_certificate_independent.c
+│   ├── direct_ap_search.c
+│   ├── staircase_criterion.c
+│   └── staircase_chunk.c
+└── logs/
+    ├── plateau_certificate.log
+    ├── plateau_certificate_independent.log
+    ├── direct_ap_tests.log
+    ├── direct_ap_extremizer9.log
+    ├── direct_ap_A8.log
+    ├── direct_ap_table_12.log
+    ├── staircase_criterion_1e8.log
+    ├── staircase_chunk_sample.log
+    └── staircase_chunk_1e8.log
+```
+
+The five `.c` files in `src/` are the computational source code. The retained
+execution logs are in `logs/`. The script `generate_certificate.sh` does **not**
+create the source files: it validates the retained logs and regenerates only
+the concise summary `CERTIFICATE.txt`.
 
 ## File map
 
-- `plateau_certificate.c` — primary finite Kunz optimization for $A=9$ and
+- `src/plateau_certificate.c` — primary finite Kunz optimization for $A=9$ and
   $m=8,9,10$.
-- `plateau_certificate_independent.c` — independent reordered
+- `src/plateau_certificate_independent.c` — independent reordered
   branch-and-bound implementation of the same optimization.
-- `direct_ap_search.c` — direct construction of gap sets and direct
+- `src/direct_ap_search.c` — direct construction of gap sets and direct
   computation of arithmetic progressions; it verifies $M(8)=48$, the small
   table through $A=12$, the multiplicity-$9$ extremizer, and regression
   examples.
-- `staircase_criterion.c` — exact composite-loss criterion through
+- `src/staircase_criterion.c` — exact composite-loss criterion through
   $A=10^8$.
-- `staircase_chunk.c` — the same criterion on an inclusive interval, used as
+- `src/staircase_chunk.c` — the same criterion on an inclusive interval, used as
   a separate full-range cross-check.
 - `generate_certificate.sh` — checks all PASS markers, compares the two
   full-range criterion outputs, and regenerates `CERTIFICATE.txt`.
@@ -31,15 +63,15 @@ logs and generates only the concise summary `CERTIFICATE.txt`.
 The retained execution logs are
 
 ```text
-plateau_certificate.log
-plateau_certificate_independent.log
-direct_ap_tests.log
-direct_ap_A8.log
-direct_ap_table_12.log
-direct_ap_extremizer9.log
-staircase_criterion_1e8.log
-staircase_chunk_sample.log
-staircase_chunk_1e8.log
+logs/plateau_certificate.log
+logs/plateau_certificate_independent.log
+logs/direct_ap_tests.log
+logs/direct_ap_A8.log
+logs/direct_ap_table_12.log
+logs/direct_ap_extremizer9.log
+logs/staircase_criterion_1e8.log
+logs/staircase_chunk_sample.log
+logs/staircase_chunk_1e8.log
 ```
 
 Compiled binaries are temporary and belong in `build/`; they are not part of
@@ -70,20 +102,20 @@ a failure means that every prime divisor $q\mid m$ failed the criterion.
 
 ## Compilation
 
-Run these commands from the project root:
+Run these commands from this `computations/` directory:
 
 ```sh
 mkdir -p build
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  plateau_certificate.c -o build/plateau_certificate
+  src/plateau_certificate.c -o build/plateau_certificate
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  plateau_certificate_independent.c -o build/plateau_certificate_independent
+  src/plateau_certificate_independent.c -o build/plateau_certificate_independent
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  direct_ap_search.c -o build/direct_ap_search
+  src/direct_ap_search.c -o build/direct_ap_search
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  staircase_criterion.c -o build/staircase_criterion
+  src/staircase_criterion.c -o build/staircase_criterion
 cc -O3 -std=c11 -Wall -Wextra -Wpedantic \
-  staircase_chunk.c -o build/staircase_chunk
+  src/staircase_chunk.c -o build/staircase_chunk
 ```
 
 The compiler should emit no warnings.
@@ -91,17 +123,17 @@ The compiler should emit no warnings.
 ## Reproduction commands
 
 ```sh
-build/plateau_certificate > plateau_certificate.log
-build/plateau_certificate_independent > plateau_certificate_independent.log
+build/plateau_certificate > logs/plateau_certificate.log
+build/plateau_certificate_independent > logs/plateau_certificate_independent.log
 
-build/direct_ap_search tests > direct_ap_tests.log
-build/direct_ap_search extremizer9 > direct_ap_extremizer9.log
-build/direct_ap_search a8 > direct_ap_A8.log
-build/direct_ap_search table 12 > direct_ap_table_12.log
+build/direct_ap_search tests > logs/direct_ap_tests.log
+build/direct_ap_search extremizer9 > logs/direct_ap_extremizer9.log
+build/direct_ap_search a8 > logs/direct_ap_A8.log
+build/direct_ap_search table 12 > logs/direct_ap_table_12.log
 
-build/staircase_criterion 100000000 > staircase_criterion_1e8.log
-build/staircase_chunk 1 100000 > staircase_chunk_sample.log
-build/staircase_chunk 1 100000000 > staircase_chunk_1e8.log
+build/staircase_criterion 100000000 > logs/staircase_criterion_1e8.log
+build/staircase_chunk 1 100000 > logs/staircase_chunk_sample.log
+build/staircase_chunk 1 100000000 > logs/staircase_chunk_1e8.log
 
 sh generate_certificate.sh
 ```
@@ -171,12 +203,12 @@ After regenerating all logs and `CERTIFICATE.txt`, run
 
 ```sh
 sha256sum \
-  main.tex references.bib README_COMPUTATIONS.md CERTIFICATE.txt \
-  generate_certificate.sh *.c \
-  plateau_certificate.log plateau_certificate_independent.log \
-  direct_ap_tests.log direct_ap_A8.log direct_ap_table_12.log \
-  direct_ap_extremizer9.log staircase_criterion_1e8.log \
-  staircase_chunk_sample.log staircase_chunk_1e8.log \
+  ../main.tex ../references.bib README.md CERTIFICATE.txt \
+  generate_certificate.sh src/*.c \
+  logs/plateau_certificate.log logs/plateau_certificate_independent.log \
+  logs/direct_ap_tests.log logs/direct_ap_A8.log logs/direct_ap_table_12.log \
+  logs/direct_ap_extremizer9.log logs/staircase_criterion_1e8.log \
+  logs/staircase_chunk_sample.log logs/staircase_chunk_1e8.log \
   > SHA256SUMS
 ```
 
