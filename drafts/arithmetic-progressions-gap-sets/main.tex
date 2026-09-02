@@ -1,0 +1,1754 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[a4paper,margin=32mm,headheight=14pt]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[
+  colorlinks=true,
+  linkcolor=blue!45!black,
+  citecolor=green!35!black,
+  urlcolor=blue!55!black,
+  pdfauthor={Alex Junior Gomez Saltachin},
+  pdftitle={Arithmetic Progressions in Gap Sets of Numerical Semigroups},
+  pdfsubject={Numerical semigroups and arithmetic progressions},
+  pdfkeywords={numerical semigroups, gap sets, arithmetic progressions, Ap\'ery sets, Kunz coordinates, prime gaps}
+]{hyperref}
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=nyt,
+  giveninits=true,
+  maxbibnames=99
+]{biblatex}
+\addbibresource{references.bib}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{computertheorem}[theorem]{Computer-assisted theorem}
+\newtheorem{computercorollary}[theorem]{Computer-assisted corollary}
+\newtheorem{conditionaltheorem}[theorem]{Conditional theorem}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Ap}{\operatorname{Ap}}
+\newcommand{\AP}{\operatorname{AP}}
+\newcommand{\compdir}{{\small\ttfamily computational\_\allowbreak
+  reproducibility\_\allowbreak files}}
+\newcommand{\draftstamp}{\textcolor{red!65!black}{\textsc{Draft}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small A. J. Gomez Saltachin}
+\fancyhead[R]{\small Arithmetic progressions in gap sets}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small\draftstamp}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \fancyfoot[R]{\small\draftstamp}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setlist{topsep=0.5\baselineskip,itemsep=0.15\baselineskip,
+  parsep=0pt,partopsep=0pt}
+\emergencystretch=2em
+
+\title{Arithmetic Progressions in Gap Sets of Numerical Semigroups}
+\author{Alex Junior Gomez Saltachin\\[0.5em]
+\small Departamento de Matem\'atica, Pontif\'{\i}cia Universidade Cat\'olica do Rio de Janeiro\\
+\small Rua Marqu\^es de S\~ao Vicente, 225, Rio de Janeiro, RJ 22451-900, Brazil\\
+\small \href{mailto:alex.gomez@pucp.edu.pe}{alex.gomez@pucp.edu.pe}}
+\date{\small\draftstamp{} --- September 2, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+For a numerical semigroup $S$, we study arithmetic progressions contained
+in its gap set and let $\AP(S)$ denote their maximal length.  Standard
+Ap\'ery theory gives $\AP_d(S)=\lfloor F/d\rfloor+1$ when the common
+difference $d$ belongs to $S$, where $F$ is the Frobenius number.  This
+isolates differences in the gap set, which lead to a divisor-orbit Run Lemma
+in Kunz coordinates whose positional term yields an anchoring phenomenon.  For
+the extremal function
+\[
+  M(A)=\max\{g(S):\AP(S)\leq A\},
+\]
+we prove $M(3)=7$ and $M(9)=54$, and computer-assisted enumeration gives
+$M(8)=48$.  A prime-multiplicity construction gives the lower bound
+$A(P(A+1)-1)$, where $P(x)$ is the largest prime not exceeding $x$, while
+composite multiplicities incur explicit divisor-orbit losses.  This leads to
+the prime-staircase conjecture
+$M(A)=A(P(A+1)-1)$ for $A\neq3$.
+
+The prime-staircase conjecture remains open in full.  We verify it
+computer-assistively for $A\leq4\cdot10^{18}$, $A\neq3$, prove it
+unconditionally on a set of integers $A$ of natural density one, and prove
+its eventual validity under a square-root-scale hypothesis on consecutive
+prime gaps.  Known prime-gap estimates also yield
+$M(A)=(1+o(1))A^2$.  Finally, we obtain genus-realization results below the
+prime-staircase lower bound and corresponding information about the inverse
+extremal function.  Accordingly, known information on consecutive prime gaps
+provides arithmetic input for the semigroup extremal problem.  The principal
+remaining obstacle is structural: propagating divisor-orbit loss through the
+Kunz inequalities for the residual composite multiplicities.
+\end{abstract}
+
+\medskip
+\noindent\textbf{2020 Mathematics Subject Classification.}
+Primary 20M14; Secondary 11B25, 11D07, 11N05.
+
+\smallskip
+\noindent\textbf{Keywords.}
+Numerical semigroups, gap sets, arithmetic progressions, Ap\'ery sets,
+Kunz coordinates, prime gaps.
+
+\section{Introduction}\label{sec:introduction}
+
+A numerical semigroup is a cofinite additive submonoid $S\subseteq\N$, where
+$0\in\N$.  Its finite complement $G(S)=\N\setminus S$ is the gap set
+\cite{rosales-garcia-sanchez}.
+Classical invariants measure the number and location of these gaps: the
+genus $g=|G(S)|$, the Frobenius number $F=\max G(S)$, the multiplicity
+$m=\min(S\setminus\{0\})$, and the Ap\'ery sets.  In this paper we study a
+different aspect of the gap set, namely additive patterns internal to it.
+For each $d\geq1$, we define
+\[
+  \AP_d(S)=\max\{k:\text{some }x>0\text{ satisfies }
+  x,x+d,\ldots,x+(k-1)d\in G(S)\}.
+\]
+We also set
+\[
+  \AP(S)=\max_{d\geq1}\AP_d(S),
+  \qquad
+  \Sigma(S)=\{(d,k)\in\N_{>0}^2:\AP_d(S)\geq k\}.
+\]
+The internal combinatorics of numerical-semigroup gap sets has been studied
+from several complementary perspectives.  Eliahou and Fromentin's gapset
+program treats $G(S)$ as a combinatorial object in its own right, using
+gapsets, filtrations, multiplicity, and related invariants
+\cite{eliahou-fromentin-gapsets,eliahou-fromentin-small}.  The consecutive-
+difference case belongs to the classical theory of gap blocks, also called
+deserts: $\AP_1(S)$ is the length of the longest such block
+\cite{moree-gap-blocks}.  Residue-class statistics of gaps are naturally
+expressed through Ap\'ery sets: Shor
+studies equidistribution modulo an integer and, more recently, parity
+distributions for free numerical semigroups
+\cite{shor-equidistribution,shor-parity}.  Kunz coordinates also admit a rich
+polyhedral interpretation through the Kunz cone, Kunz posets, and the Kunz
+fan \cite{kaplan-oneill-group-cone,brower-mcdonough-oneill-kunz-fan}, with
+related genus-counting applications \cite{bernardini-kunz}.
+
+Rather than counting gaps or studying only their distribution among residue
+classes, we study arithmetic progressions contained in the gap set itself.
+Shor's questions concern residue statistics; our residue-prefix results lie
+in the same Ap\'ery-set framework, but we ask for the longest ordered
+patterns supported by those classes and, for divisors of the multiplicity,
+by their cyclic interaction.  The special case $d=1$, corresponding to
+maximal blocks of consecutive gaps, is classical; in particular, its maximum
+length is $m-1$ \cite{moree-gap-blocks}.  To our knowledge, the
+common-difference invariants $\AP_d(S)$ for arbitrary $d$, the global
+invariant $\AP(S)$, and the extremal function $M(A)$ have not previously
+been studied in this form.
+
+The analysis rests on the following structural dichotomy:
+\[
+  d\in S
+  \qquad\text{versus}\qquad
+  d\in G(S).
+\]
+
+Subtraction by an element of $S$ preserves gaps while the result remains
+positive.  Consequently, Theorem~\ref{thm:semigroup-difference} shows that,
+for $d\in S_{>0}$, the Ap\'ery classes determine the entire distribution of
+gaps modulo $d$ and give
+\begin{equation}\label{eq:intro-semigroup-difference}
+  \AP_d(S)=\left\lfloor\frac Fd\right\rfloor+1.
+\end{equation}
+This identity is a standard consequence of Ap\'ery-set theory.
+Together with the classical consecutive-gap case, it gives the hierarchy
+\[
+\begin{array}{rcll}
+ d=1&:&\AP_1(S)=m-1,
+   &\text{classical gap blocks or deserts};\\
+ d\in S_{>0}&:&\displaystyle
+   \AP_d(S)=\left\lfloor\frac Fd\right\rfloor+1,
+   &\text{standard Ap\'ery structure};\\
+ d\in G(S)\setminus\{1\}&:&
+   \multicolumn{2}{l}{\text{the genuinely difficult part of the AP spectrum}.}
+\end{array}
+\]
+We record the semigroup-difference formulation because it isolates this last
+component.
+
+The global invariant already satisfies a useful universal bound:
+\begin{equation}\label{eq:intro-universal-bound}
+  \AP(S)\geq
+  \max\left\{m-1,\left\lceil\frac g{m-1}\right\rceil\right\}
+  \geq\lceil\sqrt g\rceil.
+\end{equation}
+
+The main semigroup mechanism is the divisor-orbit formula of
+Lemma~\ref{lem:run}.  In Kunz coordinates, we write
+\[
+  \Ap(S,m)=\{0,w_1,\ldots,w_{m-1}\},
+  \qquad w_i=i+mk_i.
+\]
+From the polyhedral viewpoint, the Run Lemma imposes divisor-orbit
+constraints on Kunz vectors; its positional term retains information not
+visible in coordinate-wise height bounds.
+
+For $d\mid m$, a nonzero orbit under addition by $d$ reads the gap-prefixes
+of its residue classes cyclically.  If its length is $\ell=m/d$, its minimum
+Kunz height is $\mu$, and the first minimum occurs at zero-indexed position
+$\rho$, then the longest gap run on that orbit has length
+\begin{equation}\label{eq:intro-run}
+  \ell\mu+\rho.
+\end{equation}
+The term $\rho$ is essential.  Under an upper bound on $\AP(S)$, an extremal
+value of $\mu$ can force the minimum to occur at a prescribed position.  We
+refer to this positional restriction as \emph{anchoring}.  The Run Lemma and
+anchoring are the source of both the small exact computations and the
+general penalty for composite multiplicities.
+
+These constraints motivate the extremal function and its inverse problem,
+which we define by
+\[
+  M(A)=\max\{g(S):\AP(S)\leq A\},
+  \qquad
+  a(g)=\min\{\AP(S):g(S)=g\}.
+\]
+The estimate \eqref{eq:intro-universal-bound} gives $M(A)\leq A^2$, but it
+does not detect the arithmetic restrictions imposed by differences in
+$G(S)$.
+
+The first nontrivial extremal values are
+\[
+  M(3)=7,
+  \qquad M(8)=48,
+  \qquad M(9)=54.
+\]
+Here $M(8)=48$ is presently computer-assisted, while
+Theorem~\ref{thm:plateau-nine} proves $M(9)=54$ by combining divisor-orbit
+constraints, Kunz propagation, and a finite Kunz certificate in the remaining
+multiplicities.  An explicit multiplicity-$9$
+Kunz vector
+\[
+  (3,3,6,6,9,9,9,9)
+\]
+attains genus $54$ and has $\AP(S)=9$.  This is the first plateau where the
+bound $M(A)\leq A^2$ is far from the true value.
+
+The general construction is controlled by primes.  Let
+\[
+  P(x)=\max\{p\leq x:p\text{ is prime}\}.
+\]
+For a prime $p\leq A+1$, the uniform multiplicity-$p$ Kunz vector
+$(A,\ldots,A)$ has genus $A(p-1)$ and AP length $A$.  This construction gives
+\begin{equation}\label{eq:intro-staircase-lower}
+  M(A)\geq A(P(A+1)-1).
+\end{equation}
+The resulting \emph{prime staircase conjecture} predicts equality for every
+$A\neq 3$, while $M(3)=7$ is exceptional.  No uniqueness assertion is part of
+the conjecture.  Indeed, at $A=9$ the maximum is attained by non-isomorphic
+semigroups of multiplicities $7$ and $9$.  Determining the structure and
+uniqueness of maximizers is therefore a separate problem from determining
+the value of $M(A)$.
+
+The opposite force comes from compositeness.  If a prime $q$ divides the
+multiplicity $m$, the Run Lemma gives the genus loss
+\begin{equation}\label{eq:intro-composite-loss}
+  g\leq A(m-1)-\left(\frac mq-1\right)
+  \left(A-\left\lfloor\frac Aq\right\rfloor\right).
+\end{equation}
+For the least prime factor this loss is greater than $A(\sqrt m-2)$.  Comparing
+it with the extra capacity obtained by taking $m>P(A+1)$ is precisely where
+estimates for gaps between consecutive primes enter the semigroup problem.
+
+The extremal problem is therefore governed by a competition between two
+effects: prime multiplicities attain the naive Kunz capacity, whereas composite
+multiplicities are subject to divisor-orbit losses.  If $p=P(A+1)$, the
+backward prime distance $A+1-p$ measures how much additional multiplicity a
+composite competitor can have beyond the largest available prime
+multiplicity.  This is where results on gaps between consecutive primes
+enter the argument.
+
+The number-theoretic input is entirely one-directional: we use known
+estimates for prime gaps to obtain consequences for the semigroup extremal
+problem, and we obtain no new bounds or other results concerning prime gaps.
+The relevant input concerns upper bounds for gaps between consecutive
+primes, or equivalently primes in short intervals, rather than the
+bounded-gap problem.  Pointwise, we use the Baker--Harman--Pintz exponent
+$0.525$.  For density statements we use Stadlmann's mean-square estimate for
+consecutive prime gaps; Heath-Brown's classical estimate gives a weaker
+historical comparison
+\cite{baker-harman-pintz,heath-brown-iii,stadlmann-mean-square}.
+We also record conditional consequences of standard conjectural prime-gap
+bounds.
+
+The full prime-staircase conjecture remains open.  The partial results have
+three distinct scopes: the conjectural formula is verified computer-assistively
+for $1\leq A\leq4\cdot10^{18}$ with $A\neq3$; it holds unconditionally for
+all but $O_\varepsilon(x^{73/100+\varepsilon})$ integers $A\leq x$; and,
+under the square-root gap hypothesis $g_p\leq\sqrt p-1$, it holds for every
+sufficiently large $A$.
+
+The principal unresolved step is semigroup-theoretic rather than a further
+application of the prime-gap machinery.  Known prime-gap estimates allow the
+criterion above to eliminate most multiplicities, but the surviving
+prime-square and balanced-semiprime cases require additional loss propagated
+through Run-Lemma anchoring and Kunz subadditivity.  Establishing such a
+propagated-loss theorem, formulated as Problem~\ref{prob:propagated-loss}, is
+the main structural route toward an unconditional proof of the full
+conjecture.
+
+The prime construction also fills the genera below its upper endpoint.  For
+every $A\geq1$, Theorem~\ref{thm:realization-staircase} realizes each genus
+$g$ satisfying
+\[
+  1\leq g\leq A(P(A+1)-1)
+\]
+by a numerical semigroup with $\AP(S)\leq A$.  Every proved exact jump of the
+prime staircase therefore yields a corresponding plateau for $a(g)$.
+
+Two further unconditional consequences sharpen the asymptotic picture.  The
+first characterizes the square maximum:
+\[
+  M(A)=A^2\quad\Longleftrightarrow\quad A+1\text{ is prime}.
+\]
+The second concerns the deficit $\Delta(A)=A^2-M(A)$ and gives
+\[
+  \Delta(A)\ll A^{1.525},
+  \qquad M(A)=(1+o(1))A^2.
+\]
+Wherever the exact staircase formula is known, the deficit satisfies
+\[
+  \frac{\Delta(A)}A=A+1-P(A+1),
+\]
+so the normalized extremal deficit is precisely the backward prime distance.
+
+Section~\ref{sec:gap-aps} develops the elementary and Ap\'ery-theoretic
+structure.  Section~\ref{sec:kunz-orbits} proves the Run Lemma and the
+composite-loss theorem.  Section~\ref{sec:small-values} treats the small
+extremal values and the plateau at nine.  Sections~\ref{sec:prime-staircase}
+and \ref{sec:prime-gaps} develop the prime staircase and derive consequences
+from known estimates for gaps between consecutive primes.
+Section~\ref{sec:realization} proves the realization and
+inverse-plateau results.  Section~\ref{sec:further} concludes with the
+remaining structural problems, and the appendix records the computational
+certificates.
+
+\section{Arithmetic progressions in numerical semigroup gaps}
+\label{sec:gap-aps}
+
+Unless stated otherwise, $S$ has positive genus.  We use the notation
+\[
+  G(S)=\N\setminus S,
+  \qquad g=|G(S)|,
+  \qquad F=\max G(S),
+  \qquad m=\min(S\setminus\{0\}).
+\]
+When $S=\N$, the gap set is empty; one may set $\AP_d(S)=\AP(S)=0$, but
+$F$ is undefined and statements involving it do not apply.
+
+\begin{lemma}[Downward closure]\label{lem:downward-closure}
+If $x\in G(S)$ and $s\in S$ satisfy $x-s>0$, then $x-s\in G(S)$.
+\end{lemma}
+
+\begin{proof}
+Otherwise $x-s\in S$, and closure under addition gives
+$x=(x-s)+s\in S$, a contradiction.
+\end{proof}
+
+\begin{proposition}[Consecutive gaps]\label{prop:consecutive-gaps}
+For every numerical semigroup of positive genus and multiplicity $m$, we have
+\[
+  \boxed{\AP_1(S)=m-1.}
+\]
+\end{proposition}
+
+\begin{proof}
+The integers $1,2,\ldots,m-1$ are gaps, so $\AP_1(S)\geq m-1$.  On the
+other hand, any $m$ consecutive integers contain a multiple of $m$.  Since
+$m\in S$ and $S$ is closed under addition, every nonnegative multiple of
+$m$ belongs to $S$.  Hence no $m$ consecutive positive integers can all be
+gaps, and therefore $\AP_1(S)\leq m-1$.
+\end{proof}
+
+This is the classical longest-gap-block observation; Moree uses the term
+\emph{gap block} and notes the alternative terminology \emph{desert}
+\cite{moree-gap-blocks}.
+
+The consecutive case leads naturally to the more restrictive question of
+when the entire gap set forms a single arithmetic progression.  There are
+only two possibilities.
+
+\begin{proposition}\label{prop:gap-set-ap}
+Assume $g\geq1$.  The gap set $G(S)$ is a single arithmetic progression if
+and only if either
+\begin{enumerate}
+  \item $S=\{0,g+1,g+2,\ldots\}$ and $G(S)=\{1,2,\ldots,g\}$; or
+  \item $S=\langle2,2g+1\rangle$ and
+  $G(S)=\{1,3,5,\ldots,2g-1\}$.
+\end{enumerate}
+For $g=1$, the two descriptions coincide.
+\end{proposition}
+
+\begin{proof}
+Since $1\in G(S)$, an arithmetic progression equal to $G(S)$ has the form
+\[
+  \{1,1+d,\ldots,1+(g-1)d\}.
+\]
+If $d=1$, the semigroup is ordinary.  If $d=2$, its gaps are precisely the
+odd integers below $2g+1$, and the semigroup is $\langle2,2g+1\rangle$.
+If $d\geq3$, then $2,3\in S$, and therefore
+$\langle2,3\rangle=\N\setminus\{1\}\subseteq S$.  It follows that
+$G(S)=\{1\}$,
+which is the common genus-one case.  The converse follows directly from the
+two displayed gap sets.
+\end{proof}
+
+The genus-zero semigroup $\N$ has empty gap set and is excluded from this
+classification.
+
+For arbitrary common differences, the relevant structure is the distribution
+of the gaps among residue classes.  Fix $d\in S_{>0}$ and recall that
+\[
+  \Ap(S,d)=\{s\in S:s-d\notin S\}
+  =\{w_0,w_1,\ldots,w_{d-1}\},
+\]
+where $w_r\equiv r\pmod d$ and $0\leq r<d$.  In particular, $w_0=0$.
+
+\begin{proposition}\label{prop:apery-residue-gaps}
+For $1\leq r\leq d-1$, the gaps in residue class $r$ are
+\[
+  G(S)\cap(r+d\Z)=\{r,r+d,\ldots,w_r-d\}.
+\]
+Consequently, this residue class contains
+\[
+  \frac{w_r-r}{d}=\left\lfloor\frac{w_r}{d}\right\rfloor,
+\]
+gaps.  Taking the maximum over the nonzero residue classes gives
+\[
+  \AP_d(S)=\max_{w\in\Ap(S,d)}\left\lfloor\frac wd\right\rfloor.
+\]
+\end{proposition}
+
+\begin{proof}
+The element $w_r$ is the least member of $S$ congruent to $r$ modulo $d$.
+It follows that the positive integers $r,r+d,\ldots,w_r-d$ are gaps, while
+$w_r+jd\in S$ for $j\geq0$.  Writing $w_r=r+a_r d$ shows that the displayed
+progression has $a_r=(w_r-r)/d=\lfloor w_r/d\rfloor$ terms.  Taking the
+largest residue-class prefix gives the final formula.
+\end{proof}
+
+Summing these prefix lengths gives Selmer's genus formula
+\begin{equation}\label{eq:selmer-genus}
+  g=\frac1d\sum_{w\in\Ap(S,d)}w-\frac{d-1}{2}.
+\end{equation}
+See \cite{selmer1977}; standard background on numerical semigroups and
+Ap\'ery sets is available in \cite{rosales-garcia-sanchez}.
+
+This is the Ap\'ery residue-class framework discussed in the Introduction;
+see \cite{shor-equidistribution,shor-parity} for related distributional
+questions.  Here the prefix lengths will control arithmetic progressions.
+
+When the common difference itself belongs to the semigroup, the
+residue-class formula depends only on $F$ and $d$.
+
+\begin{theorem}[Semigroup differences]\label{thm:semigroup-difference}
+For every $d\in S_{>0}$, we have
+\[
+  \boxed{\AP_d(S)=\left\lfloor\frac Fd\right\rfloor+1.}
+\]
+\end{theorem}
+
+\begin{proof}
+The standard identity $\max\Ap(S,d)=F+d$ and
+Proposition~\ref{prop:apery-residue-gaps} give
+\[
+  \AP_d(S)=\left\lfloor\frac{F+d}{d}\right\rfloor
+  =\left\lfloor\frac Fd\right\rfloor+1.
+\]
+For a direct description, write $F=cd+r$ with $0\leq r<d$.  Since $d\in S$
+and $S$ is closed under addition, every positive multiple of $d$ belongs to
+$S$.  As $F\notin S$, one cannot have $d\mid F$, and hence
+$1\leq r\leq d-1$.
+Repeated downward closure gives the gap progression
+\[
+  r,r+d,\ldots,r+cd=F
+\]
+of length $c+1$.  Conversely, if
+$x,x+d,\ldots,x+(k-1)d$ is a gap progression, then $x\geq1$ and its last
+term is at most $F$.  These inequalities give
+\[
+  1+(k-1)d\leq x+(k-1)d\leq F,
+\]
+so $k\leq\lfloor F/d\rfloor+1$.
+\end{proof}
+
+\begin{corollary}[Semigroup-difference spectrum]\label{cor:s-spectrum}
+The semigroup-difference part of the spectrum is
+\[
+  \Sigma(S)\cap(S_{>0}\times\N_{>0})
+  =\{(d,k):d\in S,\ (k-1)d\leq F\}.
+\]
+\end{corollary}
+
+\begin{remark}
+The Ap\'ery set records the full residue-class distribution of gaps, whereas
+Theorem~\ref{thm:semigroup-difference} shows that its longest prefix depends
+only on $F$ and $d$.  Therefore, the part of $\Sigma(S)$ with $d\in S$ is
+governed
+by classical data; apart from the classical case $d=1$, the new component
+occurs for $d\in G(S)\setminus\{1\}$.
+\end{remark}
+
+Although gap differences contain the new part of the spectrum, the classical
+residue prefixes already impose a useful lower bound on the global invariant.
+
+\begin{theorem}\label{thm:multiplicity-bound}
+For every numerical semigroup of positive genus, we have
+\[
+  \boxed{\AP(S)\geq
+  \max\left\{m-1,\left\lceil\frac{g}{m-1}\right\rceil\right\}.}
+\]
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:consecutive-gaps} gives $\AP_1(S)=m-1$.  By
+Proposition~\ref{prop:apery-residue-gaps} at $d=m$, the gaps split into
+$m-1$ nonzero residue classes modulo $m$.  Writing
+$k_i=(w_i-i)/m$ for their lengths gives $\sum_i k_i=g$ and
+\[
+  \AP_m(S)=\max_i k_i
+  \geq\left\lceil\frac g{m-1}\right\rceil.
+\]
+Combining these two bounds gives
+\[
+  \AP(S)\geq\max\{\AP_1(S),\AP_m(S)\}
+  \geq\max\left\{m-1,
+  \left\lceil\frac g{m-1}\right\rceil\right\}.
+\]
+\end{proof}
+
+\begin{corollary}\label{cor:sqrt-bound}
+Every numerical semigroup of positive genus satisfies
+\[
+  \boxed{\AP(S)\geq\lceil\sqrt g\rceil.}
+\]
+\end{corollary}
+
+\begin{proof}
+Apply $\max\{x,g/x\}\geq\sqrt g$ with $x=m-1$ and use integrality.
+\end{proof}
+
+Combining Theorems~\ref{thm:semigroup-difference} and
+\ref{thm:multiplicity-bound} at $d=m$ gives
+\[
+  \AP_m(S)=\left\lfloor\frac Fm\right\rfloor+1
+  \geq\left\lceil\frac g{m-1}\right\rceil.
+\]
+Consequently, the genus satisfies
+\[
+  g\leq(m-1)\left(\left\lfloor\frac Fm\right\rfloor+1\right).
+\]
+\section{Kunz coordinates and divisor-orbit constraints}
+\label{sec:kunz-orbits}
+
+With respect to the multiplicity, we write
+\[
+  \Ap(S,m)=\{0,w_1,\ldots,w_{m-1}\},
+  \qquad w_i=i+mk_i.
+\]
+The positive integers $k_i$ are the Kunz coordinates.  The coordinate $k_i$
+is the number of gaps congruent to $i$ modulo $m$, so
+\begin{equation}\label{eq:kunz-genus}
+  g=\sum_{i=1}^{m-1}k_i.
+\end{equation}
+For $1\leq i,j\leq m-1$, the Kunz coordinates satisfy
+\begin{align}
+  k_i+k_j&\geq k_{i+j} &&(i+j<m),\label{eq:kunz-unwrapped}\\
+  k_i+k_j+1&\geq k_{i+j-m} &&(i+j>m).\label{eq:kunz-wrapped}
+\end{align}
+When $i+j=m$, no nontrivial coordinate inequality is required.  Conversely,
+every positive integral vector satisfying these inequalities is the Kunz
+vector of a numerical semigroup of multiplicity $m$; see
+\cite{rosales-garcia-sanchez}.  The polyhedral background appears in
+\cite{kaplan-oneill-group-cone,brower-mcdonough-oneill-kunz-fan}, with
+related genus-counting applications in \cite{bernardini-kunz}.
+
+If $\AP(S)\leq A$, then Proposition~\ref{prop:apery-residue-gaps} at $d=m$
+gives
+\begin{equation}\label{eq:kunz-box-general}
+  1\leq k_i\leq A
+  \qquad(1\leq i<m).
+\end{equation}
+
+The coordinatewise box \eqref{eq:kunz-box-general} does not record how a
+progression moves cyclically through residue classes.  When its common
+difference divides the multiplicity, this interaction is exact.
+
+\begin{lemma}[Run Lemma]\label{lem:run}
+Let $d\mid m$ with $1\leq d<m$, and let $1\leq r\leq d-1$.  In cyclic
+order, the orbit of $r$ under addition by $d$ modulo $m$ is
+\[
+  c_0=r,c_1=r+d,\ldots,c_{\ell-1}=r+m-d,
+  \qquad \ell=\frac md.
+\]
+Define the minimum height and its first position by
+\[
+  \mu=\min_{0\leq j<\ell}k_{c_j},
+  \qquad \rho=\min\{j:k_{c_j}=\mu\}.
+\]
+The longest gap progression of difference $d$ contained in this orbit then
+has length
+\[
+  \boxed{\AP_d(S)|_{\mathcal O_r}=\ell\mu+\rho
+  =\frac md\,\mu+\rho.}
+\]
+\end{lemma}
+
+\begin{proof}
+We read the positive integers in the orbit with step $d$:
+\[
+  r,r+d,r+2d,\ldots.
+\]
+If $n=h\ell+j$ with $0\leq j<\ell$, then
+$r+nd=c_j+hm$.  The class $c_j$ contributes the gap-prefix
+\[
+  c_j,c_j+m,\ldots,c_j+(k_{c_j}-1)m.
+\]
+In this way, the orbit is read cyclically, one complete cycle at each height
+level $h$.  At every level $h<\mu$, all $\ell$ entries are gaps, producing
+$\ell\mu$ initial gaps.  At level $h=\mu$, the first $\rho$ classes still
+contribute gaps, while $c_\rho+\mu m$ is the first nongap.  The initial run
+has length $\ell\mu+\rho$.  At every later level, the class $c_\rho$ again
+contributes a nongap, so every later run has length at most $\ell-1$.  Since
+$\mu\geq1$, the initial run is strictly longer.
+\end{proof}
+
+The positional term $\rho$ strengthens the minimum-height constraint whenever
+the latter is close to its largest possible value.
+
+\begin{corollary}[Orbit constraint]\label{cor:orbit-constraint}
+If $\AP(S)\leq A$, then every nonzero divisor orbit in
+Lemma~\ref{lem:run} satisfies
+\[
+  \boxed{\ell\mu+\rho\leq A.}
+\]
+In particular, $\mu\leq\lfloor A/\ell\rfloor$; if equality holds, the first
+minimum is restricted by
+\[
+  \rho\leq A-\ell\left\lfloor\frac A\ell\right\rfloor.
+\]
+\end{corollary}
+
+\begin{remark}[Anchoring]
+The position $\rho$ contains information absent from the minimum-height bound.
+When $\mu$ is extremal, the first minimum can be forced to the beginning of
+the cyclic order.  This anchoring phenomenon is decisive in the plateau
+calculation of Section~\ref{sec:small-values}.
+\end{remark}
+
+Summing the orbit constraints converts this local information into a global
+genus loss for composite multiplicities.
+
+\begin{theorem}[Composite-multiplicity loss bound]
+\label{thm:composite-loss}
+Let $\AP(S)\leq A$, let $m$ be the multiplicity, and let $q\mid m$ be prime.
+Under these assumptions, the genus satisfies
+\[
+  \boxed{g\leq
+  \left(\frac mq-1\right)
+  \left((q-1)A+\left\lfloor\frac Aq\right\rfloor\right)
+  +(q-1)A.}
+\]
+Equivalently, the bound can be written as
+\begin{equation}\label{eq:composite-loss}
+  \boxed{g\leq A(m-1)-\left(\frac mq-1\right)
+  \left(A-\left\lfloor\frac Aq\right\rfloor\right).}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We set $d=m/q$.  Addition by $d$ modulo $m$ has $m/q$ cycles of length $q$.
+One contains residue $0$; the other $m/q-1$ cycles contain only nonzero
+residues.  On each nonzero cycle, Corollary~\ref{cor:orbit-constraint} gives
+$\mu\leq\lfloor A/q\rfloor$.  Its coordinate sum is therefore at most
+\[
+  (q-1)A+\left\lfloor\frac Aq\right\rfloor.
+\]
+The zero cycle contains $q-1$ nonzero coordinates and contributes at most
+$(q-1)A$.  Adding the contributions of all cycles gives
+\[
+\begin{aligned}
+g
+&\leq
+\left(\frac mq-1\right)
+\left((q-1)A+\left\lfloor\frac Aq\right\rfloor\right)
++(q-1)A\\
+&=A(m-1)-\left(\frac mq-1\right)
+\left(A-\left\lfloor\frac Aq\right\rfloor\right),
+\end{aligned}
+\]
+which is \eqref{eq:composite-loss}.
+\end{proof}
+
+\begin{remark}
+The term $A(m-1)$ is the naive genus capacity from
+\eqref{eq:kunz-box-general}.  The subtracted term in
+\eqref{eq:composite-loss} is the genus penalty forced by the divisor orbits.
+\end{remark}
+
+\section{Small extremal values and the plateau at nine}
+\label{sec:small-values}
+
+The composite-multiplicity loss already determines the exceptional value at
+$A=3$.
+
+Applying Theorem~\ref{thm:composite-loss} with $(A,m,q)=(3,4,2)$ gives
+\[
+  g\leq3(4-1)-(2-1)\left(3-\left\lfloor\frac32\right\rfloor\right)=7.
+\]
+For $m\leq3$, we have $g\leq3(m-1)\leq6$.  To attain the remaining upper
+bound, consider the semigroup
+\[
+  S=\langle4,7,13\rangle,
+\]
+which has Kunz vector $(3,3,1)$ and gap set
+\[
+  G(S)=\{1,2,3,5,6,9,10\}.
+\]
+For differences $1,2,3,4$, the following progressions have length three,
+respectively:
+\[
+  (1,2,3),\quad(1,3,5),\quad(3,6,9),\quad(1,5,9).
+\]
+A direct check of the displayed gap set shows that no progression with any
+of these four differences has four terms.  If $d\geq5$, a four-term
+progression has span $3d>F-1=9$.  We conclude that $\AP(S)=3$, and hence
+\begin{equation}\label{eq:M3}
+  \boxed{M(3)=7.}
+\end{equation}
+
+At $A=8$, a direct exhaustive search gives the exact extremal genus.
+
+\begin{computertheorem}[The value at eight]\label{thm:M8-computation}
+The extremal value at $A=8$ is
+\[
+  \boxed{M(8)=48.}
+\]
+\end{computertheorem}
+
+\begin{proof}[Computer-assisted proof]
+The accompanying directory \compdir{}
+contains the program \path{direct_ap_search.c}, which first verifies the
+prime-multiplicity
+lower-bound example directly.  The naive coordinate bound then excludes
+multiplicities at or below that prime, and the program performs exhaustive
+branch-and-bound over the remaining multiplicities $m\leq9$ and coordinate
+vectors with $1\leq k_i\leq8$.  It tests the Kunz inequalities and prunes
+only when the largest possible genus on a branch cannot exceed the verified
+lower bound.  For every remaining candidate, it constructs the finite gap set,
+computes gap arithmetic progressions directly, and maximizes $\sum_i k_i$.
+It uses no Run-Lemma constraint and returns $M(8)=48$.  The corresponding
+output is designated \path{direct_ap_A8.log} in the same directory.
+The maximum is attained at prime multiplicity $7$ by the construction of
+Proposition~\ref{prop:prime-staircase} below.
+\end{proof}
+
+For comparison, Theorem~\ref{thm:composite-loss} with $(A,m,q)=(8,8,2)$
+gives the stronger multiplicity-specific bound $g\leq44$.
+
+At $A=9$, the single-divisor estimate alone does not recover the sharp bound.
+Assume that $\AP(S)\leq9$; the Kunz coordinates then satisfy
+$1\leq k_i\leq9$.
+
+For $m=10$ and $d=5$, the relevant pairs are
+$(k_r,k_{r+5})$, where $1\leq r\leq4$.  The Run Lemma gives
+\begin{equation}\label{eq:m10-pairs}
+  \min(k_r,k_{r+5})\leq4.
+\end{equation}
+For $d=2$, the odd orbit $(1,3,5,7,9)$ has length $5$.  The corresponding
+orbit constraint is therefore
+\begin{equation}\label{eq:m10-odd}
+  \min(k_1,k_3,k_5,k_7,k_9)=1.
+\end{equation}
+
+For $m=9$ and $d=3$, the two nonzero cycles are $(1,4,7)$ and $(2,5,8)$.
+On either cycle, we have $3\mu+\rho\leq9$.  This inequality implies that
+$\mu\leq3$ and, if $\mu=3$, that $\rho=0$.  More explicitly, it gives
+\begin{equation}\label{eq:m9-anchor}
+  \begin{split}
+  \min(k_1,k_4,k_7)=3&\Longrightarrow k_1=3,\\
+  \min(k_2,k_5,k_8)=3&\Longrightarrow k_2=3.
+  \end{split}
+\end{equation}
+
+For $m=8$ and $d=4$, the pair constraints are
+\begin{equation}\label{eq:m8-pairs}
+  \min(k_i,k_{i+4})\leq4\qquad(1\leq i\leq3).
+\end{equation}
+The $d=2$ odd orbit $(1,3,5,7)$ also satisfies
+\begin{equation}\label{eq:m8-odd}
+  4\mu+\rho\leq9.
+\end{equation}
+
+\begin{lemma}\label{lem:small-multiplicity}
+If $\AP(S)\leq9$ and $m\leq7$, then the genus satisfies $g\leq54$.
+\end{lemma}
+
+\begin{proof}
+The coordinate bound gives
+$g=\sum_{i=1}^{m-1}k_i\leq9(m-1)\leq54$.
+\end{proof}
+
+\begin{proposition}\label{prop:m8-hand}
+If $\AP(S)\leq9$ and $m=8$, then the genus satisfies $g\leq48$.
+\end{proposition}
+
+\begin{proof}
+Theorem~\ref{thm:composite-loss} with $q=2$ gives
+\[
+  g\leq9(8-1)-(4-1)\left(9-\left\lfloor\frac92\right\rfloor\right)=48.
+\]
+Equivalently, each pair in \eqref{eq:m8-pairs} contributes at most $13$,
+and $k_4\leq9$.
+\end{proof}
+
+For the remaining multiplicities, anchoring interacts with Kunz
+subadditivity.  For instance, if $m=9$ and
+$k_1=k_2=3$, then
+\[
+  k_3\leq k_1+k_2=6,
+  \qquad k_4\leq2k_2=6,
+\]
+so $g\leq3+3+6+6+9+9+9+9=54$.  The doubling map on nonzero residues
+contains the cycle
+\[
+  1\to2\to4\to8\to7\to5\to1\pmod9,
+\]
+which propagates such bounds through the remaining coordinates.
+
+\begin{proposition}[Finite Kunz certification]\label{prop:finite-certificate}
+For $m=8,9,10$, consider the maximum of $\sum_i k_i$ over vectors in
+$\{1,\ldots,9\}^{m-1}$ satisfying all Kunz inequalities and the orbit
+constraints \eqref{eq:m10-pairs}--\eqref{eq:m8-odd}.  Exhaustive enumeration
+gives
+\[
+\begin{array}{ccc}
+  \toprule
+  m&\max\sum_i k_i&\text{unique maximizing vector}\\
+  \midrule
+  8&44&(7,9,2,9,4,4,9)\\
+  9&54&(3,3,6,6,9,9,9,9)\\
+  10&53&(9,9,9,8,6,4,4,3,1).\\
+  \bottomrule
+\end{array}
+\]
+\end{proposition}
+
+\begin{proof}[Computer-assisted proof]
+The finite search checks only $1\leq k_i\leq9$, the Kunz inequalities, and
+the displayed Run-Lemma consequences.  It neither constructs gap sets nor
+computes any $\AP_d(S)$.  It was performed by
+the program \path{plateau_certificate.c} in the accompanying directory
+\compdir{}; the corresponding output is
+designated \path{plateau_certificate.log}.  An independent reordered
+branch-and-bound implementation is provided in
+\path{plateau_certificate_independent.c}, with output in
+\path{plateau_certificate_independent.log}.  The constraints are
+necessary for $\AP(S)\leq9$; no converse characterization is asserted.  They
+suffice for the stated optimization.
+\end{proof}
+
+The preceding bounds cover every possible multiplicity and therefore give
+the desired plateau estimate.
+
+\begin{theorem}[Plateau at nine]\label{thm:plateau-nine}
+If $\AP(S)\leq9$, then the genus satisfies
+\[
+  \boxed{g(S)\leq54.}
+\]
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:multiplicity-bound} gives $m-1\leq9$, so $m\leq10$.
+Lemma~\ref{lem:small-multiplicity} handles $m\leq7$,
+Proposition~\ref{prop:m8-hand} handles $m=8$, and
+Proposition~\ref{prop:finite-certificate} gives $g\leq54$ for $m=9$ and
+$g\leq53$ for $m=10$.
+\end{proof}
+
+Consider the multiplicity-$9$ Kunz vector
+\begin{equation}\label{eq:extremal-vector}
+  (k_1,\ldots,k_8)=(3,3,6,6,9,9,9,9).
+\end{equation}
+It satisfies the Kunz inequalities.  Indeed, the minimum left sides of the
+unwrapped inequalities with targets $2,\ldots,8$ are
+$6,6,6,9,9,12,12$, while those of the wrapped inequalities with targets
+$1,\ldots,7$ are $13,16,16,19,19,19,19$.  Its genus is $54$, and
+\[
+  F=\max_{1\leq i\leq8}(i+9k_i)-9=80.
+\]
+
+\begin{proposition}\label{prop:sharpness-nine}
+The semigroup defined by \eqref{eq:extremal-vector} satisfies $\AP(S)=9$.
+\end{proposition}
+
+\begin{proof}
+Suppose first that $\gcd(d,9)=1$.  Every nine consecutive terms of a
+$d$-progression
+represent all residues modulo $9$, so one is a positive multiple of $9$ and
+belongs to $S$.  Therefore, $\AP_d(S)\leq8$.
+
+For $d=3$, the nonzero height triples are $(3,6,9)$ and $(3,9,9)$.  The Run
+Lemma gives length $3\cdot3=9$ on each; the zero orbit has a multiple of $9$
+every third term.  It follows that $\AP_3(S)=9$.
+
+For $d=6$, direct inspection of the residue prefixes gives the following
+longest-run lengths:
+\[
+\begin{array}{c*{6}{c}}
+  \toprule
+  x\bmod6&1&2&3&4&5&0\\
+  \midrule
+  \text{length}&6&6&2&4&4&2.\\
+  \bottomrule
+\end{array}
+\]
+For example, the two length-six runs are
+$(1,7,13,19,25,31)$ and $(2,8,14,20,26,32)$; their next terms are nongaps.
+This is a direct inspection, since $6\nmid9$.
+
+If $\gcd(d,9)=3$ and $d\notin\{3,6\}$, then $d\geq12$, and every gap lies
+in $[1,80]$.  Therefore, the progression has length at most
+$\lfloor79/12\rfloor+1=7$.  Finally, if $9\mid d$, the progression remains
+in one residue class, containing at most $9$ gaps.  Equality occurs for
+$d=9$.  These cases cover all $d>0$.
+\end{proof}
+
+Combining the upper bound with the sharpness construction gives
+\begin{equation}\label{eq:M9}
+  \boxed{M(9)=54.}
+\end{equation}
+The estimate $M(9)\leq81$ from Corollary~\ref{cor:sqrt-bound} misses the
+loss imposed by gap differences; the plateau calculation exhibits the role
+of anchoring and Kunz propagation.
+
+\section{The prime staircase and composite multiplicities}
+\label{sec:prime-staircase}
+
+For $x\geq2$, we denote by $P(x)$ the largest prime not exceeding $x$.
+
+\begin{proposition}[Prime staircase construction]
+\label{prop:prime-staircase}
+Let $p\leq A+1$ be prime.  The semigroup with multiplicity $p$ and uniform
+Kunz vector $(A,\ldots,A)$ satisfies
+\[
+  \AP(S)=A,
+  \qquad g=A(p-1).
+\]
+\end{proposition}
+
+\begin{proof}
+The uniform vector satisfies all Kunz inequalities.  If $p\nmid d$, every
+$p$ consecutive terms of a $d$-progression contain a positive multiple of
+$p$, so $\AP_d(S)\leq p-1\leq A$.  If $p\mid d$, the progression stays in
+one residue class, and each nonzero class contains exactly $A$ gaps.  Hence
+$\AP_d(S)\leq A$, with equality for $d=p$.
+\end{proof}
+
+\begin{corollary}[Prime staircase lower bound]
+\label{cor:prime-staircase-lower}
+For every $A\geq1$, we have
+\[
+  \boxed{M(A)\geq A(P(A+1)-1).}
+\]
+\end{corollary}
+
+\begin{theorem}[Quadratic growth]\label{thm:quadratic-growth}
+For every $A\geq1$, the extremal function satisfies
+\[
+  \frac{A(A-1)}2\leq M(A)\leq A^2.
+\]
+In particular, $M(A)=\Theta(A^2)$.
+\end{theorem}
+
+\begin{proof}
+The upper bound is Corollary~\ref{cor:sqrt-bound}.  Bertrand's postulate
+gives $P(A+1)>(A+1)/2$ for $A\geq2$, and the lower estimate follows from
+Corollary~\ref{cor:prime-staircase-lower}; the case $A=1$ follows directly.
+\end{proof}
+
+The prime construction and the quadratic upper bound suggest that the
+preceding lower bound is usually sharp.
+
+\begin{conjecture}[Prime staircase conjecture]
+\label{conj:prime-staircase}
+For every $A\geq1$ with $A\neq 3$, the conjectural formula is
+\[
+  \boxed{M(A)=A(P(A+1)-1).}
+\]
+At the exceptional value, $M(3)=7$.
+\end{conjecture}
+
+Direct computation for the first values gives the following comparison.
+\begingroup
+\small
+\[
+\begin{array}{c*{12}{r}}
+ \toprule
+ A&1&2&3&4&5&6&7&8&9&10&11&12\\
+ \midrule
+ M(A)&1&4&7&16&20&36&42&48&54&100&110&144\\
+ A(P(A+1)-1)&1&4&6&16&20&36&42&48&54&100&110&144.\\
+ \bottomrule
+\end{array}
+\]
+\endgroup
+The rows agree for $1\leq A\leq12$ except at $A=3$, the exceptional value
+established in \eqref{eq:M3}.  Therefore, from $A=4$ through $12$, the prime
+staircase exactly predicts the directly computed extremal genus.  This is
+computational evidence, not a proof of the conjecture, and is independent of
+the divisor-orbit criterion used below.
+
+The conjecture does not assert uniqueness.  At $A=9$, both the uniform
+multiplicity-$7$ semigroup and the multiplicity-$9$ semigroup in
+\eqref{eq:extremal-vector} are maximizers.
+
+\begin{proposition}[Composite-multiplicity reduction]
+\label{prop:composite-reduction}
+Let $p=P(A+1)$.  To prove the conjectured upper bound, it suffices to consider
+\[
+  \boxed{p<m\leq A+1.}
+\]
+Every such multiplicity is composite.
+\end{proposition}
+
+\begin{proof}
+Theorem~\ref{thm:multiplicity-bound} gives $m\leq A+1$.  If $m\leq p$, then
+$g\leq A(m-1)\leq A(p-1)$.  By definition of $p$, there is no prime $r$
+satisfying $p<r\leq A+1$.
+\end{proof}
+
+For a prime divisor $q\mid m$, Theorem~\ref{thm:composite-loss} proves the
+desired upper bound whenever
+\begin{equation}\label{eq:loss-versus-capacity}
+  \left(\frac mq-1\right)
+  \left(A-\left\lfloor\frac Aq\right\rfloor\right)
+  \geq A(m-p).
+\end{equation}
+The left side is the Run-Lemma loss, and the right side is the excess capacity
+obtained by using $m>p$.
+
+To compare these two quantities uniformly, we use the least prime factor of
+the competing multiplicity.
+
+\begin{lemma}[Least-factor loss bound]\label{lem:least-factor-loss}
+Let $m$ be composite and $q_0$ its least prime factor.  The associated loss
+satisfies
+\[
+  \boxed{
+  \left(\frac{m}{q_0}-1\right)
+  \left(A-\left\lfloor\frac{A}{q_0}\right\rfloor\right)
+  \geq A\frac{(\sqrt m-1)^2}{\sqrt m}
+  >A(\sqrt m-2).}
+\]
+\end{lemma}
+
+\begin{proof}
+We first observe that
+\[
+  A-\left\lfloor\frac A{q_0}\right\rfloor
+  \geq A\left(1-\frac1{q_0}\right).
+\]
+To analyze the remaining factor, define
+\[
+  h(t)=\left(\frac mt-1\right)\left(1-\frac1t\right).
+\]
+For this function, differentiation gives
+\[
+  h'(t)=\frac{2m-(m+1)t}{t^3}<0
+  \qquad(t\geq2).
+\]
+Since $q_0\leq\sqrt m$ and $h$ is decreasing on the relevant interval, we
+obtain
+\[
+  h(q_0)\geq h(\sqrt m)
+  =\frac{(\sqrt m-1)^2}{\sqrt m}
+  =\sqrt m-2+\frac1{\sqrt m}>\sqrt m-2.
+\]
+Multiplying by $A$ proves the result.
+\end{proof}
+
+The least-factor estimate rules out every composite competitor once the
+backward distance to the preceding prime is sufficiently small.
+
+\begin{theorem}[Prime-gap criterion]\label{thm:prime-gap-criterion}
+Let $p=P(A+1)$, and assume that
+\begin{equation}\label{eq:sqrt-gap-criterion}
+  \boxed{A+1-p\leq\sqrt p-2}.
+\end{equation}
+Under this assumption, we have
+\[
+  \boxed{M(A)=A(p-1).}
+\]
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:composite-reduction}, only composite
+$p<m\leq A+1$ require consideration.  Theorem~\ref{thm:composite-loss} and
+Lemma~\ref{lem:least-factor-loss} give
+\[
+  g<A(m-1)-A(\sqrt m-2).
+\]
+Since $m>p$ and \eqref{eq:sqrt-gap-criterion} holds, we have
+\[
+  m-p\leq A+1-p\leq\sqrt p-2<\sqrt m-2.
+\]
+Combining these inequalities yields
+$g<A(m-1)-A(m-p)=A(p-1)$.  The prime staircase construction
+attains $A(p-1)$.
+\end{proof}
+
+The theorem identifies the threshold at which prime-gap estimates imply
+optimality of the prime construction: the backward distance from $A+1$ to
+its preceding prime must be at most the square-root threshold.  A single
+divisor does not always suffice.  At $A=9$, $p=7$, and
+\[
+  g\leq60\quad(m=9,q=3),
+  \qquad g\leq61\quad(m=10,q=2),
+\]
+whereas the sharp value is $54$.  The additional anchoring and Kunz
+propagation of Section~\ref{sec:small-values} are genuinely stronger.
+
+\section{Consequences of prime-gap estimates}\label{sec:prime-gaps}
+
+Known information on consecutive prime gaps enters the extremal problem
+through Theorem~\ref{thm:prime-gap-criterion}.  It yields three statements
+with distinct statuses: finite computer-assisted verification, unconditional
+density-one validity, and conditional eventual validity.
+
+\begin{proposition}[Finite verification of the composite criterion]
+\label{prop:criterion-computation}
+For $1\leq A\leq10^8$, every composite integer $m$ satisfying
+$P(A+1)<m\leq A+1$ also satisfies inequality~\eqref{eq:loss-versus-capacity}
+for at least one prime divisor $q\mid m$, except precisely for
+\[
+  (A,m)=(3,4),(8,9),(9,9),(9,10).
+\]
+\end{proposition}
+
+\begin{proof}[Computer-assisted proof]
+The accompanying directory \compdir{}
+contains \path{staircase_criterion.c}.  This exact integer computation factors
+every relevant $m$ and tests \eqref{eq:loss-versus-capacity}.  It does not enumerate
+semigroups or compute gap progressions.  The completed run checked
+$1{,}449{,}077{,}567$ pairs and returned exactly the four displayed failures.
+Its output is recorded in \path{staircase_criterion_1e8.log} in the same
+directory.
+\end{proof}
+
+The case $(3,4)$ gives the genuine exception \eqref{eq:M3}; the case
+$(8,9)$ is covered by Theorem~\ref{thm:M8-computation}; and the two cases at
+$A=9$ are covered by Theorem~\ref{thm:plateau-nine}.
+
+\begin{computertheorem}[Prime staircase formula in the verified range]
+\label{thm:verified-range}
+For every integer $A$ satisfying
+\[
+  1\leq A\leq4\cdot10^{18},
+  \qquad A\neq 3,
+\]
+we have
+\[
+  \boxed{M(A)=A(P(A+1)-1).}
+\]
+Moreover, $M(3)=7$.
+\end{computertheorem}
+
+\begin{proof}
+Proposition~\ref{prop:criterion-computation} and the three special cases
+settle $A\leq10^8$.  Above that range, the computation of Oliveira e Silva,
+Herzog, and Pardi shows that prime gaps with lower prime below
+$4\cdot10^{18}$ are at most $1476$
+\cite{oliveira-silva-herzog-pardi,oliveira-gap-table}.  Therefore, for composite
+$A+1$ in the remaining interval, the backward prime distance satisfies
+\[
+  A+1-P(A+1)\leq1475<\sqrt{P(A+1)}-2,
+\]
+and Theorem~\ref{thm:prime-gap-criterion} applies.  If $A+1$ is prime, the
+left side of \eqref{eq:sqrt-gap-criterion} is zero, so the hypothesis also
+holds.
+\end{proof}
+
+The finite range does not control the possible exceptions beyond its
+endpoint.  To obtain an unconditional asymptotic statement, let $p^+$ denote
+the prime following $p$ and define $g_p=p^+-p$.
+
+\begin{theorem}[Density-one prime staircase]\label{thm:density-one}
+For every $\varepsilon>0$, the exceptional set satisfies
+\[
+  \#\{A\leq x:M(A)\neq A(P(A+1)-1)\}
+  =O_\varepsilon(x^{73/100+\varepsilon}).
+\]
+In particular, the prime staircase formula holds on a set of natural density
+$1$.
+\end{theorem}
+
+\begin{proof}
+If \eqref{eq:sqrt-gap-criterion} fails for $p=P(A+1)$, then, apart from
+finitely many small primes, $g_p>\sqrt p-1$.  At most $g_p$ potentially
+exceptional values of $A$ lie in the gap following $p$.  This observation
+gives
+\[
+  E(x)\ll\sum_{\substack{p\leq x+1\\g_p>\sqrt p-1}}g_p.
+\]
+On a dyadic block $X<p\leq2X$, and for $X$ sufficiently large,
+$\sqrt p-1\geq\sqrt X-1\geq\frac12\sqrt X$.  Consequently, on the
+restricted set where $g_p>\sqrt p-1$, we have
+\[
+  g_p\leq2X^{-1/2}g_p^2.
+\]
+It follows that
+\[
+  \sum_{\substack{X<p\leq2X\\g_p>\sqrt p-1}}g_p
+  \ll X^{-1/2}\sum_{X<p\leq2X}g_p^2.
+\]
+Stadlmann's estimate
+\[
+  \sum_{p\leq Y}g_p^2
+  \ll_\varepsilon Y^{123/100+\varepsilon}
+\]
+therefore gives $O_\varepsilon(X^{73/100+\varepsilon})$ on each block
+\cite{stadlmann-mean-square}.  Dyadic summation proves the theorem.
+\end{proof}
+
+This is a density-one conclusion: it allows a zero-density exceptional set
+and does not assert that the formula holds for every sufficiently large $A$.
+
+\begin{remark}
+If one instead uses Heath-Brown's classical mean-square estimate
+\[
+  \sum_{p\leq X}g_p^2
+  \ll_\varepsilon X^{23/18+\varepsilon},
+\]
+then the same argument gives the weaker exceptional-set bound
+$O_\varepsilon(x^{7/9+\varepsilon})$ \cite{heath-brown-iii}.  Stadlmann's
+more recent improvement supplies the sharper density-one estimate stated
+above.
+\end{remark}
+
+The density-one theorem still permits infinitely many exceptions.  Eventual
+validity follows from the following square-root-scale hypothesis.
+
+\begin{hypothesis}[Square-root gap hypothesis $H_{\sqrt{\ }}$]
+\label{hyp:sqrt-gap}
+For all sufficiently large primes $p$, we have
+\[
+  g_p\leq\sqrt p-1.
+\]
+\end{hypothesis}
+
+\begin{conditionaltheorem}\label{thm:conditional-staircase}
+Under Hypothesis~\ref{hyp:sqrt-gap}, the formula
+\[
+  \boxed{M(A)=A(P(A+1)-1)}
+\]
+holds for all sufficiently large $A$.
+\end{conditionaltheorem}
+
+\begin{proof}
+We set $p=P(A+1)$.  If $A+1$ is composite, then
+$A+1-p\leq g_p-1\leq\sqrt p-2$; if it is prime, the left side is zero.
+Theorem~\ref{thm:prime-gap-criterion} applies.
+\end{proof}
+
+Several standard conjectures on prime gaps are much stronger than
+Hypothesis~\ref{hyp:sqrt-gap}.  For example, Cram\'er's conjectural bound
+$g_p=O((\log p)^2)$, as well as the usual prime-gap consequences of
+Firoozbakht's conjecture, imply Hypothesis~\ref{hyp:sqrt-gap} for all
+sufficiently large $p$
+\cite{cramer-prime-gaps,kourbatov-firoozbakht}.  Therefore, either conjecture
+would imply the eventual prime-staircase formula through
+Theorem~\ref{thm:prime-gap-criterion}.  Andrica's conjecture, by contrast,
+does not provide the constant required by Hypothesis~\ref{hyp:sqrt-gap}
+\cite{andrica-conjecture}.
+
+Independently of any prime-gap hypothesis, the quadratic upper bound is
+attained exactly when $A+1$ is prime.
+
+\begin{theorem}\label{thm:square-characterization}
+For every $A\geq1$, we have
+\[
+  \boxed{M(A)=A^2\quad\Longleftrightarrow\quad A+1\text{ is prime}.}
+\]
+\end{theorem}
+
+\begin{proof}
+If $A+1$ is prime, Proposition~\ref{prop:prime-staircase} gives genus $A^2$,
+and Corollary~\ref{cor:sqrt-bound} gives the reverse inequality.  Suppose
+$A+1$ is composite.  If $m\leq A$, then
+$g\leq A(m-1)\leq A(A-1)<A^2$.  If $m=A+1$, any prime divisor $q\mid m$
+gives a strictly positive loss in \eqref{eq:composite-loss}.  These exhaust
+the possible multiplicities.
+\end{proof}
+
+Even when the exact staircase formula is not known, the distance to the
+preceding prime controls its deficit.  We define
+\[
+  \Delta(A)=A^2-M(A).
+\]
+
+\begin{theorem}[Unconditional deficit estimate]\label{thm:deficit}
+For every $A\geq1$, the deficit satisfies
+\[
+  \boxed{0\leq\Delta(A)\leq A(A+1-P(A+1)).}
+\]
+In addition, the pointwise estimate gives
+\[
+  \boxed{\Delta(A)\ll A^{1.525}},
+  \qquad
+  \boxed{M(A)=A^2+O(A^{1.525})=(1+o(1))A^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+The first assertion combines $M(A)\leq A^2$ with
+Corollary~\ref{cor:prime-staircase-lower}.  Baker, Harman, and Pintz prove
+\[
+  A+1-P(A+1)\ll A^{0.525}
+\]
+for sufficiently large $A$ \cite{baker-harman-pintz}.  This is the relevant
+unconditional pointwise short-interval estimate.  Substitution gives the
+deficit estimate, and division by $A^2$ gives the asymptotic equivalence.
+\end{proof}
+
+At every $A\neq 3$ for which the prime staircase formula is proved, the
+normalized deficit is
+\begin{equation}\label{eq:normalized-deficit}
+  \boxed{\frac{\Delta(A)}A=A+1-P(A+1).}
+\end{equation}
+Therefore, throughout the computer-verified range and on the density-one set of
+Theorem~\ref{thm:density-one}, the normalized deficit is exactly the backward
+prime distance.  Outside the proved cases, \eqref{eq:normalized-deficit}
+remains conjectural.
+
+\section{Genus realization and inverse plateaux}\label{sec:realization}
+
+The prime construction can be varied without losing control of the AP
+length.  Allowing the Kunz coordinates to range in a bounded band produces
+all intermediate genera needed below.
+
+\begin{lemma}[Bounded-band realization]\label{lem:bounded-band}
+Let $p\leq A+1$ be prime, let $1\leq B\leq A$, and set
+$L_B=\lceil B/2\rceil$.  Every vector
+\[
+  (k_1,\ldots,k_{p-1})\in\{L_B,L_B+1,\ldots,B\}^{p-1}
+\]
+is a valid Kunz vector of multiplicity $p$, and its semigroup satisfies
+\[
+  \boxed{\AP(S)\leq\max\{p-1,B\}\leq A.}
+\]
+\end{lemma}
+
+\begin{proof}
+For every target coordinate, we have
+$k_i+k_j\geq2L_B\geq B\geq k_r$.  Hence all unwrapped Kunz inequalities hold;
+the wrapped inequalities are weaker.  If $p\nmid d$, every $p$ consecutive
+terms contain a positive multiple of $p$, giving $\AP_d(S)\leq p-1$.  If
+$p\mid d$, a progression remains in one residue class, which contains at
+most $B$ gaps.
+\end{proof}
+
+\begin{proposition}[Bounded-band genera]\label{prop:bounded-band-genera}
+For every prime $p\leq A+1$ and $1\leq B\leq A$, each integer genus in the
+interval
+\[
+  \left\lceil\frac B2\right\rceil(p-1)
+  \leq g\leq B(p-1)
+\]
+is realized by a semigroup with $\AP(S)\leq A$.
+\end{proposition}
+
+\begin{proof}
+Start with all $p-1$ coordinates equal to $L_B$.  Any integer increment from
+$0$ to $(B-L_B)(p-1)$ can be distributed among the coordinates, each with
+capacity $B-L_B$.  It follows that every intermediate coordinate sum occurs,
+and the genus equals that sum.
+\end{proof}
+
+The bounded bands overlap as their upper coordinate bound varies.  Let
+$p=P(A+1)$ and $n=p-1$.  For $1\leq B\leq A$, put
+\[
+  I_B=\left[\left\lceil\frac B2\right\rceil n,Bn\right].
+\]
+The intervals cover $[n,An]$: $I_1=\{n\}$, and
+$\lceil(B+1)/2\rceil\leq B$ shows that consecutive intervals overlap.
+
+\begin{theorem}[Realization up to the prime staircase]
+\label{thm:realization-staircase}
+For every $A\geq1$ and every integer $g$ satisfying
+\[
+  1\leq g\leq A(P(A+1)-1),
+\]
+there exists a numerical semigroup $S$ with
+\[
+  g(S)=g,
+  \qquad \AP(S)\leq A.
+\]
+Equivalently, the set of realized genera satisfies
+\[
+  \boxed{\{g(S):\AP(S)\leq A\}
+  \supseteq\{1,\ldots,A(P(A+1)-1)\}.}
+\]
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:bounded-band-genera} and the interval coverage realize
+every genus in $[n,An]$.  Since $n=p-1\leq A$, it remains only to realize
+$1\leq g\leq A$.  The ordinary semigroup
+$\{0,g+1,g+2,\ldots\}$ has gap set $\{1,\ldots,g\}$ and $\AP(S)=g$.
+This proof is unconditional and does not use the prime staircase conjecture.
+\end{proof}
+
+This realization result allows the extremal function to be inverted at every
+level where the staircase formula is known.  We define
+\[
+  a(g)=\min\{\AP(S):g(S)=g\},
+  \qquad
+  A_M(g)=\min\{A:M(A)\geq g\}.
+\]
+By definition, $A_M(g)\leq a(g)$.  A global equality does not follow formally:
+if $M(A)$ were larger than the prime lower bound, the preceding theorem would
+not realize the intervening genera.
+
+\begin{corollary}[Inverse function at an exact staircase level]
+\label{cor:inverse-exact-level}
+Suppose that the exact staircase formula
+\[
+  M(A)=A(P(A+1)-1)
+\]
+holds.  It follows that every $1\leq g\leq M(A)$ is realized with
+$\AP(S)\leq A$.  If
+\[
+  A_0=\min\{A:M(A)\geq g\}
+\]
+and the staircase formula is known at $A_0$, then
+\[
+  \boxed{a(g)=A_0.}
+\]
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:realization-staircase} gives $a(g)\leq A_0$, and the
+definition of $A_0$ gives $A_0\leq a(g)$.
+\end{proof}
+
+\begin{computercorollary}[Inverse staircase in the verified range]
+\label{cor:verified-inverse}
+For every $g\leq M(4\cdot10^{18})$, we have
+\[
+  \boxed{a(g)=\min\{A:g\leq M(A)\},}
+\]
+where in the relevant range
+\[
+  M(A)=
+  \begin{cases}
+    7,&A=3,\\
+    A(P(A+1)-1),&A\neq 3.
+  \end{cases}
+\]
+\end{computercorollary}
+
+\begin{proof}
+The minimizing $A$ is at most $4\cdot10^{18}$ by monotonicity.  Apply
+Theorem~\ref{thm:verified-range} and
+Corollary~\ref{cor:inverse-exact-level}; when $A=3$, genera through $6$ are
+covered by Theorem~\ref{thm:realization-staircase}, and genus $7$ by
+$\langle4,7,13\rangle$.
+\end{proof}
+
+Exact consecutive values of $M$ now translate directly into plateaux for the
+inverse function.
+
+\begin{corollary}\label{cor:inverse-plateaux}
+Suppose the staircase formula is known at $A$ and $M(A-1)$ is known exactly.
+Under these assumptions, the implication
+\[
+  M(A-1)<g\leq M(A)
+  \quad\Longrightarrow\quad
+  \boxed{a(g)=A.}
+\]
+holds.
+In particular, this implication gives
+\[
+  \boxed{a(g)=10\qquad(55\leq g\leq100).}
+\]
+\end{corollary}
+
+\begin{proof}
+The lower bound follows from the definition of $M(A-1)$ and the upper bound
+from Corollary~\ref{cor:inverse-exact-level}.  The example uses
+$M(9)=54$ and $M(10)=100$; the latter follows from
+Theorem~\ref{thm:square-characterization} because $11$ is prime.
+\end{proof}
+
+The plateau length is $M(A)-M(A-1)$ whenever the two consecutive values and
+the realization at $A$ are known.  The set of levels at which the exact
+formula holds simultaneously at $A-1$ and $A$ has density one, since the
+exceptional set in Theorem~\ref{thm:density-one} and its unit translate both
+have density zero.  This density statement concerns staircase levels and
+does not by itself give a global closed formula for $a(g)$.
+
+\section{Further directions}\label{sec:further}
+
+The results above leave one main structural question unresolved: whether the
+prime staircase formula holds for every \(A\neq 3\).  The prime-gap input
+explains the finite verification and density-one results, but the harder
+remaining step lies within the semigroup problem itself.  The arguments of
+Sections~5 and~6 exclude most multiplicities using the loss from a single
+divisor orbit; what remains is a narrow class of composite multiplicities for
+which this first loss is insufficient.  Understanding how the different
+orbit constraints interact with the Kunz inequalities is the central task.
+
+Two secondary directions concern settings in which the invariant may be
+useful beyond the extremal problem itself.  Weierstrass semigroups and
+one-point algebraic-geometry codes provide one such setting, because the
+arrangement of the gaps already plays an important role.  Another consists of
+special classes of numerical semigroups, such as symmetric semigroups, for
+which arithmetic progressions in the gap set can be related directly to
+arithmetic progressions among the nongaps.
+
+To isolate the remaining structural obstruction, let \(p=P(A+1)\), and
+suppose that a composite multiplicity \(m>p\) survives the single-divisor
+criterion of Theorem~\ref{thm:prime-gap-criterion}.
+Lemma~\ref{lem:least-factor-loss} then forces
+\[
+    m-p>\sqrt m-2.
+\]
+Thus, a surviving multiplicity can occur only when \(A+1\) lies unusually far
+from the preceding prime.  Moreover, the least-factor estimate is weakest when
+the least prime factor of \(m\) is close to \(\sqrt m\).  This singles out prime
+squares and balanced semiprimes as the most natural cases to understand.
+
+The first example already occurs at \(A=9\).  The multiplicities
+\(9=3^2\) and \(10=2\cdot 5\) lie between the consecutive primes \(7\) and
+\(11\), and the single-divisor estimate does not recover the sharp bound.
+For \(m=9\), the additional information comes from anchoring.  The Run Lemma
+controls not only the minimum Kunz coordinate on an orbit but also the
+position at which that minimum first occurs.  Once this positional information
+is combined with the Kunz inequalities, bounds propagate to further
+coordinates and recover the correct genus.
+
+The same mechanism should persist more generally.  For instance, when
+\(m=q^2\), every nonzero \(q\)-orbit satisfies
+\[
+    \min_{i\in\mathcal O} k_i\leq
+    \left\lfloor\frac{A}{q}\right\rfloor .
+\]
+These small coordinates cannot be placed independently because the Kunz
+inequalities relate them through addition in \(\Z/q^2\Z\).
+The problem is therefore not only to measure the loss on each orbit but also to
+understand how minima on different orbits force one another.
+
+This suggests the following more precise question.
+
+\begin{problem}[Propagated loss]\label{prob:propagated-loss}
+Find a quantitative genus-loss estimate for prime-square and balanced
+semiprime multiplicities that combines Run-Lemma anchoring with Kunz
+subadditivity, and that is strong enough to rule out the remaining composite
+competitors in the prime staircase conjecture.
+\end{problem}
+
+Even a sufficiently uniform additional loss would already have consequences.
+For example, a bound of the form
+\[
+    g\leq A(m-1)-cAm
+\]
+with some fixed \(c>0\) in the residual cases, together with
+\(P(x)=(1-o(1))x\), would eliminate such multiplicities for all sufficiently
+large \(A\).  A sharper analysis of the propagation phenomenon may therefore
+lead to a proof of the prime staircase conjecture without any hypothesis on
+prime gaps.
+
+Beyond the extremal problem, Weierstrass semigroups provide a natural setting
+in which the arrangement of gaps matters.  If \(P\) is a rational point on a
+smooth projective curve, then its Weierstrass semigroup \(H(P)\) is numerical
+and its gap set has cardinality equal to the genus
+\cite{stichtenoth-function-fields}.  In the theory of one-point
+algebraic-geometry codes, the Feng--Rao order bound depends on additive
+relations among nongaps, while consecutive Weierstrass gaps are already known
+to influence distance estimates
+\cite{stichtenoth-function-fields,garcia-kim-lax}.  It is therefore natural to
+ask whether the finer spectrum \(\Sigma(H(P))\), rather than only
+\(\operatorname{AP}(H(P))\), carries useful information about the Feng--Rao
+sequence or the order bound.  Structured Weierstrass semigroups, particularly
+those arising from recursive or otherwise highly organized families, provide
+natural test cases for this question.
+
+Symmetric numerical semigroups provide another structured class.  In this
+case, arithmetic progressions of gaps admit a simple reflection across the
+Frobenius number.  Suppose that
+\[
+x,x+d,\ldots,x+(k-1)d\subseteq G(S).
+\]
+Symmetry then gives the reflected progression
+\[
+F-x-(k-1)d,\ldots,F-x\subseteq S\cap[0,F].
+\]
+Consequently, the part of the spectrum \(\Sigma(S)\) arising from gap
+differences \(d\in G(S)\setminus\{1\}\) may also be viewed through arithmetic
+progressions among the nongaps below \(F\).  It would be interesting to
+determine how much of the gap spectrum can be recovered from this reflected
+picture.
+
+These considerations lead to four concrete questions.
+
+\begin{enumerate}
+    \item Establish a propagated genus-loss theorem for the residual
+    prime-square and balanced-semiprime multiplicities by combining
+    Run-Lemma anchoring with Kunz subadditivity.  Such a theorem is the main
+    structural route to proving the prime staircase conjecture for every
+    \(A\neq3\) without prime-gap hypotheses or finite computation.
+
+    \item Find a conceptual replacement for the remaining finite certificates,
+    especially the multiplicities \(9\) and \(10\) at \(A=9\).
+
+    \item Determine whether \(A=3\) is the only exception to the prime
+    staircase formula and, separately, classify the semigroups attaining
+    \(M(A)\).  The value predicted by the conjecture does not imply uniqueness
+    of a maximizing semigroup.
+
+    \item Understand the gap-difference part of \(\Sigma(S)\), in particular
+    for structured classes such as symmetric and Weierstrass semigroups.
+\end{enumerate}
+
+The first question is the immediate continuation of the present work.  The
+calculation at \(A=9\) suggests that the missing ingredient is a systematic
+way of propagating the positional information supplied by the Run Lemma
+through the Kunz inequalities.
+
+\appendix
+
+\section{Computational certificates and reproducibility}
+\label{app:computation}
+
+All filenames in this appendix refer to files in the accompanying directory
+\compdir{}.
+
+The finite search used in Proposition~\ref{prop:finite-certificate} was
+performed by \path{plateau_certificate.c}; its corresponding output is
+designated \path{plateau_certificate.log}.  It enumerates the bounded Kunz boxes for
+$m=8,9,10$ and uses only the Kunz inequalities and the explicitly stated
+Run-Lemma constraints.  It does not construct full gap sets or compute
+$\AP_d(S)$ directly, and it does not assert that these necessary constraints
+characterize the condition $\AP(S)\leq9$.  A second exhaustive enumeration,
+implemented in \path{plateau_certificate_independent.c}, uses a different
+branching order and a disjunctive encoding of the orbit conditions.  It
+produced the same maxima and the same unique maximizing vectors; its output is
+recorded in \path{plateau_certificate_independent.log}.  Both implementations
+and their outputs accompany this draft.
+
+As an independent check, the program \path{direct_ap_search.c}
+constructs gap sets and computes their arithmetic progressions directly.
+Its \texttt{a8} mode proves Theorem~\ref{thm:M8-computation}; the output is
+designated \path{direct_ap_A8.log}.  Its \texttt{table} mode produces the
+comparison displayed after Conjecture~\ref{conj:prime-staircase}; the output
+is designated \path{direct_ap_table_12.log}.  Unlike the finite Kunz
+certificate, this program constructs each candidate gap set and computes the
+arithmetic progressions themselves.  Its \texttt{extremizer9} mode directly
+checks the multiplicity-$9$ sharpness example, with output in
+\path{direct_ap_extremizer9.log}, while \texttt{tests} runs the elementary
+regression checks recorded in \path{direct_ap_tests.log}.
+
+The exact inequality calculation in
+Proposition~\ref{prop:criterion-computation} was performed by
+\path{staircase_criterion.c}; the file
+\path{staircase_criterion_1e8.log} records the run through $10^8$.  This
+calculation factors the relevant multiplicities and tests the exact composite
+criterion; it does not enumerate numerical semigroups.  The
+companion \path{staircase_chunk.c} performs the same calculation on a
+specified interval, with a sample output in \path{staircase_chunk_sample.log}.
+A second complete execution on $1\leq A\leq10^8$ is recorded in
+\path{staircase_chunk_1e8.log}; it returns the same pair count and the same
+four failures as \path{staircase_criterion_1e8.log}.
+
+For reproducibility, the direct search uses dynamically sized Kunz arrays and
+a dynamically allocated gap array indexed from $0$ through the computed
+Frobenius number.
+An earlier fixed-width 128-bit mask overflowed when a possible gap position
+exceeded $127$, producing a false discrepancy at $A=12$; widening the
+representation removed it.  Future extensions should allocate on the order
+of $A(A+1)$ positions and avoid fixed Kunz arrays tied to a small
+multiplicity.
+
+% TODO before submission: reproduce the 10^8 criterion computation
+% independently, preferably with
+% computational_reproducibility_files/staircase_chunk.c on a different compiler
+% and machine, and retain checksums and complete log files.
+
+\section*{Acknowledgments}
+
+An early version of this project began to take shape during AGRA V---A School on
+Arithmetic, Groups and Analysis, held in Popayán, Colombia, from July 27 to
+August 7, 2026.  I am grateful to the organizers for providing a stimulating
+environment in which some of the first ideas and computations behind this work
+were developed.
+
+\section*{Funding}
+
+The author was supported by the Fundação Carlos Chagas Filho de Amparo à Pesquisa
+do Estado do Rio de Janeiro (FAPERJ) through the Nota 10 Excellence Scholarship.
+
+\section*{Conflict of interest}
+
+The author declares no conflict of interest.
+
+\section*{Code and data availability}
+
+The source code, complete computational logs, concise certificate, checksums,
+and reproduction instructions accompany this draft but are not yet deposited
+in a permanent public repository.  The package contains
+the primary and independent plateau certificates, the direct AP checker, the
+two staircase-criterion programs, and their complete logs.  The directory
+\compdir{} contains compilation
+and reproduction commands in \path{README_COMPUTATIONS.md}; the generated
+summary and checksums are \path{CERTIFICATE.txt} and \path{SHA256SUMS}.
+These files will be placed in a permanent repository
+before public circulation.
+
+% TODO BEFORE SUBMISSION:
+% Upload the computational source, logs, and reproduction instructions to a
+% public GitHub repository; create an archival Zenodo release and replace the
+% preceding sentence by the permanent repository URL and DOI.  The deposit
+% should archive the complete computational_reproducibility_files directory.
+
+\printbibliography
+
+\end{document}

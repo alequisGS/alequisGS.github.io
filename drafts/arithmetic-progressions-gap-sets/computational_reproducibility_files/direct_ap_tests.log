@@ -1,0 +1,5 @@
+UNIT_TEST name=ordinary_m6 genus=5 AP=5 status=PASS
+UNIT_TEST name=generators_4_7_13 genus=7 AP=3 status=PASS
+UNIT_TEST name=uniform_prime_m5_A4 genus=16 AP=4 status=PASS
+UNIT_TEST name=extremizer_m9_A9 genus=54 AP=9 status=PASS
+UNIT_TEST_SUMMARY status=PASS

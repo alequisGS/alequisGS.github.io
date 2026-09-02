@@ -1,0 +1,4 @@
+KUNZ_RESULT m=8 max_genus=44 maximizers=1 vector=(7,9,2,9,4,4,9) theoretical=4782969 evaluated_leaves=3 nodes=11205 kunz_pruned=17467 orbit_pruned=29679 bound_pruned=8405
+KUNZ_RESULT m=9 max_genus=54 maximizers=1 vector=(3,3,6,6,9,9,9,9) theoretical=43046721 evaluated_leaves=6 nodes=105139 kunz_pruned=187985 orbit_pruned=301620 bound_pruned=74100
+KUNZ_RESULT m=10 max_genus=53 maximizers=1 vector=(9,9,9,8,6,4,4,3,1) theoretical=387420489 evaluated_leaves=1 nodes=214957 kunz_pruned=404640 orbit_pruned=471730 bound_pruned=162534
+KUNZ_ASSERTIONS status=PASS

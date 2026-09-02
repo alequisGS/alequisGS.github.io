@@ -1,0 +1,4 @@
+INDEPENDENT_RESULT m=8 max_genus=44 maximizers=1 vector=(7,9,2,9,4,4,9) nodes=2052 leaves=3 kunz_rejects=3268 orbit_rejects=3774 bound_prunes=1736
+INDEPENDENT_RESULT m=9 max_genus=54 maximizers=1 vector=(3,3,6,6,9,9,9,9) nodes=4854 leaves=5 kunz_rejects=7139 orbit_rejects=11475 bound_prunes=4006
+INDEPENDENT_RESULT m=10 max_genus=53 maximizers=1 vector=(9,9,9,8,6,4,4,3,1) nodes=56616 leaves=1 kunz_rejects=58718 orbit_rejects=215070 bound_prunes=39491
+INDEPENDENT_ASSERTIONS status=PASS

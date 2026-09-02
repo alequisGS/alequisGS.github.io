@@ -95,7 +95,7 @@
 \newcommand{\OO}{\mathcal O}
 
 \usepackage[
-  backend=bibtex,
+  backend=biber,
   style=numeric,
   sorting=nyt,
   giveninits=true,
@@ -164,7 +164,7 @@ Our geometric tool is the Corti--Heuberger classification by log del Pezzo casca
 Our first structural result is the following.
 
 \begin{theorem}\label{thm:general-main}
-Let \(X\) be a log del Pezzo surface whose singularities are \(p_1,\dots,p_r\), all of type \(\frac13(1,1)\). Let \(\XX\) be its canonical smooth Deligne--Mumford stack, and let \(\widetilde X\to X\) be the minimal resolution. Then \(\Db(\coh \XX)\) admits a full exceptional collection of length
+Let \(X\) be a log del Pezzo surface whose singularities are \(p_1,\dots,p_r\), all of type \(\frac13(1,1)\). Let \(\XX\) be its canonical smooth Deligne--Mumford stack, and let \(\widetilde X\to X\) be the minimal resolution. The category \(\Db(\coh \XX)\) admits a full exceptional collection of length
 \[
 \ell=12-K_X^2+\frac{4r}{3}.
 \]
@@ -177,7 +177,7 @@ be a full exceptional collection on \(\Db(\coh \widetilde X)\), where
 \[
 N=\rk K_0(\widetilde X)=12-K_X^2+\frac r3.
 \]
-If \(\Phi:\Db(\coh \widetilde X)\to \Db(\coh \XX)\) is the Ishii--Ueda fully faithful functor, then
+If \(\Phi:\Db(\coh \widetilde X)\to \Db(\coh \XX)\) is the Ishii--Ueda fully faithful functor, the ordered collection
 \[
 \left\langle
 \mathcal E_{p_1},\dots,\mathcal E_{p_r},
@@ -208,7 +208,7 @@ This geometry permits an explicit treatment of \(X_{10}\): we display a full exc
 For a blow-up \(\beta_i:Y_i\to Y_{i-1}\) with exceptional curve \(D_i\), Orlov's blow-up formula contributes \(\OO_{D_i}(-1)\). We denote its image after pullback through the subsequent blow-ups by \(G_i\in\Db(\coh\widetilde X_{10})\), and retain the notation \(\mathcal E_p\) and \(\Phi\) introduced above.
 
 \begin{theorem}\label{thm:X10-main}
-Let \(X_{10}\subset \Pp(1,2,3,5)\) be a general member of the family of degree-\(10\) log del Pezzo hypersurfaces. Then its unique singularity \(p\) is of type \(\frac13(1,1)\), and \(X_{10}\) is the anticanonical model of the blow-up of \(\Pp(1,1,3)\) at eight general smooth points.
+Let \(X_{10}\subset \Pp(1,2,3,5)\) be a general member of the family of degree-\(10\) log del Pezzo hypersurfaces. Its unique singularity \(p\) is of type \(\frac13(1,1)\), and \(X_{10}\) is the anticanonical model of the blow-up of \(\Pp(1,1,3)\) at eight general smooth points.
 
 On minimal resolutions, this gives a sequence
 \[
@@ -220,7 +220,7 @@ Y_1
 \xrightarrow{\beta_1}
 Y_0=\F_3,
 \]
-where each \(\beta_i\) is the blow-up of a point away from the negative section \(C_0\subset \F_3\) and its successive strict transforms. Let \(f\) be the fiber class on \(\F_3\), and let \(\sigma:\widetilde X_{10}\to \F_3\) be the composition of the \(\beta_i\). Then \(\Db(\coh\mathcal X_{10})\) has the full exceptional collection of length \(13\) given by
+where each \(\beta_i\) is the blow-up of a point away from the negative section \(C_0\subset \F_3\) and its successive strict transforms. Let \(f\) be the fiber class on \(\F_3\), and let \(\sigma:\widetilde X_{10}\to \F_3\) be the composition of the \(\beta_i\). The category \(\Db(\coh\mathcal X_{10})\) has the following full exceptional collection of length \(13\):
 \[
 \left\langle
 \mathcal E_p,
@@ -251,7 +251,7 @@ The geometry and categorical constructions in \cref{thm:X10-main} are developed 
 \begin{theorem}[Brauer obstruction in the Corti--Heuberger cascades]
 \label{thm:brauer-cascades-intro}
 Let \(X\) belong to a Corti--Heuberger cascade with \(k\) singular points, all
-of type \(\frac13(1,1)\). Then
+of type \(\frac13(1,1)\). Its Brauer group is
 \[
 \Br(X)
 \cong
@@ -289,7 +289,7 @@ Most of the foundational material on log del Pezzo surfaces discussed in this se
 A \emph{log del Pezzo surface} is a normal projective surface \(X\) with klt singularities such that \(-K_X\) is ample.
 \end{definition}
 
-For normal surfaces, klt singularities are precisely quotient singularities \cite[Corollary 5.21]{Kollar1998}. Moreover, klt surface singularities are rational \cite[Theorem 5.22]{Kollar1998}. Hence, if \(f:\widetilde X\to X\) is any resolution, then \(f_*\OO_{\widetilde X}=\OO_X\) and \(R^i f_*\OO_{\widetilde X}=0\) for all \(i>0\). Consequently, the Leray spectral sequence gives a canonical isomorphism
+For normal surfaces, klt singularities are precisely quotient singularities \cite[Corollary 5.21]{Kollar1998}. Moreover, klt surface singularities are rational \cite[Theorem 5.22]{Kollar1998}. Hence, if \(f:\widetilde X\to X\) is any resolution, we have \(f_*\OO_{\widetilde X}=\OO_X\) and \(R^i f_*\OO_{\widetilde X}=0\) for all \(i>0\). Consequently, the Leray spectral sequence gives a canonical isomorphism
 \[
 H^1(\widetilde X,\OO_{\widetilde X})
 \cong
@@ -299,7 +299,7 @@ H^1(X,\OO_X).
 Although the rationality statement is standard (see, for example, \cite[Lemma~1.3]{AlexeevNikulin}), we include the following short self-contained argument because it also fixes the intersection-theoretic conventions used below.
 
 \begin{proposition}\label{prop:log-del-pezzo-rational}
-Let \(X\) be a log del Pezzo surface, and let \(f:\widetilde X\to X\) be its minimal resolution. Then \(\widetilde X\) is a smooth rational surface. In particular, \(X\) is rational.
+Let \(X\) be a log del Pezzo surface, and let \(f:\widetilde X\to X\) be its minimal resolution. The surface \(\widetilde X\) is smooth and rational. In particular, \(X\) is rational.
 \end{proposition}
 
 \begin{proof}
@@ -355,7 +355,7 @@ Thus one such collection is
 \]
 
 \begin{theorem}[Orlov's blow-up formula {\cite[Theorem~4.3 and Corollary~4.4]{Orlov1993}}]\label{thm:orlov-blow-up}
-Let \(S\) be a smooth projective surface, and let \(\beta:\Bl_pS\to S\) be the blow-up of \(S\) at a point \(p\), with exceptional divisor \(E\). Then there is a semiorthogonal decomposition
+Let \(S\) be a smooth projective surface, and let \(\beta:\Bl_pS\to S\) be the blow-up of \(S\) at a point \(p\), with exceptional divisor \(E\). There is a semiorthogonal decomposition
 \[
 \Db(\coh \Bl_pS)
 =
@@ -363,7 +363,7 @@ Let \(S\) be a smooth projective surface, and let \(\beta:\Bl_pS\to S\) be the b
 \OO_E(-1),\beta^*\Db(\coh S)
 \right\rangle,
 \]
-where \(\OO_E(-1)\) is regarded as an object of \(\Db(\coh \Bl_pS)\) via the inclusion \(E\hookrightarrow \Bl_pS\). In particular, if \(\Db(\coh S)\) admits a full exceptional collection, then \(\Db(\coh \Bl_pS)\) also admits a full exceptional collection.
+where \(\OO_E(-1)\) is regarded as an object of \(\Db(\coh \Bl_pS)\) via the inclusion \(E\hookrightarrow \Bl_pS\). In particular, if \(\Db(\coh S)\) admits a full exceptional collection, the category \(\Db(\coh \Bl_pS)\) also admits one.
 \end{theorem}
 
 \begin{corollary}[{\cite[Theorem~5.6]{HillePerling2011}}]\label{cor:rational-surface-fec}
@@ -377,7 +377,7 @@ Every smooth projective rational surface is obtained from either \(\Pp^2\) or a 
 Combining \cref{prop:log-del-pezzo-rational} and \cref{cor:rational-surface-fec}, we obtain the following consequence.
 
 \begin{corollary}\label{cor:resolution-fec}
-Let \(X\) be a log del Pezzo surface, and let \(f:\widetilde X\to X\) be its minimal resolution. Then \(\Db(\coh \widetilde X)\) admits a full exceptional collection.
+Let \(X\) be a log del Pezzo surface, and let \(f:\widetilde X\to X\) be its minimal resolution. The category \(\Db(\coh \widetilde X)\) admits a full exceptional collection.
 \end{corollary}
 
 % ------------------------------------------------------------
@@ -420,7 +420,7 @@ In the cyclic case \(\frac1n(1,q)\), the special representations can be read fro
 \[
 i_0=3,\qquad i_1=1,\qquad i_2=0.
 \]
-Character indices are read modulo \(3\). Hence
+Character indices are read modulo \(3\). Hence the special representations satisfy
 \[
 \rho_{i_0}=\rho_3=\rho_0,
 \qquad
@@ -448,7 +448,7 @@ In the local notation of Ishii--Ueda, this corresponds to the object  \(\OO_0\ot
 \end{definition}
 
 \begin{theorem}[Ishii--Ueda {\cite[Theorem 1.4]{Ishii2015}}]\label{thm:ishii-ueda-global}
-Let \(X\) be a surface with at worst quotient singularities, let \(\XX\) be its canonical stack, and let \(Y\to X\) be the minimal resolution. Then there is a fully faithful functor
+Let \(X\) be a surface with at worst quotient singularities, let \(\XX\) be its canonical stack, and let \(Y\to X\) be the minimal resolution. There is a fully faithful functor
 \[
 \Phi:\Db(\coh Y)\to \Db(\coh \XX)
 \]
@@ -468,7 +468,7 @@ For the cyclic singularities \(\frac1n(1,1)\) used below, the exceptional collec
 We now prove the main theorem for canonical stacks.
 
 \begin{theorem}\label{thm:general-fec}
-Let \(X\) be a log del Pezzo surface whose singularities are all of type \(\frac13(1,1)\). Let \(\XX\) be its canonical stack, and let \(\widetilde X\to X\) be the minimal resolution. Suppose that the singular points of \(X\) are \(p_1,\dots,p_r\). Then there is a semiorthogonal decomposition
+Let \(X\) be a log del Pezzo surface whose singularities are all of type \(\frac13(1,1)\). Let \(\XX\) be its canonical stack, and let \(\widetilde X\to X\) be the minimal resolution. Suppose that the singular points of \(X\) are \(p_1,\dots,p_r\). There is a semiorthogonal decomposition
 \[
 \Db(\coh \XX)
 =
@@ -524,7 +524,7 @@ K_{\widetilde X}
 =
 f^*K_X-\frac13\sum_{i=1}^r C_i.
 \]
-The curves \(C_i\) are disjoint, and \(f^*K_X\cdot C_i=0\) for all \(i\). Hence
+The curves \(C_i\) are disjoint, and \(f^*K_X\cdot C_i=0\) for all \(i\). It follows that
 \[
 K_{\widetilde X}^2
 =
@@ -532,7 +532,7 @@ K_X^2+\frac19\sum_{i=1}^r C_i^2
 =
 K_X^2-\frac r3.
 \]
-Since \(\widetilde X\) is a smooth rational surface, we have \(\rho(\widetilde X)=10-K_{\widetilde X}^2\). Therefore
+Since \(\widetilde X\) is a smooth rational surface, we have \(\rho(\widetilde X)=10-K_{\widetilde X}^2\). Therefore, the Grothendieck-group rank is
 \[
 \rk K_0(\widetilde X)=2+\rho(\widetilde X)
 =
@@ -645,7 +645,8 @@ Therefore \cite[Theorem~2.12]{KKS2020} gives
 \mathcal A_0,\mathcal A_1,\mathcal A_2
 \right\rangle,
 \]
-where \(\mathcal A_i\) denotes the descended component. Moreover,
+where \(\mathcal A_i\) denotes the descended component. Moreover, the
+components satisfy
 \[
 \mathcal A_0\simeq \Db(K(3,1)\text{-mod}),
 \qquad
@@ -668,12 +669,13 @@ We will only need the following compatibility observation.
 \label{lem:kks-blowups}
 Let \(\beta:S'\to S\) be the blow-up of a smooth point on a smooth surface. Let
 \(C\subset S\) be a smooth curve, and assume that the center of \(\beta\) does
-not lie on \(C\). If \(C'\subset S'\) is the strict transform of \(C\), then
+not lie on \(C\). If \(C'\subset S'\) is the strict transform of \(C\), there is
+an isomorphism in \(\Db(\coh S')\):
 \[
 \OO_{C'}(-1)\simeq \beta^*\OO_C(-1)
 \]
-as objects of \(\Db(\coh S')\). In particular, if
-\(\OO_C(-1)\in \mathcal B\subset \Db(\coh S)\), then
+In particular, the inclusion
+\(\OO_C(-1)\in \mathcal B\subset \Db(\coh S)\) implies that
 \[
 \OO_{C'}(-1)\in \beta^*\mathcal B .
 \]
@@ -696,9 +698,9 @@ Brauer groups arises for the finite groups computed here. This is also the
 Brauer group entering the obstruction in \cite[Corollary~4.8]{KKS2020}.
 
 We use Bright's exact sequence for a normal surface \(X\) with rational
-singularities. If \(\tau:Y\to X\) is the minimal resolution and
-\(\Lambda_\tau\subset \Pic(Y)\) denotes the subgroup generated by the exceptional
-curves, then the intersection pairing induces a homomorphism
+singularities. Let \(\tau:Y\to X\) be the minimal resolution, and let
+\(\Lambda_\tau\subset \Pic(Y)\) denote the subgroup generated by the exceptional
+curves. The intersection pairing induces a homomorphism
 \[
 \theta:\Pic(Y)\longrightarrow \Lambda_\tau^\vee,
 \qquad
@@ -723,8 +725,9 @@ are smooth rational surfaces, their Brauer groups vanish.
 \end{remark}
 
 For \(X=\Pp(1,1,3)\), the minimal resolution is
-\(\tau:\F_3\to \Pp(1,1,3)\), and the exceptional curve is \(C_0\). Thus
-\(\Lambda_\tau=\Z C_0\), and we identify \(\Lambda_\tau^\vee\) with \(\Z\) by
+\(\tau:\F_3\to \Pp(1,1,3)\), and the exceptional curve is \(C_0\). The
+exceptional lattice is \(\Lambda_\tau=\Z C_0\), and we identify
+\(\Lambda_\tau^\vee\) with \(\Z\) by
 evaluating on \(C_0\). The fiber class \(f\) satisfies
 \[
 f\cdot C_0=1.
@@ -748,7 +751,7 @@ that \(Y\) is obtained from \(\F_3\) by blowing up eight smooth points away from
 \sigma:Y\longrightarrow \F_3
 \]
 be the resulting morphism, and let \(E\subset Y\) be the strict transform of
-\(C_0\). Then \(E\) is the unique exceptional curve of \(\nu\), and \(E^2=-3\).
+\(C_0\). The curve \(E\) is the unique exceptional curve of \(\nu\), and \(E^2=-3\).
 Hence \(\Lambda_\nu=\Z E\). Since the blow-up centers are away from \(C_0\),
 the pullback \(\sigma^*f\) satisfies
 \[
@@ -798,7 +801,7 @@ Every surface in an index-one family \(X_{k,d}\) of the corresponding cascade is
 
 The auxiliary families \(B_{1,16/3}\) and \(B_{2,8/3}\) may appear as outputs of a directed MMP; see \cite[Theorem~6 and Remark~7]{Corti2016}. The alternative contraction routes relating smooth-point blow-ups of these families to the chosen bases are described in \cite[Remark~9]{Corti2016}; the one-point case relevant to \(X_{10}\) is made explicit below.
 
-We now describe the inductive step. Let \(X\) be a surface in the family \(X_{k,d}\). Then \(X\) is obtained from \(Z_k\) by
+We now describe the inductive step. Let \(X\) be a surface in the family \(X_{k,d}\). The surface \(X\) is obtained from \(Z_k\) by
 \[
 K_{Z_k}^2-d
 \]
@@ -846,7 +849,7 @@ K_{X_{10}}^2=\frac{10}{1\cdot2\cdot3\cdot5}=\frac13.
 \]
 Thus a general \(X_{10}\subset\Pp(1,2,3,5)\) is a log del Pezzo surface in the Corti--Heuberger family \(X_{1,1/3}\); see \cite[Theorem~4 and Table~2]{Corti2016}. By \cite[Corollary~8(1)]{Corti2016}, every surface in \(X_{1,d}\) is obtained by blowing up \(25/3-d\) nonsingular points of \(\Pp(1,1,3)\); for \(d=1/3\), this gives eight blow-ups.
 
-A chosen directed MMP in the one-point case may instead terminate at the auxiliary family \(B_{1,16/3}\). This does not conflict with the presentation above: \cite[Remark~9(1)]{Corti2016} states that if \(X\to B_{1,16/3}\) is the blow-up of a nonsingular point, then an alternative sequence of four contractions of floating \((-1)\)-curves starting from \(X\) ends at \(\Pp(1,1,3)\). The available \((-1)\)-curves therefore permit different contraction sequences, and the endpoint of one directed MMP does not obstruct the eight-blow-up presentation. For the general member, the Reid--Suzuki construction realizes this presentation with eight general smooth centers and identifies its anticanonical model.
+A chosen directed MMP in the one-point case may instead terminate at the auxiliary family \(B_{1,16/3}\). This does not conflict with the presentation above: \cite[Remark~9(1)]{Corti2016} states that a blow-up \(X\to B_{1,16/3}\) of a nonsingular point admits an alternative sequence of four contractions of floating \((-1)\)-curves from \(X\) to \(\Pp(1,1,3)\). The available \((-1)\)-curves therefore permit different contraction sequences, and the endpoint of one directed MMP does not obstruct the eight-blow-up presentation. For the general member, the Reid--Suzuki construction realizes this presentation with eight general smooth centers and identifies its anticanonical model.
 
 \begin{theorem}[{Reid--Suzuki \cite[Section~1 and Table~1.1]{ReidSuzuki2004}}]
 \label{thm:X10-anticanonical-model}
@@ -854,7 +857,7 @@ Let \(P_1,\dots,P_8\in \Pp(1,1,3)\) be eight general smooth points, and let
 \[
 \eta:S\longrightarrow \Pp(1,1,3)
 \]
-be their blow-up. Then
+be their blow-up. The anticanonical divisor of \(S\) is
 \[
 -K_S=\eta^*(-K_{\Pp(1,1,3)})-\sum_{i=1}^8E_i,
 \]
@@ -928,7 +931,7 @@ on \(\widetilde X_{10}\). The curves \(D_i\) are pairwise disjoint, so their exc
 consequence.
 
 \begin{corollary}\label{cor:X10-stack-fec} 
-Let \(\pi:\mathcal X_{10}\to X_{10}\) be the canonical stack. Then \(\Db(\coh\mathcal X_{10})\) has a full exceptional collection of length \(13\). 
+Let \(\pi:\mathcal X_{10}\to X_{10}\) be the canonical stack. The category \(\Db(\coh\mathcal X_{10})\) has a full exceptional collection of length \(13\).
 \end{corollary} 
 
 More generally, the Hille--Perling toric systems on \(\F_3\) induce the
@@ -940,7 +943,7 @@ following family of full exceptional collections on \(\widetilde X_{10}\)
 &\sigma^*\OO(C_0+(s+4)f),\sigma^*\OO(C_0+(s+5)f) \big\rangle,
 \end{aligned}
 \]
-for all $s\in\Z$. The underlying four-term Hille--Perling collection on \(\F_3\) is strongly exceptional for \(s\geq -1\).
+for all $s\in\Z$. The underlying four-term Hille–Perling collection on \(\F_3\) is strongly exceptional for \(s\geq -1\).
 
 \begin{proposition}[The Euler form for \(\mathcal X_{10}\)]
 \label{prop:X10-euler-form}
@@ -957,7 +960,7 @@ Let \(s\in\Z\) and let
 \big\rangle 
 \end{aligned}
 \]
-be an exceptional collection of \(D^b(\coh \mathcal X_{10})\) associated with the Hille--Perling toric system for \(\F_3\). Then the matrix of the Euler form \(S_{ij}(s)=\chi(\mathcal C_i(s),\mathcal C_j(s))\)
+be an exceptional collection of \(D^b(\coh \mathcal X_{10})\) associated with the Hille--Perling toric system for \(\F_3\). The matrix of the Euler form \(S_{ij}(s)=\chi(\mathcal C_i(s),\mathcal C_j(s))\)
 is given by
 \[
 \begingroup
@@ -1073,13 +1076,13 @@ D^b(\coh\mathcal X_{10})
 \]
 and we use here the ordering of \cite[Theorem~1.4]{Ishii2015}, in which the
 exceptional complement lies to the left of
-\(\Phi(D^b(\coh\widetilde X_{10}))\). Thus
+\(\Phi(D^b(\coh\widetilde X_{10}))\). Consequently, semiorthogonality gives
 \[
 \chi_{\mathcal X_{10}}(\Phi A,\mathcal E_p)=0.
 \]
 Only the first row has to be computed.
 
-The curve \(E\) is the strict transform of the negative section \(C_0\subset\F_3\), while the curves \(D_1,\dots,D_8\) are disjoint from \(E\). Hence
+The curve \(E\) is the strict transform of the negative section \(C_0\subset\F_3\), while the curves \(D_1,\dots,D_8\) are disjoint from \(E\). Hence the corresponding Euler characteristics vanish:
 \[
 \chi_{\widetilde X_{10}}(\OO_E(-2),\OO_{D_i}(-1))=0
 \]
@@ -1105,11 +1108,11 @@ Therefore, we have
 =
 -D\cdot C_0.
 \]
-For the four line bundles
+Consider the following four line bundles:
 \[
-\OO,\qquad \OO(f),\qquad \OO(C_0+(s+4)f),\qquad \OO(C_0+(s+5)f),
+\OO,\qquad \OO(f),\qquad \OO(C_0+(s+4)f),\qquad \OO(C_0+(s+5)f).
 \]
-the intersection numbers with \(C_0\) are
+Their intersection numbers with \(C_0\) are
 \[
 0,\qquad 1,\qquad s+1,\qquad s+2.
 \]
@@ -1125,7 +1128,7 @@ for all \(A,B\in D^b(\coh\widetilde X_{10})\). The curves \(D_i\) are pairwise d
 \[
 \chi(\OO_{D_i}(-1),\OO_{D_j}(-1))=\delta_{ij}.
 \]
-If \(L\) is pulled back from \(\F_3\), then \((\sigma^*L)|_{D_i}\simeq\OO_{D_i}\). Using \(D_i^2=-1\) and the same divisor-duality computation, we get
+For a line bundle \(L\) pulled back from \(\F_3\), its restriction satisfies \((\sigma^*L)|_{D_i}\simeq\OO_{D_i}\). Using \(D_i^2=-1\) and the same divisor-duality computation, we get
 \[
 \RHom_{\widetilde X_{10}}(\OO_{D_i}(-1),\sigma^*L)
 \simeq
@@ -1210,7 +1213,7 @@ We start with the decomposition on \(\F_3\) from
 \widetilde{\mathcal A}_2
 \right\rangle,
 \]
-where
+whose three components are
 \[
 \widetilde{\mathcal A}_0
 =
@@ -1253,7 +1256,8 @@ exceptional curve \(D\), the right-handed form of
 \]
 Iterating this form gives a semiorthogonal decomposition of
 \(\Db(\coh \widetilde X_{10})\) in which the eight Orlov exceptional
-components follow the three pulled-back blocks. Set
+components follow the three pulled-back blocks. Define the two line bundles on
+\(\F_3\) by
 \[
 L_0=\OO(-C_0-f),
 \qquad
@@ -1263,9 +1267,9 @@ The morphism \(\sigma\) is an isomorphism in a neighborhood of \(E\). Since
 the blow-up centers are disjoint from \(C_0\), the relation
 \(L_1=L_0(C_0)\) pulls back to
 \[
-\sigma^*L_1=\sigma^*L_0(E),
+\sigma^*L_1=\sigma^*L_0(E).
 \]
-and
+The corresponding intersection number is
 \[
 (\sigma^*L_0)\cdot E
 =
@@ -1304,16 +1308,16 @@ The remaining components consist, in this order, of the two exceptional componen
 We finish with a general formal consequence of the Ishii--Ueda decomposition and rationality of the minimal resolution, and then indicate possible extensions of the cascade method. The existence assertion below applies to arbitrary quotient singularities; under the additional hypothesis of singularities of type \(\frac1k(1,1)\), the local contribution and the length can be computed explicitly.
 
 \begin{proposition}\label{prop:general-log-del-pezzo-stack}
-Let \(X\) be a log del Pezzo surface, and let \(\XX\) be its canonical stack. Then \(\Db(\coh \XX)\) admits a full exceptional collection.
+Let \(X\) be a log del Pezzo surface, and let \(\XX\) be its canonical stack. The category \(\Db(\coh \XX)\) admits a full exceptional collection.
 
-Assume moreover that the singularities of \(X\) are \(p_1,\dots,p_r\), where \(p_i\) has type \(\frac1{k_i}(1,1)\), with \(k_i\geq 2\). Then the length of this full exceptional collection is
+Assume moreover that the singularities of \(X\) are \(p_1,\dots,p_r\), where \(p_i\) has type \(\frac1{k_i}(1,1)\), with \(k_i\geq 2\). The length of this full exceptional collection is
 \[
 12-K_X^2
 +
 \sum_{i=1}^r
 \frac{2(k_i-1)(k_i-2)}{k_i}.
 \]
-Equivalently, if \(f:\widetilde X\to X\) is the minimal resolution, then
+Equivalently, for the minimal resolution \(f:\widetilde X\to X\), we have
 \[
 \rk K_0(\widetilde X)
 =
@@ -1334,7 +1338,7 @@ K_{\widetilde X}
 =
 f^*K_X-\sum_{i=1}^r\frac{k_i-2}{k_i}C_i.
 \]
-The curves \(C_i\) are disjoint, and \(f^*K_X\cdot C_i=0\) for all \(i\). Hence
+The curves \(C_i\) are disjoint, and \(f^*K_X\cdot C_i=0\) for all \(i\). It follows that
 \[
 K_{\widetilde X}^2
 =
@@ -1397,7 +1401,7 @@ X_9\subset \Pp(1,1,3,6).
 \]
 The local contribution is immediate from the formula above: the \(\frac13(1,1)\) point contributes one exceptional object supported on the residual gerbe, while the \(\frac16(1,1)\) point contributes four. Thus these two singularities contribute five local exceptional objects in total.
 
-This gives the guiding principle for explicit constructions beyond \(X_{10}\). One first chooses a model whose basket contains the desired singularities, then analyzes the cascade by blow-ups at smooth points, and finally adds the exceptional objects supported on the residual gerbes over the singular points. A systematic extension would require a precise cascade description and a compatibility check for the chosen initial model.
+This gives the guiding principle for explicit constructions beyond \(X_{10}\). First, one chooses a model whose basket contains the desired singularities. Next, one analyzes the cascade by blow-ups at smooth points. Finally, one adds the exceptional objects supported on the residual gerbes over the singular points. A systematic extension would require a precise cascade description and a compatibility check for the chosen initial model.
 
 % ------------------------------------------------------------
 
@@ -1426,14 +1430,13 @@ cascades.
 \subsection{Glue in the exceptional lattice}
 \label{app:brauer-glue}
 
-Set
+Define the saturation of \(\Lambda\) in \(\Pic(\widetilde X)\) by
 \[
 \Lambda^{\mathrm{sat}}
 =
 \bigl(\Lambda\otimes\mathbb Q\bigr)\cap\Pic(\widetilde X).
 \]
-This is the saturation of \(\Lambda\) in \(\Pic(\widetilde X)\). The quotient
-\(\Lambda^{\mathrm{sat}}/\Lambda\) measures the failure of the
+The quotient \(\Lambda^{\mathrm{sat}}/\Lambda\) measures the failure of the
 exceptional lattice to be primitive; following standard lattice terminology,
 we call its elements \emph{glue classes}. The discriminant group
 \[
@@ -1459,7 +1462,7 @@ L=\frac13\sum_{i=1}^k a_iE_i,
 \qquad
 a_i\in\{0,\pm1\}.
 \]
-For such a representative,
+Such a representative satisfies the congruences
 \[
 \sum_{i=1}^k a_i^2\equiv0\pmod3,
 \qquad
@@ -1467,7 +1470,7 @@ For such a representative,
 \]
 Consequently:
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item if \(k=1\) or \(k=2\), then \(\Lambda\) is primitive;
+\item if \(k=1\) or \(k=2\), the lattice \(\Lambda\) is primitive;
 \item if \(3\leq k\leq5\), every nonzero glue class is represented by
 \[
 \pm\frac{E_a+E_b+E_c}{3}
@@ -1492,7 +1495,7 @@ and therefore \(\sum_i a_i^2\equiv0\pmod3\). Moreover, adjunction gives
 \[
 K_{\widetilde X}\cdot E_i=1.
 \]
-Thus
+It follows that
 \[
 K_{\widetilde X}\cdot L=\frac13\sum_i a_i\in\Z,
 \]
@@ -1525,7 +1528,8 @@ Hirzebruch surfaces, and a point blow-up adds an orthogonal \((-1)\)-class.
 Since \(\Lambda\subset\Pic(\widetilde X)\) is primitive, its quotient is
 torsion-free. Applying \(\Hom(-,\Z)\) and using the unimodularity
 \(\Pic(\widetilde X)\cong\Pic(\widetilde X)^\vee\) shows that the restriction
-map \(\theta:\Pic(\widetilde X)\to\Lambda^\vee\) is surjective. Hence
+map \(\theta:\Pic(\widetilde X)\to\Lambda^\vee\) is surjective. Hence the
+Brauer group vanishes:
 \[
 \Br(X)=0.
 \]
@@ -1539,7 +1543,7 @@ is elementary.
 
 \begin{lemma}\label{lem:brauer-cascade-invariance}
 Let \(X'\to X\) be one of the blow-ups at a smooth point occurring in a
-Corti--Heuberger cascade. Then
+Corti--Heuberger cascade. This blow-up preserves the Brauer group:
 \[
 \Br(X')\cong\Br(X).
 \]
@@ -1557,7 +1561,7 @@ transforms of these curves give natural identifications
 \qquad
 \Lambda_{X'}^\vee\cong\Lambda_X^\vee.
 \]
-If \(F\) is the new exceptional curve, then
+If \(F\) is the new exceptional curve, the Picard group decomposes as
 \[
 \Pic(\widetilde X')
 =
@@ -1565,7 +1569,7 @@ If \(F\) is the new exceptional curve, then
 \qquad
 F\cdot E_i=0.
 \]
-Therefore
+Therefore, the intersection numbers satisfy
 \[
 (\beta^*D+nF)\cdot E_i=D\cdot E_i
 \]
@@ -1626,13 +1630,13 @@ The boundary intersections give
 \theta(V_2)=e_1+e_2,\qquad
 \theta(V_4)=e_3.
 \]
-Consequently,
+Consequently, the dual basis vectors satisfy
 \[
 e_1=\theta(V_1),\qquad
 e_2=\theta(V_2)-\theta(V_1),\qquad
 e_3=\theta(V_4),
 \]
-so \(\theta\) is surjective and
+so \(\theta\) is surjective and the Brauer group vanishes:
 \[
 \Br(Z_3)=\Br(X_{3,5})=0.
 \]
@@ -1684,7 +1688,7 @@ order-two quotient, we obtain
 \[
 A_5\Z^5+3\Z^5=\Z^5.
 \]
-Therefore \(\theta\) is surjective and
+Therefore \(\theta\) is surjective, and the Brauer group vanishes:
 \[
 \Br(Z_5)=\Br(X_{5,5/3})=0.
 \]
@@ -1715,7 +1719,7 @@ Their self-intersections are all \(-1\). The adjacent intersections are
 \[
 C_1\cdot C_2=C_2\cdot C_3=C_3\cdot C_4=C_4\cdot C_1=1,
 \]
-while
+and the nonadjacent intersections are
 \[
 C_1\cdot C_3=0,
 \qquad
@@ -1777,7 +1781,7 @@ u_i=\frac{v_i+v_{i+1}}3,
 \qquad
 i\in\Z/6\Z.
 \]
-Explicitly,
+The inserted rays are explicitly
 \[
 \begin{aligned}
 u_1&=(0,1),&
@@ -1817,7 +1821,7 @@ Rearranging gives
 \[
 E_1-E_2+E_3-E_4+E_5-E_6=3L,
 \]
-where
+where the divisor \(L\) is
 \[
 L=-V_2-V_3+V_5+V_6-E_2+E_5
 \in\Pic(\widetilde Z_6).
@@ -1857,7 +1861,7 @@ generators \(-3e_i\) gives
 a_1-a_2+a_3-a_4+a_5-a_6\equiv0\pmod3
 \right\}.
 \]
-Consequently,
+Consequently, the cokernel and Brauer group are
 \[
 \operatorname{coker}(\theta)\cong\Z/3,
 \qquad
@@ -1906,7 +1910,8 @@ routes gives
 \]
 Similarly, let \(B\in B_{2,8/3}\). By
 \cite[Remark~9(2)]{Corti2016}, a suitable smooth-point blow-up \(X'\to B\)
-admits an alternative contraction to \(X_{2,17/3}\). Hence
+admits an alternative contraction to \(X_{2,17/3}\). Hence the Brauer groups
+satisfy
 \[
 \Br(B)\cong\Br(X')\cong\Br(X_{2,17/3})=0.
 \]
