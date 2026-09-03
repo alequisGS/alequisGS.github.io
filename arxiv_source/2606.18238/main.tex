@@ -129,7 +129,7 @@
 \maketitle
 
 \begin{abstract}
-We study derived categories associated with log del Pezzo surfaces whose singularities are of type $\frac13(1,1)$. The Ishii--Ueda special McKay correspondence and the rationality of the minimal resolution provide the structural mechanism for full exceptional collections on the canonical stack. We identify the residual-gerbe contribution, obtain an explicit length formula, and use the Corti--Heuberger cascades to give a uniform construction procedure once a full exceptional collection on the resolution of the rigid base is fixed. For the sporadic Johnson--Koll\'ar hypersurface $X_{10}\subset\mathbb P(1,2,3,5)$, we use the Reid--Suzuki realization as the anticanonical model of the blow-up of $\mathbb P(1,1,3)$ at eight general smooth points to construct an explicit full exceptional collection of length $13$. We compute its Euler form and obtain a semiorthogonal decomposition of the singular surface with a $K(3,1)$-component and ten exceptional objects via Karmazyn--Kuznetsov--Shinder descent. Finally, an appendix determines the Brauer group throughout the six Corti--Heuberger cascades: it is trivial in the cascades with $1\leq k\leq5$ and is isomorphic to $\mathbb Z/3$ in the six-point cascade.
+We study derived categories associated with log del Pezzo surfaces whose singularities are of type $\frac13(1,1)$. The Ishii--Ueda special McKay correspondence and the rationality of the minimal resolution provide the structural mechanism for full exceptional collections on the canonical stack. We make the residual-gerbe contribution explicit, obtain a length formula, and use the Corti--Heuberger cascades to give a uniform construction procedure once a full exceptional collection on the resolution of the rigid base is fixed. For the sporadic Johnson--Koll\'ar hypersurface $X_{10}\subset\mathbb P(1,2,3,5)$, we use the Reid--Suzuki realization as the anticanonical model of the blow-up of $\mathbb P(1,1,3)$ at eight general smooth points to construct an explicit full exceptional collection of length $13$. We compute its Euler form and further record a closed block formula in the one-$\frac1n(1,1)$ case with blow-ups at distinct smooth points. We also obtain a semiorthogonal decomposition of the singular surface with a $K(3,1)$-component and ten exceptional objects via Karmazyn--Kuznetsov--Shinder descent. Finally, an appendix determines the Brauer group throughout the six Corti--Heuberger cascades: it is trivial in the cascades with $1\leq k\leq5$ and is isomorphic to $\mathbb Z/3$ in the six-point cascade.
 \end{abstract}
 
 \medskip
@@ -161,7 +161,8 @@ For singularities of type \(\frac13(1,1)\), we make the local contribution expli
 
 Our geometric tool is the Corti--Heuberger classification by log del Pezzo cascades \cite{Corti2016}. In this classification, the relevant surfaces are organized by sequences of blow-ups starting from \(\mathbb Q\)-Gorenstein rigid (\(qG\)-rigid) base surfaces. Once a full exceptional collection is fixed on the minimal resolution of a rigid base, Orlov's blow-up formula and the local Ishii--Ueda contribution give a uniform construction procedure along the corresponding cascade. Thus the cascades control both the birational geometry and the passage from the chosen base collection to the stack-theoretic collections.
 
-Our first structural result is the following.
+Specializing this formal mechanism to \(\frac13(1,1)\)-points gives the
+following explicit description and length formula.
 
 \begin{theorem}\label{thm:general-main}
 Let \(X\) be a log del Pezzo surface whose singularities are \(p_1,\dots,p_r\), all of type \(\frac13(1,1)\). Let \(\XX\) be its canonical smooth Deligne--Mumford stack, and let \(\widetilde X\to X\) be the minimal resolution. The category \(\Db(\coh \XX)\) admits a full exceptional collection of length
@@ -195,7 +196,7 @@ is a full exceptional collection on \(\Db(\coh \XX)\), where
 is the inclusion of the residual gerbe over \(p_i\), and \(\rho_2\) is the unique non-special representation of \(\muthree\).
 \end{theorem}
 
-The theorem is established in \cref{sec:canonical-stack} by combining the Ishii--Ueda decomposition with the geometry of the minimal resolution. Its explicit content is the identification of the local object and the length formula: the resolution contributes \(12-K_X^2+\frac r3\) objects, and the stack contributes one object at each singular point. The broader formal consequence for quotient singularities, together with the corresponding formula for singularities of type \(\frac1k(1,1)\), is recorded in \cref{sec:further-directions}.
+The theorem is established in \cref{sec:canonical-stack} by combining the Ishii--Ueda decomposition with the geometry of the minimal resolution. Its explicit content is the identification of the local object and the length formula: the resolution contributes \(12-K_X^2+\frac r3\) objects, and the stack contributes one object at each singular point. The broader formal consequence for quotient singularities, the corresponding formula for singularities of type \(\frac1k(1,1)\), and a closed Euler-matrix formula in the one-point case are recorded in \cref{sec:further-directions}.
 
 We now turn to the family of degree-\(10\) hypersurfaces
 \[
@@ -272,8 +273,10 @@ and exceptional collections, \cref{sec:canonical-stack} treats canonical
 stacks and the special McKay correspondence, and \cref{sec:kks} discusses the
 singular surface and KKS descent. \Cref{sec:cascade} develops the
 Corti--Heuberger cascade and the \(X_{10}\) example, including the Euler form,
-while \cref{sec:further-directions} records broader consequences and further
-directions. Appendix~\ref{app:brauer} contains the Brauer-group calculations.
+while \cref{sec:further-directions} gives the general
+\(\frac1k(1,1)\) length formula and a closed Euler-matrix formula in the
+one-point case. Appendix~\ref{app:brauer} contains the Brauer-group
+calculations.
 
 % ------------------------------------------------------------
 \section{Resolutions and exceptional collections}
@@ -943,7 +946,7 @@ following family of full exceptional collections on \(\widetilde X_{10}\)
 &\sigma^*\OO(C_0+(s+4)f),\sigma^*\OO(C_0+(s+5)f) \big\rangle,
 \end{aligned}
 \]
-for all $s\in\Z$. The underlying four-term Hille–Perling collection on \(\F_3\) is strongly exceptional for \(s\geq -1\).
+for all $s\in\Z$. The underlying four-term Hille--Perling collection on \(\F_3\) is strongly exceptional for \(s\geq -1\).
 
 \begin{proposition}[The Euler form for \(\mathcal X_{10}\)]
 \label{prop:X10-euler-form}
@@ -1279,7 +1282,12 @@ L_0\cdot C_0
 =3-1
 =2.
 \]
-These are precisely the equivalent line-bundle conditions of
+Since \(\widetilde X_{10}\) is rational, its structure sheaf satisfies
+\[
+H^\bullet(\widetilde X_{10},\OO_{\widetilde X_{10}})\cong\C.
+\]
+Together with the displayed line-bundle relations, this verifies the
+hypotheses and equivalent conditions of
 \cite[Lemma~3.5 and Definition~3.6]{KKS2020} for untwisted adherence to the
 single \((-3)\)-curve \(E\). Moreover, \cref{lem:kks-blowups} gives
 \[
@@ -1301,11 +1309,13 @@ The remaining components consist, in this order, of the two exceptional componen
 \end{proof}
 
 % ------------------------------------------------------------
-\section{A general consequence and further directions}
+\section{Further consequences}
 \label{sec:further-directions}
 % ------------------------------------------------------------
 
-We finish with a general formal consequence of the Ishii--Ueda decomposition and rationality of the minimal resolution, and then indicate possible extensions of the cascade method. The existence assertion below applies to arbitrary quotient singularities; under the additional hypothesis of singularities of type \(\frac1k(1,1)\), the local contribution and the length can be computed explicitly.
+The Ishii--Ueda decomposition and rationality of the minimal resolution have
+the following general consequence. For singularities of type
+\(\frac1k(1,1)\), both the local contribution and the length are explicit.
 
 \begin{proposition}\label{prop:general-log-del-pezzo-stack}
 Let \(X\) be a log del Pezzo surface, and let \(\XX\) be its canonical stack. The category \(\Db(\coh \XX)\) admits a full exceptional collection.
@@ -1330,21 +1340,26 @@ and the canonical stack contributes \(k_i-2\) further exceptional objects over t
 \end{proposition}
 
 \begin{proof}
-The existence of a full exceptional collection follows from the Ishii--Ueda decomposition and \cref{cor:rational-surface-fec}, as in \cref{thm:general-fec}. We prove the length formula under the additional assumption on the singularities.
+By \cref{prop:log-del-pezzo-rational,cor:rational-surface-fec}, the minimal
+resolution is a smooth rational surface with a full exceptional collection.
+The first assertion therefore follows from \cref{thm:ishii-ueda-global}.
 
-Let \(C_i\subset \widetilde X\) be the exceptional curve over \(p_i\). Since \(p_i\) has type \(\frac1{k_i}(1,1)\), the exceptional locus over \(p_i\) consists of one smooth rational curve with \(C_i^2=-k_i\). The discrepancy formula is
+Under the additional hypothesis, let \(C_i\subset\widetilde X\) be the
+exceptional curve over \(p_i\). Thus \(C_i^2=-k_i\), and the discrepancy
+formula is
 \[
 K_{\widetilde X}
 =
 f^*K_X-\sum_{i=1}^r\frac{k_i-2}{k_i}C_i.
 \]
-The curves \(C_i\) are disjoint, and \(f^*K_X\cdot C_i=0\) for all \(i\). It follows that
+The curves \(C_i\) are disjoint and satisfy \(f^*K_X\cdot C_i=0\). It
+follows that
 \[
 K_{\widetilde X}^2
 =
 K_X^2-\sum_{i=1}^r\frac{(k_i-2)^2}{k_i}.
 \]
-Since \(\widetilde X\) is a smooth rational surface, we have
+Consequently, the rank is
 \[
 \rk K_0(\widetilde X)
 =
@@ -1356,17 +1371,19 @@ Since \(\widetilde X\) is a smooth rational surface, we have
 \frac{(k_i-2)^2}{k_i}.
 \]
 
-It remains to count the local objects added by the canonical stack. For the singularity \(\frac1{k_i}(1,1)\), the Hirzebruch--Jung continued fraction is \(\frac{k_i}{1}=[k_i]\). The corresponding Wunram sequence gives the special representations \(\rho_0\) and \(\rho_1\) of \(\boldsymbol{\mu}_{k_i}\). Hence the non-special representations are
-\[
-\rho_2,\rho_3,\dots,\rho_{k_i-1}.
-\]
-This local calculation is also recorded in \cite[Example~2.6]{GugiattiRota2023}, where the local exceptional collection is ordered as
+For a singularity of type \(\frac1{k_i}(1,1)\), Gugiatti--Rota identify
+\(\rho_0\) and \(\rho_1\) as the special representations and order the local
+exceptional collection as
 \[
 \left\langle
 \OO_0\otimes\rho_2,\dots,\OO_0\otimes\rho_{k_i-1}
 \right\rangle.
 \]
-In the Ishii--Ueda decomposition this local block precedes \(\Phi(\Db(\coh\widetilde X))\); blocks supported at distinct singular points are mutually orthogonal and may be ordered arbitrarily. Therefore the point \(p_i\) contributes \(k_i-2\) exceptional objects, and the full exceptional collection on \(\Db(\coh \XX)\) has length
+See \cite[Example~2.6]{GugiattiRota2023}. In the Ishii--Ueda decomposition,
+this local block precedes
+\(\Phi(\Db(\coh\widetilde X))\), and blocks at distinct singular points are
+mutually orthogonal. Hence \(p_i\) contributes \(k_i-2\) objects. Adding
+these local contributions to the rank above gives
 \[
 12-K_X^2
 +
@@ -1382,26 +1399,250 @@ In the Ishii--Ueda decomposition this local block precedes \(\Phi(\Db(\coh\widet
 \]
 \end{proof}
 
-We now explain how this computation interacts with cascades. Suppose first that \(X\) has one singular point of type \(\frac1k(1,1)\) and belongs to a family described by the Cavey--Prince cascade starting from \(\Pp(1,1,k)\); see \cite{CAVEY2020}. The minimal resolution of \(\Pp(1,1,k)\) is the Hirzebruch surface \(\F_k\), and the exceptional curve over the singular point is the negative section \(C_0\subset \F_k\), with \(C_0^2=-k\).
+The preceding proposition determines the length of the collection. In the
+one-point case, when the minimal resolution is obtained from \(\F_n\) by
+blowing up pairwise distinct points away from the negative section, the same
+construction also gives a closed formula for its Euler matrix.
 
-The cascade consists of blow-ups at smooth points of the singular surface. Since these blow-ups occur away from the singular point, the analytic type \(\frac1k(1,1)\) remains unchanged. Passing to minimal resolutions, the cascade lifts to a sequence of ordinary point blow-ups of \(\F_k\), all away from \(C_0\) and its successive strict transforms. Thus Orlov's blow-up formula gives a full exceptional collection on the resolution. The Ishii--Ueda decomposition places the \(k-2\) residual-gerbe objects corresponding to \(\rho_2,\dots,\rho_{k-1}\), in that order, to the left of the image of this resolution collection.
+\begin{proposition}[An Euler matrix for one cyclic point]
+\label{prop:general-one-point-euler}
+Let \(n\geq3\) and \(m\geq0\). Suppose that the minimal resolution of a log
+del Pezzo surface \(X\) fits into a diagram
+\[
+\widetilde X\xrightarrow{\ \sigma\ }\F_n,
+\qquad
+\widetilde X\xrightarrow{\ \nu\ }X,
+\]
+where \(\sigma\) is the blow-up of \(m\) distinct points of \(\F_n\), all
+disjoint from the negative section \(C_0\subset\F_n\), and \(\nu\)
+contracts the strict transform \(E\) of \(C_0\) to the unique singular point
+of \(X\), of type \(\frac1n(1,1)\). Write \(D_1,\dots,D_m\) for the
+exceptional curves of \(\sigma\), and use the intersection conventions
+\[
+C_0^2=-n,
+\qquad
+C_0\cdot f=1,
+\qquad
+f^2=0.
+\]
+Let \(\XX\) be the canonical stack of \(X\), let
+\(\Phi:\Db(\coh\widetilde X)\to\Db(\coh\XX)\) be the Ishii--Ueda functor,
+and let \(\iota:B\boldsymbol{\mu}_n\hookrightarrow\XX\) be the residual
+gerbe. For \(2\leq i\leq n-1\), define
+\[
+\mathcal E_i
+:=
+\iota_*\bigl(\OO_{B\boldsymbol{\mu}_n}\otimes\rho_i\bigr),
+\qquad
+\rho_i(\zeta)=\zeta^i.
+\]
+For \(s\in\Z\), the Hille--Perling collection
+\cite[Proposition~5.2]{HillePerling2011}, Orlov's blow-up formula, and the
+Ishii--Ueda decomposition give the ordered full exceptional collection
+\[
+\begin{aligned}
+\mathcal C_{n,m}(s)=\big\langle
+&\mathcal E_2,\dots,\mathcal E_{n-1},
+\Phi(\OO_{D_1}(-1)),\dots,\Phi(\OO_{D_m}(-1)),\\
+&\Phi(\sigma^*\OO),\Phi(\sigma^*\OO(f)),
+\Phi(\sigma^*\OO(C_0+(s+n+1)f)),\\
+&\Phi(\sigma^*\OO(C_0+(s+n+2)f))
+\big\rangle .
+\end{aligned}
+\]
 
-For several singularities, the initial model must already carry the prescribed basket; in particular, \(\Pp(1,1,k)\) is insufficient because it has only one singular point. For instance, Cavey--Prince construct models with two singularities as hypersurfaces
+The local block \(T_n\in M_{n-2}(\Z)\) is defined by
+\[
+T_n
+:=
+\bigl(\chi(\mathcal E_i,\mathcal E_j)\bigr)_{2\leq i,j\leq n-1}
+\]
+and has entries
+\[
+(T_n)_{ij}
+=
+\delta_{ij}-2\delta_{j,i+1}+\delta_{j,i+2}.
+\]
+Here the Kronecker symbols refer to the displayed integer range rather than
+to indices modulo \(n\). Equivalently, with the evident truncation in the
+small dimensions,
+\[
+T_n=
+\begin{pmatrix}
+1&-2&1&0&\cdots&0\\
+0&1&-2&1&\ddots&\vdots\\
+0&0&1&-2&\ddots&0\\
+\vdots&&\ddots&\ddots&\ddots&1\\
+0&\cdots&0&1&-2\\
+0&\cdots&\cdots&0&1
+\end{pmatrix}.
+\]
+For \(n\geq4\), the local-to-Hirzebruch block
+\(B_n(s)\in\operatorname{Mat}_{(n-2)\times4}(\Z)\) is
+\[
+B_n(s)
+=
+\begin{pmatrix}
+0_{(n-4)\times4}\\[2pt]
+\begin{matrix}
+1&2&s+2&s+3\\
+0&-1&-(s+1)&-(s+2)
+\end{matrix}
+\end{pmatrix},
+\]
+where the zero block is absent for \(n=4\). The penultimate and final rows
+are indexed by \(\mathcal E_{n-2}\) and \(\mathcal E_{n-1}\), respectively.
+For \(n=3\), the local block consists only of \(\mathcal E_2\), so
+\(T_3=(1)\). The representation \(\rho_{n-2}=\rho_1\) is special and does
+not belong to the Ishii--Ueda complement; consequently, only the final row
+of \(B_n(s)\) occurs:
+\[
+B_3(s)
+=
+\begin{pmatrix}
+0&-1&-(s+1)&-(s+2)
+\end{pmatrix}.
+\]
+
+The Hirzebruch-surface block \(H_n(s)\in M_4(\Z)\) is
+\[
+H_n(s)
+=
+\begin{pmatrix}
+1&2&2s+n+4&2s+n+6\\
+0&1&2s+n+2&2s+n+4\\
+0&0&1&2\\
+0&0&0&1
+\end{pmatrix}.
+\]
+
+With respect to \(\mathcal C_{n,m}(s)\), the \((n+m+2)\times(n+m+2)\)
+matrix of the Euler form is
+\[
+\boxed{
+S_{n,m}(s)
+=
+\begin{pmatrix}
+T_n&0&B_n(s)\\
+0&I_m&-\mathbf1_{m\times4}\\
+0&0&H_n(s)
+\end{pmatrix}
+}.
+\]
+Here \(\mathbf1_{m\times4}\) denotes the matrix all of whose entries are
+equal to \(1\).
+\end{proposition}
+
+\begin{proof}
+On the local quotient chart \([\A^2/\boldsymbol{\mu}_n]\), consider the
+standard \(\boldsymbol{\mu}_n\)-equivariant Koszul resolution
+\cite[cf. Proposition~3.10]{Ishii2015}:
+\[
+0\longrightarrow
+\OO_{\A^2}\otimes\rho_{i+2}
+\longrightarrow
+(\OO_{\A^2}\otimes\rho_{i+1})^{\oplus2}
+\longrightarrow
+\OO_{\A^2}\otimes\rho_i
+\longrightarrow
+\OO_0\otimes\rho_i
+\longrightarrow0.
+\]
+Taking equivariant Homs to \(\OO_0\otimes\rho_j\) gives
+\[
+\chi(\mathcal E_i,\mathcal E_j)
+=
+\delta_{ij}-2\delta_{j,i+1}+\delta_{j,i+2},
+\]
+which gives \(T_n\). Although the characters are indexed cyclically, no
+wraparound term remains within the range \(2\leq i,j\leq n-1\); the indices
+in the displayed formula are therefore ordinary integers.
+
+Let \(\Psi\) be the left adjoint of \(\Phi\). The direct specialization of
+the Gugiatti--Rota adjoint formula gives
+\cite[Theorem~3.1 and Example~3.5]{GugiattiRota2023}
+\[
+\Psi(\mathcal E_i)=0
+\quad(2\leq i\leq n-3),
+\qquad
+\Psi(\mathcal E_{n-1})\simeq\OO_E(-n+1).
+\]
+For \(n\geq4\), the remaining relevant formula is
+\[
+\Psi(\mathcal E_{n-2})\simeq\OO_E(-n)[1].
+\]
+When \(n=3\), the omitted source corresponds to the special representation
+\(\rho_1\).
+
+The same divisor-duality computation as in
+\cref{prop:X10-euler-form} therefore gives, for a divisor \(D\) on \(\F_n\),
+\[
+\chi\bigl(\mathcal E_{n-2},\Phi(\sigma^*\OO(D))\bigr)
+=D\cdot C_0+1,
+\qquad
+\chi\bigl(\mathcal E_{n-1},\Phi(\sigma^*\OO(D))\bigr)
+=-D\cdot C_0.
+\]
+The first formula applies when \(n\geq4\). For the four line bundles in
+\(\mathcal C_{n,m}(s)\), the intersection numbers are
+\[
+D\cdot C_0=0,\ 1,\ s+1,\ s+2.
+\]
+These values give \(B_n(s)\), including the stated truncation when \(n=3\).
+Moreover, \(E\) is disjoint from \(D_1,\dots,D_m\), so
+\[
+\chi\bigl(\mathcal E_i,\Phi(\OO_{D_a}(-1))\bigr)=0
+\]
+for every \(i\) and \(a\).
+
+Because the blow-up centers are pairwise distinct, the curves
+\(D_1,\dots,D_m\) are pairwise disjoint. Orlov's blow-up formula
+\cite[Theorem~4.3 and Corollary~4.4]{Orlov1993} and the divisor-duality
+computation in \cref{prop:X10-euler-form} apply to each of them and give
+\[
+\chi(\OO_{D_a}(-1),\OO_{D_b}(-1))=\delta_{ab},
+\qquad
+\chi(\OO_{D_a}(-1),\sigma^*L)=-1,
+\qquad
+\chi(\sigma^*L,\OO_{D_a}(-1))=0
+\]
+for every line bundle \(L\) on \(\F_n\). These pairings yield \(I_m\),
+\(-\mathbf1_{m\times4}\), and the opposite zero block.
+
+Finally, Riemann--Roch on \(\F_n\), using
+\[
+K_{\F_n}=-2C_0-(n+2)f
+\]
+and
+\[
+\chi(\OO(A),\OO(B))
+=
+1+\frac12(B-A)\cdot(B-A-K_{\F_n}),
+\]
+gives \(H_n(s)\) for the four Hille--Perling line bundles. Combining these
+calculations with the Ishii--Ueda ordering
+\cite[Theorem~1.4]{Ishii2015}, which supplies the remaining lower-left zero
+blocks, proves the formula for \(S_{n,m}(s)\).
+\end{proof}
+
+For \(n=3\) and \(m=8\), one has \(T_3=(1)\) and
+\(B_3(s)=(0,-1,-(s+1),-(s+2))\), while \(H_3(s)\) is the
+\(4\times4\) block in \cref{prop:X10-euler-form}. Together with \(I_8\) and
+\(-\mathbf1_{8\times4}\), the formula recovers
+\(S_{\mathcal X_{10}}(s)\).
+
+In particular, \cref{prop:general-one-point-euler} applies to the one-point
+Cavey--Prince cascades starting from \(\Pp(1,1,n)\) whenever the centers on
+the minimal resolution are pairwise distinct; see \cite{CAVEY2020}. For
+several singularities, the initial model must already carry the prescribed
+basket. Cavey--Prince, for example, construct two-point models
 \[
 X_{k_1+k_2}\subset \Pp(1,1,k_1,k_2),
 \]
 with singularities of types \(\frac1{k_1}(1,1)\) and
-\(\frac1{k_2}(1,1)\) \cite[Corollary~7.1]{CAVEY2020}. A cascade from such a
-model consists of blow-ups at smooth points, so the basket remains fixed
-along the cascade.
-
-Taking \(k_1=3\) and \(k_2=6\) in this construction gives
-\[
-X_9\subset \Pp(1,1,3,6).
-\]
-The local contribution is immediate from the formula above: the \(\frac13(1,1)\) point contributes one exceptional object supported on the residual gerbe, while the \(\frac16(1,1)\) point contributes four. Thus these two singularities contribute five local exceptional objects in total.
-
-This gives the guiding principle for explicit constructions beyond \(X_{10}\). First, one chooses a model whose basket contains the desired singularities. Next, one analyzes the cascade by blow-ups at smooth points. Finally, one adds the exceptional objects supported on the residual gerbes over the singular points. A systematic extension would require a precise cascade description and a compatibility check for the chosen initial model.
+\(\frac1{k_2}(1,1)\) \cite[Corollary~7.1]{CAVEY2020}. Extending the closed
+matrix formula to such families requires accounting for the separate local
+blocks and their interaction with the chosen blow-up configuration.
 
 % ------------------------------------------------------------
 
@@ -1426,6 +1667,13 @@ cascade as a sequence of blow-ups of nonsingular points from \(Z_k\). The
 auxiliary families in the one- and two-point cascades are treated separately
 in \cref{app:brauer-classification}. We determine the cokernel for all six
 cascades.
+
+Bright's exact sequence applies to arbitrary rational surface singularities
+\cite[Proposition~1]{Bright2013}, whereas the classification carried out in
+\cite[Section~3]{Bright2013} concerns the classical singular del Pezzo case
+obtained by contracting \((-2)\)-curves. In the Corti--Heuberger cascades the
+exceptional curves over the singular points have self-intersection \(-3\), so
+the calculations below are not contained in that classification.
 
 \subsection{Glue in the exceptional lattice}
 \label{app:brauer-glue}
