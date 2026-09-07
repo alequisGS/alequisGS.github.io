@@ -72,6 +72,30 @@ li + li {
   margin-top: 6px;
 }
 
+.paper-abstract-details {
+  margin-top: 10px;
+}
+
+.paper-abstract-details summary {
+  display: inline-flex;
+  align-items: center;
+  color: #0b635b;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.paper-abstract-details summary:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.paper-abstract-details summary:focus {
+  outline: 2px solid var(--rule);
+  outline-offset: 3px;
+}
+
 .paper-abstract {
   margin: 10px 0 0;
   padding-left: 16px;
