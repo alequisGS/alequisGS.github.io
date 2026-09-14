@@ -72,6 +72,40 @@ li + li {
   margin-top: 6px;
 }
 
+.research-directions {
+  display: grid;
+  gap: 14px;
+}
+
+.research-direction {
+  padding: 14px 16px;
+  border-left: 3px solid #0b635b;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.research-direction h3 {
+  margin: 0 0 6px;
+  color: #0b635b;
+  font-size: 1rem;
+}
+
+.research-direction p {
+  margin: 0;
+}
+
+.project-list {
+  padding-left: 1.2rem;
+}
+
+.primary-projects > li {
+  margin-top: 14px;
+}
+
+.secondary-projects {
+  color: var(--muted);
+  font-size: 0.96em;
+}
+
 .paper-abstract-details {
   margin-top: 10px;
 }
@@ -303,5 +337,9 @@ a.doi:visited {
 
   .spotify-player {
     height: 352px;
+  }
+
+  .research-direction {
+    padding: 12px 14px;
   }
 }

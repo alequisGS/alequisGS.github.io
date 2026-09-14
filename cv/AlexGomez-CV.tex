@@ -1,0 +1,135 @@
+\documentclass[10pt,a4paper]{article}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,left=16mm,right=16mm,top=13mm,bottom=15mm]{geometry}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\definecolor{cvteal}{HTML}{0B635B}
+\definecolor{cvnavy}{HTML}{17324D}
+\definecolor{cvgray}{HTML}{4F5B66}
+\definecolor{cvrule}{HTML}{D8DFDC}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=cvteal,
+  linkcolor=cvteal,
+  pdftitle={Alex Gomez CV},
+  pdfauthor={Alex Junior Gomez Saltachin}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\emergencystretch=2em
+\sloppy
+\setlist[itemize]{leftmargin=*, itemsep=1.5pt, topsep=2pt}
+\renewcommand{\labelitemi}{--}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{6pt}
+  {\large\bfseries\color{cvteal}#1}\par
+  \vspace{1pt}{\color{cvrule}\hrule height 0.5pt}\vspace{3pt}
+}
+
+\newcommand{\cvitem}[1]{\item #1}
+\newcommand{\submissiontag}{\textbf{\color{cvteal}Submitted to \emph{Advances in Geometry}.}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries\color{cvnavy} Alex Junior Gomez Saltachin}\\[3pt]
+  PhD student in Mathematics, PUC-Rio\\[3pt]
+  \href{mailto:alex.gomez@pucp.edu.pe}{alex.gomez@pucp.edu.pe}
+  \quad|\quad \href{https://alequisgs.github.io}{alequisgs.github.io}
+  \quad|\quad \href{https://github.com/alequisGS}{github.com/alequisGS}\\
+  \href{https://orcid.org/0000-0002-1798-5657}{ORCID 0000-0002-1798-5657}
+  \quad|\quad \href{http://lattes.cnpq.br/1837761002962927}{Lattes}
+\end{center}
+
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{\color{cvteal}Research areas} &
+\textbf{\color{cvteal}Current focus} &
+\textbf{\color{cvteal}Research output} \\
+Algebraic geometry, mirror symmetry, derived categories, Fano and log del Pezzo geometry &
+Big quantum cohomology, Gromov--Witten theory, and categorical invariants for log del Pezzo surfaces, especially \(X_{10}\subset\mathbb P(1,2,3,5)\) &
+Two 2026 arXiv preprints; one submitted to \emph{Advances in Geometry} \\
+\hline
+\end{tabularx}
+
+\cvsection{Profile}
+I am a PhD student in Mathematics at PUC-Rio working at the interface of algebraic geometry and mirror symmetry, particularly on Fano and log del Pezzo surfaces. My recent work develops the categorical side of this geometry through derived categories, exceptional collections, Brauer groups, and categorical invariants. My current research also develops the enumerative side, with particular interest in big quantum cohomology and Gromov--Witten theory for log del Pezzo surfaces, using \(X_{10}\subset\mathbb P(1,2,3,5)\) as a central example. Landau--Ginzburg models, periods, and mirror symmetry provide a bridge between these directions.
+
+\textbf{Research advisor:} Sergey Galkin, currently on sabbatical. \textbf{Co-advisor:} Vasily Golyshev. \textbf{Official PhD advisor at PUC-Rio:} Nicolau Saldanha.
+
+\cvsection{Education}
+\begin{itemize}
+  \cvitem{\textbf{PhD in Mathematics}, PUC-Rio, Brazil, 2023--present. Research advisor: Sergey Galkin, currently on sabbatical. Co-advisor: Vasily Golyshev. Official PhD advisor at PUC-Rio: Nicolau Saldanha.}
+  \cvitem{\textbf{MSc in Mathematics}, Pontificia Universidad Catolica del Peru, 2019. Thesis: \emph{Modular Forms}.}
+  \cvitem{\textbf{BSc in Mathematics}, Pontificia Universidad Catolica del Peru, 2015. First Class Honors. Thesis: \emph{Elliptic Curves: Mordell--Weil, Roth and Siegel Theorems}.}
+\end{itemize}
+
+\cvsection{Preprints}
+\begin{itemize}
+  \cvitem{\textbf{\emph{Categorical genus for log del Pezzo surfaces with cyclic quotient singularities}}. \href{https://arxiv.org/abs/2609.13102}{arXiv:2609.13102}, 2026.}
+  \cvitem{\textbf{\emph{Derived categories and Brauer groups of log del Pezzo surfaces with \(1/3(1,1)\) singularities}}. \href{https://arxiv.org/abs/2606.18238}{arXiv:2606.18238}, 2026. \submissiontag}
+\end{itemize}
+
+\cvsection{Work in progress}
+\begin{itemize}
+  \cvitem{\emph{A Seven-Parameter Landau--Ginzburg Mirror for the Cubic Surface}.}
+\end{itemize}
+
+\cvsection{Honors and fellowships}
+\begin{itemize}
+  \cvitem{\textbf{FAPERJ Nota 10 Excellence Scholarship}, Rio de Janeiro, Brazil, 2024--present.}
+  \cvitem{First Class Honors, BSc in Mathematics, Pontificia Universidad Catolica del Peru, 2015.}
+\end{itemize}
+
+\cvsection{Selected research talks and posters}
+\begin{itemize}
+  \cvitem{\emph{Brauer--Manin and a log del Pezzo surface}, Pontificia Universidad Catolica de Chile, 2026.}
+  \cvitem{\emph{Exceptional Collections for Canonical Stacks of Log del Pezzo Surfaces with \(1/3(1,1)\)-Singularities}, poster, RGAS Summer School, Zaragoza, Spain, 2026.}
+  \cvitem{\emph{Periods in Homological Mirror Symmetry and Kloosterman Motives}, ICTP, 2025.}
+  \cvitem{\emph{A Tentative Relationship Between Homological Mirror Symmetry and Arithmetic Geometry}, Arithmetic and p-adic Geometry in Chile, 2024.}
+\end{itemize}
+
+\cvsection{Teaching}
+\begin{itemize}
+  \cvitem{Graduate instructor and teaching assistant at PUC-Rio and PUCP, 2013--2026.}
+  \cvitem{Courses taught or assisted include Linear Algebra, Algebra, Real Analysis, Complex Analysis, Calculus, and Mathematics for Economists.}
+\end{itemize}
+
+\newpage
+\cvsection{Academic service and seminar organization}
+\begin{itemize}
+  \cvitem{\textbf{Organizer}, \href{https://alequisgs.github.io/etale-cohomology-seminar-2026-/}{Etale Cohomology Seminar 2026}, a five-week online reading and discussion seminar following Daniel Litt's course \emph{Etale Cohomology and the Weil Conjectures}.}
+  \cvitem{Teaching assistant for \emph{Metodos explicitos de Chabauty: un punto de vista computacional a los puntos racionales}, AGRA V, Popayan, Colombia, 2026.}
+  \cvitem{One of the typesetters, with Mohamed Aliouane, for Masha Vlasenko's lecture notes \emph{Hypergeometric Functions} in the ICTP Number Theory and Physics Proceedings, in progress.}
+  \cvitem{Co-founder and organizer of the 38 Movimientos Seminar; co-organizer of the Meetings on Arithmetic and Algebraic Number Theory Seminar.}
+\end{itemize}
+
+\cvsection{Selected schools and programs}
+\begin{itemize}
+  \cvitem{Rutgers Symplectic Summer School, Rutgers University, New Brunswick, USA, 2026.}
+  \cvitem{RGAS Summer School: Mirror Symmetry and Homological Methods in Algebraic Geometry, Zaragoza, Spain, 2026.}
+  \cvitem{GARLAT: Latin American School in Arithmetic Geometry, Santiago, Chile, 2026.}
+  \cvitem{AGRA V: School on Arithmetic, Groups and Analysis, Popayan, Colombia, 2026.}
+  \cvitem{ICTP School and Workshop on Explicit Arithmetic Geometry, Trieste, Italy, 2025.}
+  \cvitem{The Mordell Conjecture 100 Years Later, MIT, USA, 2024; ICTP String-Math, Trieste, Italy, 2024; CIMPA ELGA, 2024.}
+\end{itemize}
+
+\cvsection{Languages}
+Spanish native; English advanced; Portuguese advanced; basic Chinese and French.
+
+\end{document}
