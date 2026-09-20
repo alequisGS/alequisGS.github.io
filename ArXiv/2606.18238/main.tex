@@ -2102,25 +2102,17 @@ weighted scalars \cite[Theorem~4.2]{Cox1995}. Hence
 \dim H=4+1+4-1=8.
 \]
 
-The proof now follows a dimension-count strategy. \Cref{lem:graded-ring-lift}
-gives a general lifting result for graded hypersurface rings.
-\Cref{lem:X10-hypersurface-parameters} identifies hypersurface isomorphism
-classes with \(G\)-orbits, while
-\cref{lem:X10-hypersurface-stabilizers} identifies their stabilizers with
-their automorphism groups.
-\Cref{lem:X10-configuration-parameters} proves that the stabilizer in \(H\)
-of a general ordered configuration is trivial, while
-\cref{lem:X10-finite-presentations} proves the required finiteness of blow-up
-presentations modulo \(H\) and of the relevant automorphism groups. Finally,
-\cref{prop:X10-blowup-dominance} constructs \(F:G\times W_0\to U\) and
-shows that every nonempty fiber has dimension \(8\). Hence
+The strategy is a dimension count. Ordered eight-point configurations have
+dimension \(16\), while the space \(U\) of hypersurface equations has
+dimension \(19\). Allowing graded coordinate changes contributes
+\(\dim G=11\), whereas configurations giving the same surface occur, up to
+finite ambiguity, in \(H\)-orbits of dimension \(8\). Thus the expected
+image dimension is
 \[
-\dim \overline{F(G\times W_0)}
-=11+16-8
-=19
-=\dim U,
+16+11-8=19=\dim U.
 \]
-which proves dominance.
+The lemmas below justify the orbit and finiteness statements needed to turn
+this count into a proof.
 
 \begin{lemma}[Lifting graded hypersurface isomorphisms]
 \label{lem:graded-ring-lift}
@@ -2294,29 +2286,9 @@ of every ordered tuple is trivial.
 
 \begin{proof}
 Let \(\mathcal C\) be the space of ordered distinct smooth eight-tuples on
-\(Q\), which is irreducible by the discussion above. Consider the open
-locus where all eight points lie in the chart \(u\ne0\)
-and at least five have distinct images in \(\Pp^1_{[u:v]}\); these five
-points will also provide the \(5\times5\) minor for the five residual
-unknowns below. An
-automorphism fixing the ordered tuple induces an element of
-\(\operatorname{PGL}_2\) fixing at least five distinct points, and hence
-the identity, since a nontrivial M\"obius transformation has at most two
-fixed points. Thus \(A=\lambda I\) for some \(\lambda\in\C^\times\). The
-weighted scalar represented by \(\lambda\) acts as
-\((u,v,z)\mapsto(\lambda u,\lambda v,\lambda^3z)\); composing with its
-inverse gives a representative with \(A=I\). After renaming the coefficient
-of \(z\) and the binary cubic, the residual action in the affine coordinates
-\(t=v/u\) and \(\zeta=z/u^3\) is still
-\((t,\zeta)\mapsto(t,a\zeta+q(t))\), where \(\deg q\leq3\). Write
-\(q(t)=c_0+c_1t+c_2t^2+c_3t^3\). The condition that
-\((t_j,\zeta_j)\) be fixed is
-\[
-(a-1)\zeta_j+c_0+c_1t_j+c_2t_j^2+c_3t_j^3=0,
-\qquad 1\leq j\leq 8.
-\]
-These equations form a homogeneous linear system in
-\((a-1,c_0,c_1,c_2,c_3)\) with coefficient matrix
+\(Q\), which is irreducible by the discussion above. On the chart
+\(u\ne0\), write \(t=v/u\) and \(\zeta=z/u^3\), and associate to an
+ordered tuple \(P=((t_j,\zeta_j))_{j=1}^8\) the matrix
 \[
 M(P)=
 \begin{pmatrix}
@@ -2325,22 +2297,66 @@ M(P)=
 \zeta_8&1&t_8&t_8^2&t_8^3
 \end{pmatrix}.
 \]
-The rank-five condition is open, since its complement is the common zero
-locus of the \(5\times5\) minors. To show that this open locus is nonempty,
-choose five distinct values \(t_j\) and set \(\zeta_j=t_j^4\). The
-corresponding minor is, up to sign, the Vandermonde determinant
+Let \(\mathcal C^\circ\subset\mathcal C\) be the locus where all eight
+points lie in this chart and \(\operatorname{rank}M(P)=5\). This is open,
+since its complement in the chart locus is the common zero locus of the
+\(5\times5\) minors. If \(\operatorname{rank}M(P)=5\), then the last four
+columns \(1,t,t^2,t^3\) have rank \(4\): otherwise their rank would be at
+most \(3\), and adjoining the \(\zeta\)-column could give total rank at
+most \(4\). The evaluation matrix
+\[
+\begin{pmatrix}
+1&t_1&t_1^2&t_1^3\\
+\vdots&\vdots&\vdots&\vdots\\
+1&t_8&t_8^2&t_8^3
+\end{pmatrix}
+\]
+has rank \(4\) only if at least four of the \(t_j\) are distinct.
+
+On \(Q\setminus\{\text{singular point}\}\), the projection
+\([u:v:z]\mapsto[u:v]\) to \(\Pp^1\) is compatible with the \(H\)-action:
+an automorphism
+\[
+(u,v)\longmapsto A(u,v),\qquad z\longmapsto az+q_3(u,v)
+\]
+induces the projective transformation \([A]\in\operatorname{PGL}_2\) on
+the base. Therefore an automorphism fixing the ordered tuple fixes all the
+corresponding projected points. Since at least four of them are distinct,
+the induced M\"obius transformation is the identity. Thus
+\(A=\lambda I\) for some \(\lambda\in\C^\times\). Composing with the
+weighted scalar
+\[
+(u,v,z)\longmapsto
+(\lambda^{-1}u,\lambda^{-1}v,\lambda^{-3}z)
+\]
+normalizes the representative so that \(A=I\). After renaming the
+coefficient of \(z\) and the binary cubic, the residual action is
+\[
+(t,\zeta)\longmapsto(t,a\zeta+q(t)),\qquad \deg q\leq3.
+\]
+Write \(q(t)=c_0+c_1t+c_2t^2+c_3t^3\). The condition that every
+\((t_j,\zeta_j)\) be fixed is
+\[
+(a-1)\zeta_j+c_0+c_1t_j+c_2t_j^2+c_3t_j^3=0,
+\qquad 1\leq j\leq 8.
+\]
+This is the homogeneous linear system with coefficient matrix \(M(P)\).
+Since \(\operatorname{rank}M(P)=5\), its kernel is zero, so \(a=1\) and
+\(q=0\). Thus the normalized representative is the identity.
+
+It remains to check that \(\mathcal C^\circ\) is nonempty. Choose five
+distinct values \(t_j\) and set \(\zeta_j=t_j^4\). The corresponding
+minor is, up to sign, the Vandermonde determinant
 \[
 \det(t_j^{\ell-1})_{1\leq j,\ell\leq5}
 =\prod_{1\leq i<j\leq5}(t_j-t_i)\ne0.
 \]
-
-The chart, distinctness, and rank-five conditions therefore define a
-nonempty open subset \(\mathcal C^\circ\subset\mathcal C\). Since
-\(W\subset\mathcal C\) is also nonempty open and \(\mathcal C\) is
-irreducible, \(W\cap\mathcal C^\circ\) is nonempty open. For every tuple in
-this intersection, the fixing equations give \(a=1\) and \(q=0\).
-Thus the normalized representative is the identity, and the stabilizer in
-\(H\) is trivial.
+These five points can be completed by three further distinct points in the
+chart to an ordered smooth eight-tuple. Therefore \(\mathcal C^\circ\) is a
+nonempty open subset of the irreducible configuration space \(\mathcal C\).
+Since \(W\) is also nonempty open, \(W\cap\mathcal C^\circ\) is nonempty
+open, and the stabilizer in \(H\) of every tuple in this intersection is
+trivial.
 \end{proof}
 
 The next lemma shows that a fixed surface arises from finitely many
@@ -2360,32 +2376,48 @@ If the stabilizer of \(P\) in \(H\) is trivial, then
 \begin{proof}
 Let \(\nu:Y\to S_P\) be the minimal resolution and put
 \(A=\nu^*(-K_{S_P})\). Then \(A^2=1/3\). A floating
-\((-1)\)-curve is disjoint from the singular locus, so its strict
-transform \(C\) on \(Y\) satisfies
+\((-1)\)-curve is disjoint from the singular locus, so its strict transform
+\(C\) on \(Y\) is disjoint from the exceptional locus and is a smooth
+rational \((-1)\)-curve. Adjunction gives \(K_Y\cdot C=-1\). The discrepancy
+divisor is exceptional and disjoint from \(C\), hence
 \[
-C^2=-1,\qquad A\cdot C=1.
+\nu^*K_{S_P}\cdot C=K_Y\cdot C=-1,
+\qquad A\cdot C=1.
 \]
-Decompose its numerical class as \(C=3A+v\). Then
+The coefficient \(3\) in \(v=C-3A\) is determined by
+\[
+\frac{A\cdot C}{A^2}=\frac{1}{1/3}=3,
+\]
+so \(v\) is the component of \(C\) orthogonal to \(A\). Thus
 \[
 A\cdot v=0,\qquad
 v^2=(C-3A)^2=C^2-6A\cdot C+9A^2=-4.
 \]
+Because \(S_P\) has Cartier index \(3\), the divisor \(-3K_{S_P}\) is
+Cartier. Consequently \(3A=\nu^*(-3K_{S_P})\) is an integral divisor class
+on \(Y\), and hence
+\[
+v=C-3A\in\operatorname{Pic}(Y)\cap A^\perp.
+\]
 The Hodge index theorem makes \(A^\perp\) negative definite
-\cite[Chapter~V, Theorem~1.9]{Hartshorne1977}. The possible vectors
-\(v\) lie in a translate of the numerical divisor lattice and on
-the compact locus \(v^2=-4\) in this negative definite space.
-There are therefore only finitely many possible integral classes
-\(C\). Each contains at most one irreducible curve: two distinct
-curves in that class would have intersection \(-1\), whereas distinct
-irreducible curves on a smooth surface have nonnegative intersection.
-This proves finiteness of the floating curves.
+\cite[Chapter~V, Theorem~1.9]{Hartshorne1977}. A negative-definite lattice
+has only finitely many integral vectors of a fixed norm, so there are only
+finitely many possibilities for \(v\), hence for \(C\). A numerical class
+of square \(-1\) contains at most one irreducible curve: two distinct curves
+in that class would have intersection \(-1\), whereas distinct irreducible
+curves on a smooth surface have nonnegative intersection. This proves
+finiteness of the floating curves.
 
-Any presentation of a fixed surface \(S_P\) as the blow-up of eight
-distinct smooth points of \(Q\) selects an ordered set of eight
-disjoint floating curves to contract. There are only finitely many
-such ordered sets. For each set, the contraction determines the target
-and the ordered centers up to an isomorphism of the target with \(Q\),
-that is, up to \(H\). This proves the second assertion.
+The eight exceptional curves of \(S_P\to Q\) are pairwise disjoint floating
+\((-1)\)-curves because the eight centers are smooth points. Thus a
+presentation as the blow-up of eight ordered distinct smooth points of
+\(Q\) determines an ordered set of eight disjoint floating curves. Since
+there are only finitely many floating curves, there are finitely many such
+ordered sets. After contracting a fixed ordered set, an identification of
+the resulting surface with \(Q\) determines the ordered centers, and two
+such identifications differ by \(H=\operatorname{Aut}(Q)\). Hence a fixed
+isomorphism class gives only finitely many \(H\)-orbits. This proves the
+second assertion.
 
 Finally, \(\operatorname{Aut}(S_P)\) permutes the finite set of floating
 curves. A finite-index subgroup fixes the eight exceptional curves and
@@ -2448,25 +2480,28 @@ in the relevant lower degrees. For \(m\in\{1,2,3,5\}\), let
 \(\mathcal D_m\subset\mathcal E_m\) be the image of the multiplication maps
 generated by lower-degree sections. The fiber dimension of
 \(\mathcal E_m/\mathcal D_m\) is one; after shrinking \(W_0\), these
-quotients are line bundles. Choose local frames and lift them to local
-sections \(x,y,z,w\) of degrees \(1,2,3,5\), respectively.
-The chosen generators induce a degree-\(10\) evaluation map
+quotients are line bundles. Locally choosing generators of these four line
+bundles and lifts to \(\mathcal E_m\) induces a degree-\(10\) evaluation map
 \[
 \OO_{W_0}[x,y,z,w]_{10}\longrightarrow\mathcal E_{10}.
 \]
 On every fiber its kernel has dimension one, since
 \cref{prop:reid-suzuki-X10} gives a single relation of weighted degree
-\(10\). After a further shrinking, the constant-rank property makes this
-kernel a line bundle. Trivializing it locally gives a relation
-\(f_P(x,y,z,w)=0\) whose coefficients vary regularly with \(P\).
-Changing the trivialization multiplies all coefficients by the same
-nowhere-vanishing scalar, so the projective class \([f_P]\) is independent
-of this choice. Hence these coefficients define a morphism
+\(10\). After shrinking, the constant-rank property makes this kernel a
+line bundle. We now replace \(W_0\) once and for all by a sufficiently small
+nonempty affine open subset on which the four quotient line bundles and the
+degree-\(10\) kernel line bundle are trivial. Shrinking further if necessary,
+the quotient maps admit chosen global lifts. Choose global sections
+\(x,y,z,w\) representing the four generators, and choose a global generator
+of the degree-\(10\) kernel. This gives a relation
+\(f_P(x,y,z,w)=0\) whose coefficients are regular functions on \(W_0\).
+Its projective class therefore defines an honest morphism
 \[
 h:W_0\longrightarrow U,\qquad V(h(P))\simeq S_P,
 \]
 where \(V(h(P))\) denotes the hypersurface defined by the projective
-form \(h(P)\).
+form \(h(P)\). The subsequent saturation by the \(G\)-action makes the
+argument independent of the chosen graded coordinates.
 
 Allowing all graded coordinate changes gives the morphism
 \[
@@ -2474,8 +2509,12 @@ F:G\times W_0\longrightarrow U,\qquad (g,P)\longmapsto g\cdot h(P).
 \]
 Its image consists precisely of the equations of hypersurfaces
 isomorphic to some \(S_P\), \(P\in W_0\), by
-\cref{lem:X10-hypersurface-parameters}. We compute the dimension of
-each nonempty fiber of \(F\).
+\cref{lem:X10-hypersurface-parameters}.
+
+Two pairs \((g,P)\) and \((g',P')\) can map to the same equation only when
+\(S_P\simeq S_{P'}\), and \cref{lem:X10-finite-presentations} shows that
+configurations with a fixed isomorphism class occur in finitely many
+\(H\)-orbits. We now compute the dimension of each nonempty fiber of \(F\).
 
 Fix \(u\in F(G\times W_0)\). Projection of \(F^{-1}(u)\) to
 \(W_0\) has image
@@ -2521,6 +2560,11 @@ these points resolves \(S_P\); its exceptional locus over the
 singular point is still the single \((-3)\)-curve \(C_0\), so this
 resolution is minimal.
 \end{proof}
+
+The final assertion of \cref{prop:X10-blowup-dominance} gives the converse
+used in \cref{thm:X10-main}(iii): restricting to any nonempty open locus of
+centers still produces a dense open subset of \(U\), so general centers give
+a general hypersurface.
 
 % ------------------------------------------------------------
 
