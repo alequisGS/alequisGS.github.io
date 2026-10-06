@@ -146,6 +146,47 @@ li + li {
   line-height: 1.5;
 }
 
+.paper-talks {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.paper-talks-summary,
+.paper-talks-summary:link,
+.paper-talks-summary:visited {
+  color: #414852;
+}
+
+.paper-talks-list {
+  display: block;
+}
+
+.paper-talks-list .talk-link.completed,
+.paper-talks-list .talk-link.completed:visited {
+  color: var(--muted);
+}
+
+.paper-talks-list .talk-link.upcoming,
+.paper-talks-list .talk-link.upcoming:visited,
+.paper-talks .talk-count.upcoming {
+  color: var(--link);
+}
+
+.paper-talk-entry {
+  scroll-margin-top: 20px;
+}
+
+.talk-status {
+  color: var(--link);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8em;
+  font-style: italic;
+  white-space: nowrap;
+}
+
 a:link {
   color: var(--link);
   text-decoration: none;
